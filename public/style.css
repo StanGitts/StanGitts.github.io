@@ -14,7 +14,7 @@ body {
 /*Section contains code regarding the navbar*/
 .navbar-brand {
     position: relative;
-    left: 3%;
+    left: 2%;
 }
 
 #nav {
@@ -26,16 +26,21 @@ body {
 
 .nav-item {
     margin: 0px 40px 0px 0px;
-    font-size: 18px;
+    font-size: 19px;
 }
 
-#login-btn, #logout-btn {
-    position: relative;
-    left: 75%;
+#btn-div {
+    position: fixed;
+    left: 9%;
 }
 
-#navbarNavAltMarkup {
-    position: relative;
-    left: 8%;
+#login-btn {
+    position: fixed;
+    left: 82%;
+}
+
+#signup-btn {
+    position: fixed;
+    left: 88%;
 }
 /*Section contains code regarding the navbar*/
