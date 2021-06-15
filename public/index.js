@@ -23,8 +23,7 @@ jQuery(document).ready(function() {
 
         while(parent.rows.length >= 1){
             parent.deleteRow(0);
-        }
-            
+        }       
     }
 
     function removeFirstEmpty(id){
@@ -33,6 +32,8 @@ jQuery(document).ready(function() {
     }
     
     
+    
 
+    var okFlag = 1;
 
 });
