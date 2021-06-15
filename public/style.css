@@ -173,6 +173,27 @@ p {
 }
 /* display the brand name when the window is small */
 
+/*search div */
+/**TO DO: 1. put more options per device;
+          2. fix the positioning */
+#search-div {
+    width: 1280px;
+    height: 50px;
+}
+
+#search-form {
+    width: 1280px;
+}
+
+#search-box {
+    
+}
+
+#submit-btn {
+    
+
+}
+
 /*Section contains code regarding the navbar*/
 
 /*-----------------------------------------------------*/

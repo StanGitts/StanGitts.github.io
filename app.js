@@ -53,6 +53,11 @@ app.get('/logo.jpg', function(req, res){
   res.sendFile(path.join(__dirname + '/public/assets/new.jpg'));
 })
 
+//sending the icon for search
+app.get('/search.svg', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/assets/search.svg'));
+})
+
 
 //******************** Your code goes here ******************** 
 
