@@ -5,11 +5,13 @@ html {
     min-height: 100%;
     margin: 0 auto;
     font-size: 16px;
-    background: #FFFFFF;
+    background: white;
 }
 
 body {
     text-align: center;
+    width: 1280px;
+    margin: auto;
 }
 
 a {
@@ -17,11 +19,26 @@ a {
 }
 
 p {
-    font-size: 24px;
+    font-size: 25px;
 }
+
+footer {
+    width: 1280px;
+    position: fixed;
+    bottom: 0%;
+    
+}
+
 /* tags */
 
+/*-----------------------------------------------------*/
+
 /*classes and Ids*/
+
+.container {
+    margin: auto;
+    width: 240px;
+}
 
 /*Section contains code regarding the navbar*/
 .navbar-brand {
@@ -97,12 +114,12 @@ p {
 @media (min-width: 1366px) {
     #log-div {
         position: fixed;
-        left: 85%;
+        left: 75%;
     }
 
     #btn-div {
         position: fixed;
-        left: 10%;
+        left: 17%;
     }
 }
 /* adjusting the position of the buttons with the size of the window */
@@ -126,6 +143,7 @@ p {
     }
 }
 
+/*for desktop*/
 @media  (min-width: 460px) and (max-width: 767px) {
     #brand-div {
         display: inline;
@@ -133,5 +151,16 @@ p {
         left: 42%;
     }
 }
+/* display the brand name when the window is small */
 
 /*Section contains code regarding the navbar*/
+
+/*-----------------------------------------------------*/
+
+/*section contains code regarding the footer*/
+#social-div {
+    background: #e3e3e3;
+    opacity: 40%;
+    height: 40px;
+}
+/*section contains code regarding the footer*/
