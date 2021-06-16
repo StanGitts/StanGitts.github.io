@@ -8,20 +8,11 @@ html {
     background: white;
 }
 
-@media (max-width: 768px) {
-    body {
-        width: 100%;
-        margin: auto;
-        text-align: center;
-    }
-}
-
-@media (min-width: 1366px) {
-    body {
-        text-align: center;
-        width: 1280px;
-        margin: auto;
-    }
+body {
+    text-align: center;
+    width: 100%;
+    height: 1000px;
+    margin: auto;
 }
 
 
@@ -33,7 +24,14 @@ p {
     font-size: 25px;
 }
 
-@media (max-width: 768px) {
+footer {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+}
+
+/*@media (max-width: 768px) {
     footer {
         width: 100%;
         position: fixed;
@@ -47,7 +45,7 @@ p {
         position: fixed;
         bottom: 0%;
     }   
-}
+}*/
 
 /* tags */
 
@@ -61,114 +59,258 @@ p {
 }
 
 /*Section contains code regarding the navbar*/
-.navbar-brand {
-    position: relative;
-    left: 40px;
-}
 
-@media (min-width: 320px) {
-    .navbar-brand {
-        position: relative;
-        left: 25px;
-    }
+#icon {
+    position: fixed;
+    left: 25%;
 }
 
 #nav {
     padding: 5px 5px 5px 5px;
-    margin: 10px 5px 5px 5px;
+    margin: auto;
     background: #a5fc03;
-    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    position: fixed;
 }
 
 .nav-item {
     font-size: 19px;
-    margin: 0px 10px 0px 0px;
+    margin: 0px 40px 0px 0px;
 }
+
 
 #brand-div {
     height: 40px;
     width: 140px;
     display: none;
-    position: fixed;
-    top: 15px;
     color:  #03a1fc;
 }
 
-/* adjusting the position of the buttons with the size of the window */
-@media (min-width: 768px) {
-    #log-div {
-        position: fixed;
-        left: 75%;
-    }
-
-    #btn-div {
-        position: fixed;
-        left: 15%;
-    }
+#btn-div {
+    height: 50px;
 }
 
-@media (min-width: 980px) and (max-width: 1156px) {
-    #log-div {
+#search-div {
+    width: 500px;
+    height: 50px;
+}
+
+
+/* adjusting the position of the buttons with the size of the window */
+/*-----------------PHONE----------------*/
+@media only screen and (min-width: 320px) {
+  
+    /*#btn-div {
+        position: fixed;
+        left: 30%; 
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-box {
+        float: right;
+        position: fixed;
+        left: 60%;
+    }
+
+    #submit-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 70%;
+    }*/
+
+    #brand-div {
+        display: inline;
+        position: fixed;
+        left: 28%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 5%;
+    }
+
+    #navbar-btn {
         position: fixed;
         left: 80%;
     }
+}
+
+@media only screen and (min-width: 375px) {
+  
+    /*#btn-div {
+        position: fixed;
+        left: 30%; 
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-box {
+        float: right;
+        position: fixed;
+        left: 60%;
+    }
+
+    #submit-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 70%;
+    }*/
+
+    #brand-div {
+        display: inline;
+        position: fixed;
+        left: 29%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 5%;
+    }
+
+    #navbar-btn {
+        position: fixed;
+        left: 80%;
+    }
+}
+/*-----------------PHONE----------------*/
+
+/*-----------------TABLET----------------*/
+@media only screen and (min-width: 768px) {
+  
+    #btn-div {
+        position: fixed;
+        left: 24%; 
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-btn img {
+        height: 25px;
+        width: 25px;
+    }
+
+    #search-btn {
+        position: fixed;
+        top: 11px;
+        left: 77%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 10%;
+    }
+
+    #brand-div {
+        display: none;
+    }
+}
+/*-----------------TABLET----------------*/
+
+@media (min-width: 980px) and (max-width: 1156px) {
+   
 
     #btn-div {
         position: fixed;
         left: 15%;
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-box {
+        float: right;
+        position: fixed;
+        left: 920px;
+    }
+
+    #submit-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 1060px;
     }
 }
 
 @media (min-width: 1156px) and (max-width: 1366px) {
-    #log-div {
-        position: fixed;
-        left: 85%;
-    }
+   
 
     #btn-div {
         position: fixed;
         left: 12%;
     }
-}
 
-@media (min-width: 1366px) {
-    #log-div {
+    #search-div {
+        width: 500px;
+        height: 50px;
         position: fixed;
-        left: 75%;
+        top: 8px;
     }
 
-    #btn-div {
+    #search-box {
+        float: right;
         position: fixed;
-        left: 17%;
+        left: 920px;
+    }
+
+    #submit-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 1060px;
     }
 }
 /* adjusting the position of the buttons with the size of the window */
 
 /* display the brand name when the window is small */
+
+/*phone*/
+
+
 /*tablet*/
-@media  (min-width: 360px) and (max-width: 460px) {
+/*@media  (max-width: 360px) and (max-width: 460px) {
     #brand-div {
         display: inline;
         position: fixed;
         left: 35%;
     }
-}
+}*/
 
-/*phone*/
-@media (max-width: 360px) {
-    #brand-div {
-        display: inline;
-        position: fixed;
-        left: 30%;
-    }
-}
+
 
 /*for desktop*/
 @media  (min-width: 460px) and (max-width: 767px) {
     #brand-div {
         display: inline;
         position: fixed;
-        left: 42%;
+        left: 25%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 25px;
     }
 }
 /* display the brand name when the window is small */
@@ -176,23 +318,11 @@ p {
 /*search div */
 /**TO DO: 1. put more options per device;
           2. fix the positioning */
-#search-div {
-    width: 1280px;
-    height: 50px;
-}
 
-#search-form {
-    width: 1280px;
-}
 
-#search-box {
-    
-}
 
-#submit-btn {
-    
 
-}
+
 
 /*Section contains code regarding the navbar*/
 
@@ -202,6 +332,8 @@ p {
 #social-div {
     background: #e3e3e3;
     opacity: 40%;
-    height: 40px;
+    height: 30px;
+    margin: auto;
 }
+
 /*section contains code regarding the footer*/
