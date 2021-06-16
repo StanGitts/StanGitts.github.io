@@ -99,7 +99,7 @@ footer {
 
 /* adjusting the position of the buttons with the size of the window */
 /*-----------------PHONE----------------*/
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 0px) and (max-width: 360px) {
   
     /*#btn-div {
         position: fixed;
@@ -143,7 +143,7 @@ footer {
     }
 }
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 360px) and (max-width: 375px) {
   
     /*#btn-div {
         position: fixed;
@@ -179,6 +179,95 @@ footer {
     #icon {
         position: fixed;
         left: 5%;
+    }
+
+    #navbar-btn {
+        position: fixed;
+        left: 80%;
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 414px) {
+  
+    /*#btn-div {
+        position: fixed;
+        left: 30%; 
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-box {
+        float: right;
+        position: fixed;
+        left: 60%;
+    }
+
+    #submit-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 70%;
+    }*/
+
+    #brand-div {
+        display: inline;
+        position: fixed;
+        left: 31%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 5%;
+    }
+
+    #navbar-btn {
+        position: fixed;
+        left: 82%;
+    }
+}
+
+/*landscape*/
+@media only screen and (min-width: 414px) and (max-width: 740px) {
+  
+    /*#btn-div {
+        position: fixed;
+        left: 30%; 
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-box {
+        float: right;
+        position: fixed;
+        left: 60%;
+    }
+
+    #submit-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 70%;
+    }*/
+
+    #brand-div {
+        display: inline;
+        position: fixed;
+        left: 40%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 14%;
     }
 
     #navbar-btn {
@@ -223,14 +312,12 @@ footer {
         display: none;
     }
 }
-/*-----------------TABLET----------------*/
 
-@media (min-width: 980px) and (max-width: 1156px) {
-   
-
+@media only screen and (min-width: 800px) {
+  
     #btn-div {
         position: fixed;
-        left: 15%;
+        left: 25%; 
     }
 
     #search-div {
@@ -240,80 +327,226 @@ footer {
         top: 8px;
     }
 
-    #search-box {
-        float: right;
-        position: fixed;
-        left: 920px;
+    #search-btn img {
+        height: 25px;
+        width: 25px;
     }
 
-    #submit-btn {
-        margin: auto;
+    #search-btn {
         position: fixed;
-        top: 15px;
-        left: 1060px;
-    }
-}
-
-@media (min-width: 1156px) and (max-width: 1366px) {
-   
-
-    #btn-div {
-        position: fixed;
-        left: 12%;
-    }
-
-    #search-div {
-        width: 500px;
-        height: 50px;
-        position: fixed;
-        top: 8px;
-    }
-
-    #search-box {
-        float: right;
-        position: fixed;
-        left: 920px;
-    }
-
-    #submit-btn {
-        margin: auto;
-        position: fixed;
-        top: 15px;
-        left: 1060px;
-    }
-}
-/* adjusting the position of the buttons with the size of the window */
-
-/* display the brand name when the window is small */
-
-/*phone*/
-
-
-/*tablet*/
-/*@media  (max-width: 360px) and (max-width: 460px) {
-    #brand-div {
-        display: inline;
-        position: fixed;
-        left: 35%;
-    }
-}*/
-
-
-
-/*for desktop*/
-@media  (min-width: 460px) and (max-width: 767px) {
-    #brand-div {
-        display: inline;
-        position: fixed;
-        left: 25%;
+        top: 11px;
+        left: 74%;
     }
 
     #icon {
         position: fixed;
-        left: 25px;
+        left: 10%;
+    }
+
+    #brand-div {
+        display: none;
     }
 }
-/* display the brand name when the window is small */
+/*-----------------TABLET----------------*/
+
+/*------------------PC-------------------*/
+
+@media only screen and (min-width: 800px) and (max-width: 960px) {
+   
+
+    #btn-div {
+        position: fixed;
+        left: 24%;
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 74%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 10%;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+   
+
+    #btn-div {
+        position: fixed;
+        left: 29%;
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 77%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 10%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1152px) {
+   
+
+    #btn-div {
+        position: fixed;
+        left: 32%;
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 77%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 10%;
+    }
+}
+
+@media only screen and (min-width: 1152px) and (max-width: 1280px) {
+   
+
+    #btn-div {
+        position: fixed;
+        left: 35%;
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 72%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 20%;
+    }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1366px) {
+   
+    #btn-div {
+        position: fixed;
+        left: 36%;
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 72%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 20%;
+    }
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1440px) {
+   
+    #btn-div {
+        position: fixed;
+        left: 36%;
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 72%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 20%;
+    }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1920px) {
+   
+    #btn-div {
+        position: fixed;
+        left: 38%;
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 72%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 24%;
+    }
+}
+
+
+/*------------------PC-------------------*/
+/* adjusting the position of the buttons with the size of the window */
 
 /*search div */
 /**TO DO: 1. put more options per device;
