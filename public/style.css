@@ -54,8 +54,17 @@ footer {
 /*classes and Ids*/
 
 .container {
-    margin: auto;
+    margin: auto
     width: 240px;
+}
+
+.navExtend {
+    background: #a5fc03;
+}
+
+.divExtend {
+    position: relative;
+    top: 12%;
 }
 
 /*Section contains code regarding the navbar*/
@@ -74,6 +83,19 @@ footer {
     position: fixed;
 }
 
+#innerNav {
+    position: relative;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+#navbarNavAltMarkup {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
 .nav-item {
     font-size: 19px;
     margin: 0px 40px 0px 0px;
@@ -88,14 +110,33 @@ footer {
 }
 
 #btn-div {
+    width: 50px;
     height: 50px;
+    margin: auto;
 }
 
 #search-div {
-    width: 500px;
+    width: 50px;
     height: 50px;
+    margin: auto;
 }
 
+#search-btn {
+    height: 50px;
+    width: 50px;
+}
+
+#search-btn img {
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 10px;
+}
+
+#search-form {
+    height: 50px;
+    width: 50px;
+}
 
 /* adjusting the position of the buttons with the size of the window */
 /*-----------------PHONE----------------*/
@@ -274,11 +315,15 @@ footer {
         position: fixed;
         left: 80%;
     }
+
+    #search-div {
+        top: 10px;
+    }
 }
 /*-----------------PHONE----------------*/
 
 /*-----------------TABLET----------------*/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 800px) {
   
     #btn-div {
         position: fixed;
@@ -286,22 +331,20 @@ footer {
     }
 
     #search-div {
-        width: 500px;
-        height: 50px;
         position: fixed;
-        top: 8px;
+        left: 87%;
     }
 
-    #search-btn img {
+    /*#search-btn img {
         height: 25px;
         width: 25px;
-    }
+    }*/
 
-    #search-btn {
+   /* #search-btn {
         position: fixed;
         top: 11px;
         left: 77%;
-    }
+    }*/
 
     #icon {
         position: fixed;
@@ -321,10 +364,8 @@ footer {
     }
 
     #search-div {
-        width: 500px;
-        height: 50px;
         position: fixed;
-        top: 8px;
+        left: 87%;
     }
 
     #search-btn img {
@@ -332,11 +373,11 @@ footer {
         width: 25px;
     }
 
-    #search-btn {
+   /* #search-btn {
         position: fixed;
         top: 11px;
         left: 74%;
-    }
+    }*/
 
     #icon {
         position: fixed;
@@ -350,28 +391,62 @@ footer {
 /*-----------------TABLET----------------*/
 
 /*------------------PC-------------------*/
+@media only screen and (min-width: 740px) and (max-width: 767.9px) {
+   
+
+   /* #btn-div {
+        position: fixed;
+        left: 24%;
+    }*/
+
+  /*  #search-div {
+        position: fixed;
+        left: 87%;
+    }*/
+
+   /* #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 74%;
+    }*/
+
+    #icon {
+        position: fixed;
+        left: 10%;
+    }
+
+    #navbar-btn {
+        position: fixed;
+        left: 82%;
+    }
+
+    #brand-div {
+        display: inline;
+        position: fixed;
+        left: 40%;
+    }
+}
 
 @media only screen and (min-width: 800px) and (max-width: 960px) {
    
 
     #btn-div {
         position: fixed;
-        left: 24%;
+        left: 25%;
     }
 
     #search-div {
-        width: 500px;
-        height: 50px;
         position: fixed;
-        top: 8px;
+        left: 87%;
     }
 
-    #search-btn {
+   /* #search-btn {
         margin: auto;
         position: fixed;
         top: 15px;
         left: 74%;
-    }
+    }*/
 
     #icon {
         position: fixed;
@@ -388,18 +463,16 @@ footer {
     }
 
     #search-div {
-        width: 500px;
-        height: 50px;
         position: fixed;
-        top: 8px;
+        left: 88%;
     }
 
-    #search-btn {
+   /* #search-btn {
         margin: auto;
         position: fixed;
         top: 15px;
         left: 77%;
-    }
+    }*/
 
     #icon {
         position: fixed;
@@ -416,18 +489,16 @@ footer {
     }
 
     #search-div {
-        width: 500px;
-        height: 50px;
         position: fixed;
-        top: 8px;
+        left: 83%;
     }
 
-    #search-btn {
+   /* #search-btn {
         margin: auto;
         position: fixed;
         top: 15px;
         left: 77%;
-    }
+    }*/
 
     #icon {
         position: fixed;
@@ -444,18 +515,16 @@ footer {
     }
 
     #search-div {
-        width: 500px;
-        height: 50px;
         position: fixed;
-        top: 8px;
+        left: 80%;
     }
 
-    #search-btn {
+   /* #search-btn {
         margin: auto;
         position: fixed;
         top: 15px;
         left: 72%;
-    }
+    }*/
 
     #icon {
         position: fixed;
@@ -471,18 +540,16 @@ footer {
     }
 
     #search-div {
-        width: 500px;
-        height: 50px;
         position: fixed;
-        top: 8px;
+        left: 79%;
     }
 
-    #search-btn {
+   /* #search-btn {
         margin: auto;
         position: fixed;
         top: 15px;
         left: 72%;
-    }
+    }*/
 
     #icon {
         position: fixed;
@@ -498,18 +565,16 @@ footer {
     }
 
     #search-div {
-        width: 500px;
-        height: 50px;
         position: fixed;
-        top: 8px;
+        left: 78%;
     }
 
-    #search-btn {
+   /* #search-btn {
         margin: auto;
         position: fixed;
         top: 15px;
         left: 72%;
-    }
+    }*/
 
     #icon {
         position: fixed;
@@ -525,18 +590,16 @@ footer {
     }
 
     #search-div {
-        width: 500px;
-        height: 50px;
         position: fixed;
-        top: 8px;
+        left: 76%;
     }
 
-    #search-btn {
+   /* #search-btn {
         margin: auto;
         position: fixed;
         top: 15px;
         left: 72%;
-    }
+    }*/
 
     #icon {
         position: fixed;
