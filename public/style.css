@@ -11,7 +11,7 @@ html {
 body {
     text-align: center;
     width: 100%;
-    height: 1000px;
+    height: 640px;
     margin: auto;
 }
 
@@ -58,9 +58,6 @@ footer {
     width: 240px;
 }
 
-/*.navExtend {
-    background: #a5fc03;
-}*/
 
 .divExtend {
     position: relative;
@@ -72,10 +69,6 @@ footer {
     top: 70%;
 }
 
-/*.divResize {
-    top: 10%;
-    display: inline;
-}*/
 
 /*Section contains code regarding the navbar*/
 

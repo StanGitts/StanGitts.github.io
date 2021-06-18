@@ -59,17 +59,6 @@ jQuery(document).ready(function() {
 
     })
 
-   /* function showAltNav() {
-        if((wasNavClicked == 0) && (window.screen.height >= 768)){
-            console.log("yessir");
-            altNav = document.getElementById('navbarNavAltMarkup');
-            altNav.setAttribute("class", "collapse navbar-collapse divResize");
-            altNav.style.height = "50px";
-        }
-        
-    }
-
-    window.addEventListener('resize', showAltNav);*/
 
     var okFlag = 1;
 
