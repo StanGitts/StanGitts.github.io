@@ -58,14 +58,24 @@ footer {
     width: 240px;
 }
 
-.navExtend {
+/*.navExtend {
     background: #a5fc03;
-}
+}*/
 
 .divExtend {
     position: relative;
     top: 12%;
 }
+
+.searchDivExtend {
+    position: fixed;
+    top: 70%;
+}
+
+/*.divResize {
+    top: 10%;
+    display: inline;
+}*/
 
 /*Section contains code regarding the navbar*/
 

@@ -34,35 +34,42 @@ jQuery(document).ready(function() {
     
     
     $('#navbar-btn').click(function(e){
-        if (wasNavClicked == 0) {
+        if(wasNavClicked == 0) {
             wasNavClicked = 1;
-            console.log("here");
-            e.preventDefault();
-
-            var div = document.getElementById('btn-div');
+            console.log("hey");
             var nav = document.getElementById('nav');
+            var btnDiv = document.getElementById('btn-div');
+            var searchDiv = document.getElementById('search-btn');
 
-            nav.setAttribute("class", "navbar navbar-extend-md navbar-light navExtend");
             nav.style.height = "260px";
-            div.setAttribute("class", "navbar-nav divExtend");
-            div.style.height = "200px";
+            btnDiv.setAttribute("class", "navbar-nav divExtend");
+            searchDiv.setAttribute("class", "searchDivExtend");
         }
-        else {
+        else if(wasNavClicked == 1) {
             wasNavClicked = 0;
             console.log("off");
-            e.preventDefault();
-
-            var div = document.getElementById('btn-div');
             var nav = document.getElementById('nav');
+            var btnDiv = document.getElementById('btn-div');
+            var searchDiv = document.getElementById('search-btn');
 
-            nav.setAttribute("class", "navbar navbar-extend-md navbar-light");
-            nav.removeAttribute("style");
-            div.setAttribute("class", "navbar-nav");
-            div.removeAttribute("style");
+            nav.style.height = "50px";
+            btnDiv.setAttribute("class", "navbar-nav");
+            searchDiv.removeAttribute("class");
         }
-        
 
     })
+
+   /* function showAltNav() {
+        if((wasNavClicked == 0) && (window.screen.height >= 768)){
+            console.log("yessir");
+            altNav = document.getElementById('navbarNavAltMarkup');
+            altNav.setAttribute("class", "collapse navbar-collapse divResize");
+            altNav.style.height = "50px";
+        }
+        
+    }
+
+    window.addEventListener('resize', showAltNav);*/
 
     var okFlag = 1;
 
