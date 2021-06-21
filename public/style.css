@@ -70,15 +70,15 @@ td {
 .gradient {
     background-color: #005157;
 
-   /* background-image: linear-gradient(#005157, #a9f8ff);*/
-    background-image: linear-gradient(#504fb0, #a9f8ff);
-    /*background-image: linear-gradient(#005157, #5df034);*/
+   /*background-image: radial-gradient(#a9f8ff, #005157);*/
+    /*background-image: linear-gradient(#504fb0, #a9f8ff);*/
+    background-image: linear-gradient(#5df034, #005157);
 
     background: #005157;
 
-   /* background: linear-gradient(#005157, #a9f8ff);*/
-    background: linear-gradient(#504fb0, #a9f8ff);
-    /*background: linear-gradient(#005157, #5df034);*/
+    /*background: radial-gradient(#a9f8ff, #005157);*/
+   /* background: linear-gradient(#504fb0, #a9f8ff);*/
+    background: linear-gradient(#5df034, #005157);
 }
 
 .container {
