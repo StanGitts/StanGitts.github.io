@@ -58,7 +58,9 @@ app.get('/search.svg', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/assets/search.svg'));
 })
 
-
+app.get('/house1vid.mp4', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/houses/house1vid.mp4'));
+})
 
 //******************** Your code goes here ******************** 
 
