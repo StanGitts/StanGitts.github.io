@@ -59,6 +59,7 @@ app.get('/search.svg', function(req, res){
 })
 
 
+
 //******************** Your code goes here ******************** 
 
 /**********Setting up the functions**************/
