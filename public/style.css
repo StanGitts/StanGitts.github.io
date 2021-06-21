@@ -66,7 +66,7 @@ footer {
 
 .searchDivExtend {
     position: fixed;
-    top: 70%;
+    top: 205px;
 }
 
 
@@ -589,7 +589,7 @@ footer {
    
     #btn-div {
         position: fixed;
-        left: 38%;
+        left: 37%;
     }
 
     #search-div {
