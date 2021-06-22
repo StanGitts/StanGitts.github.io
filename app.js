@@ -62,6 +62,18 @@ app.get('/house1vid.mp4', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/houses/house1vid.mp4'));
 })
 
+app.get('/img1.png', function (req, res) {
+	res.sendFile(path.join(__dirname + '/public/houses/img1.png'));
+})
+
+app.get('/img2.png', function (req, res) {
+	res.sendFile(path.join(__dirname + '/public/houses/img2.png'));
+})
+
+app.get('/img3.png', function (req, res) {
+	res.sendFile(path.join(__dirname + '/public/houses/img3.png'));
+})
+
 //******************** Your code goes here ******************** 
 
 /**********Setting up the functions**************/
