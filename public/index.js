@@ -4,6 +4,8 @@ jQuery(document).ready(function() {
     
     //alert(document.cookie);
     var wasNavClicked = 0;
+    var isContact = 0;
+    var isHome = 1;
 
     //console.log(document.cookie);
     // On page-load AJAX Example
@@ -57,6 +59,32 @@ jQuery(document).ready(function() {
             searchDiv.removeAttribute("class");
         }
 
+    })
+
+    $('#home-btn').click(function(e){
+        e.preventDefault();
+        console.log("home");
+
+        if(isHome == 0) {
+            isHome = 1;
+            isContact = 0;
+
+            //scroll to the top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    })
+
+    $('#contact-btn').click(function(e){
+        e.preventDefault();
+        console.log("contact");
+
+        if(isContact == 0) {
+            isContact = 1;
+            isHome = 0;
+
+            //scroll to bottom
+            window.scrollTo({ top: 720, behavior: 'smooth' });
+        }
     })
 
 
