@@ -40,6 +40,9 @@ hr {
     background-color: white;
 }
 
+svg {
+    margin: 0px 5px 0px 0px;
+}
 /*@media (max-width: 768px) {
     footer {
         width: 100%;
@@ -137,7 +140,16 @@ hr {
 
 /*section regarding the body */
 
-
+/* carousel */
+#car-search-div {
+    position: relative;
+    width: 120px;
+    height: 25px;
+    top: 70px;
+    left: 90%;
+    z-index: 99 !important;
+}
+/* carousel */
 
 /*Section contains code regarding the navbar*/
 
