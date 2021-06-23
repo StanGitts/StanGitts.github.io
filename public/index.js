@@ -64,8 +64,9 @@ jQuery(document).ready(function() {
     $('#home-btn').click(function(e){
         e.preventDefault();
         console.log("home");
+        var pos = window.scorllY;
 
-        if(isHome == 0) {
+        if(isHome == 0 || pos != 0) {
             isHome = 1;
             isContact = 0;
 
@@ -77,8 +78,9 @@ jQuery(document).ready(function() {
     $('#contact-btn').click(function(e){
         e.preventDefault();
         console.log("contact");
+        var pos = window.scrollY;
 
-        if(isContact == 0) {
+        if(isContact == 0 || pos != 720) {
             isContact = 1;
             isHome = 0;
 
