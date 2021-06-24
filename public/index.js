@@ -33,6 +33,26 @@ jQuery(document).ready(function() {
         var parent = document.getElementById(id);
         parent.deleteRow(0);
     }
+
+    function displayCarouselDiv(){
+        if(window.screen.width <= 454) {
+            var option = document.getElementById('carousel-options');
+            option.hidden = false;
+            var div = document.getElementById('car-search-div');
+            div.hidden = true;
+        }
+        else {
+            var div = document.getElementById('car-search-div');
+            div.hidden = false;
+            var option = document.getElementById('carousel-options');
+            option.hidden = true;
+        }
+    }
+    
+    window.onresize = displayCarouselDiv;
+
+    /*--------------Calling functions and other events-------------------------*/
+    displayCarouselDiv()
     
     
     $('#navbar-btn').click(function(e){
