@@ -27,6 +27,7 @@ button {
     border-top: solid 1px black;
     border-bottom: solid 1px black;
     font-family: Kingthings clarity;
+    margin: 0px 5px 0px 0px;
 }
 
 p {
@@ -36,12 +37,12 @@ p {
 
 footer {
     width: 100%;
-    height: 252px;
+    height: 275px;
     text-align: center;
     margin: auto;
    /* background-color: #b6b6b6;*/
     position: relative;
-    top: 40%;
+    top: 32%;
 }
 
 hr {
@@ -49,8 +50,9 @@ hr {
 }
 
 svg {
-    margin: 0px 15px 0px 0px;
     white-space: nowrap;
+    margin: auto;
+
 }
 /*@media (max-width: 768px) {
     footer {
@@ -97,6 +99,14 @@ svg {
     max-width: 1920px;
 }
 
+.container-wht {
+    background-color: white;
+    width: 150px;
+    font-size: 16px;
+    font-family: Montserrat;
+    text-align: left;
+}
+
 .first-col {
     background-color: #bebebe;
 }
@@ -135,6 +145,16 @@ svg {
     top: 205px;
 }
 
+.nav-item {
+    transition: background-color 1s;
+}
+
+.btn {
+    height: 31.6px;
+    opacity: 50%;
+    transition: opacity 1s;
+}
+
 /*section regarding the body */
 
 /*#slideshow-div {
@@ -167,8 +187,8 @@ svg {
 /* carousel */
 #car-search-div {
     position: relative;
-    width: 140px;
-    height: 25px;
+    width: 250px;
+    height: 50px;
     top: 70px;
     left: 80%;
     z-index: 99 !important;
@@ -178,9 +198,21 @@ svg {
     position: relative;
     height: 25px;
     width: 25px;
-    top: 70px;
-    left: 90%;
+    top: 60px;
+    left: 88.4%;
     z-index: 99 !important;
+}
+
+#option-btn {
+    height: 20px;
+    width: 20px;
+}
+
+/*vertical dots icon*/
+.bi-three-dots-vertical {
+    position: relative;
+    bottom: 5px;
+    right: 8px;
 }
 /* carousel */
 
@@ -989,6 +1021,7 @@ svg {
     height: 225px;
     width: 75%;
     margin: auto;
+    top
    /* background-color: #7c7c7c;*/
 
 }
@@ -996,15 +1029,28 @@ svg {
 #social-div .container {
     width: 100%;
     height: 30px;
-    background: white;
+}
+
+#social-div {
+    position: relative;
+    top: 25px;
 }
 
 #fb-logo {
     margin: auto;
-    position: relative;
-    top: 4px;
 }
 
 
 
 /*section contains code regarding the footer*/
+
+
+/*section contains code for transitions and other effects*/
+.nav-item:hover {
+    background-color: #b9b9b9;
+}
+
+.btn:hover {
+    opacity: 100%;
+}
+/*section contains code for transitions and other effects*/
