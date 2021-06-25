@@ -6,6 +6,7 @@ jQuery(document).ready(function() {
     var wasNavClicked = 0;
     var isContact = 0;
     var isHome = 1;
+    var isBlur = 0;
 
     //console.log(document.cookie);
     // On page-load AJAX Example
@@ -109,7 +110,30 @@ jQuery(document).ready(function() {
         }
     })
 
+    $('#carousel-options').click(function(e){
+        if(isBlur == 0) {
+            isBlur = 1;
+            var carousel = document.getElementById('carouselExampleIndicators');
+            var footer = document.getElementById('foot');
+            var div = document.getElementById('options');
 
+            carousel.setAttribute("class", "carousel slide blur-cont");
+            footer.setAttribute("class", "blur-cont");
+            div.setAttribute("class", "container-2 appear");
+        }
+        else {
+            isBlur = 0;
+            var carousel = document.getElementById('carouselExampleIndicators');
+            var footer = document.getElementById('foot');
+            var div = document.getElementById('options');
+
+            carousel.setAttribute("class", "carousel slide");
+            footer.removeAttribute("class");
+            div.setAttribute("class", "container-2 hide");
+        }
+        
+
+    })
     var okFlag = 1;
 
 });
