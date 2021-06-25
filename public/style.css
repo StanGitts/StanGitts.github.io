@@ -1,8 +1,6 @@
 /* tags */
 html {
     width: 100%;
-    height: 100%;
-    min-height: 100%;
     margin: 0 auto;
     font-size: 16px;
     background: white;
@@ -11,7 +9,6 @@ html {
 body {
     text-align: center;
     width: 100%;
-    height: 100%;
     margin: auto;
     top: 0px;
 }
@@ -19,6 +16,8 @@ body {
 
 a {
     font-size: 23px;
+    margin: auto;
+    text-align: center;
 }
 
 button {
@@ -42,7 +41,6 @@ footer {
     margin: auto;
    /* background-color: #b6b6b6;*/
     position: relative;
-    top: 14%;
 }
 
 hr {
@@ -174,6 +172,8 @@ svg {
 }
 
 
+
+
 /*section regarding the body */
 
 /*#slideshow-div {
@@ -210,7 +210,7 @@ svg {
     height: 50px;
     top: 70px;
     left: 80%;
-    z-index: 99 !important;
+    z-index: 98 !important;
 }
 
 #carousel-options {
@@ -239,6 +239,7 @@ svg {
     position: relative;
     bottom: 170px;
     transition: opacity 0.1s;
+    text-align: center;
 }
 
 #options p {
@@ -247,6 +248,36 @@ svg {
 }
 
 /* carousel */
+
+
+/*section contains code regarding the footer*/
+#info-div {
+    height: 225px;
+    width: 75%;
+    margin: auto;
+    top
+   /* background-color: #7c7c7c;*/
+
+}
+
+#social-div .container {
+    width: 100%;
+    height: 30px;
+}
+
+#social-div {
+    position: relative;
+    top: 25px;
+}
+
+#fb-logo {
+    margin: auto;
+}
+
+
+
+/*section contains code regarding the footer*/
+
 
 /*Section contains code regarding the navbar*/
 
@@ -391,6 +422,24 @@ svg {
         opacity: 80%;
     }
 
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    footer {
+        height: 275px;
+        position: relative;
+        top: 24%;
+    }
+
 }
 
 @media only screen and (min-width: 360px) and (max-width: 375px) {
@@ -458,6 +507,23 @@ svg {
         opacity: 80%;
     }
 
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    footer {
+        height: 275px;
+        position: relative;
+        top: 26%;
+    }
 }
 
 @media only screen and (min-width: 375px) and (max-width: 414px) {
@@ -525,6 +591,24 @@ svg {
         opacity: 80%;
     }
 
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
+
+
+    footer {
+        height: 275px;
+        top: 31.8%;
+    }
+    
 }
 
 @media only screen and (min-width: 414px) and (max-width: 454px) {
@@ -596,6 +680,23 @@ svg {
         opacity: 80%;
     }
 
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    footer {
+        height: 275px;
+        position: relative;
+        top: 21.8%;
+    }
 }
 
 /*landscape*/
@@ -655,6 +756,10 @@ svg {
         top: 40px;
     }*/
 
+    #car-search-div {
+        left: 62%;
+    }
+
     .column {
         width: 100%;
     }
@@ -665,6 +770,22 @@ svg {
 
     .btn {
         opacity: 80%;
+    }
+
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    footer {
+        top: 10%;
     }
 }
 /*-----------------PHONE----------------*/
@@ -712,6 +833,27 @@ svg {
         top: 50px;
       
     }*/
+
+    #car-search-div {
+        left: 67%;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    footer {
+        top: 20%;
+    }
+
+    #social-div {
+        position: relative;
+        top: 43px;
+    }
 }
 
 @media only screen and (min-width: 800px) {
@@ -756,6 +898,28 @@ svg {
         top: 50px;
         
     }*/
+
+    #car-search-div {
+        left: 67%;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    footer {
+        top: 34.8%;
+    }
+
+    #social-div {
+        position: relative;
+        top: 43px;
+    }
+
 }
 /*-----------------TABLET----------------*/
 
@@ -817,6 +981,18 @@ svg {
     .btn {
         opacity: 80%;
     }
+
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
 }
 
 @media only screen and (min-width: 800px) and (max-width: 960px) {
@@ -851,6 +1027,14 @@ svg {
         background-color: black;
         position: relative;
         top: 50px;*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
 }
 
 @media only screen and (min-width: 960px) and (max-width: 1024px) {
@@ -886,6 +1070,14 @@ svg {
         position: relative;
         top: 50px;
     }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1152px) {
@@ -921,6 +1113,18 @@ svg {
         position: relative;
         top: 50px;
     }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
+
+    footer {
+        top: 320px;
+    }
 }
 
 @media only screen and (min-width: 1152px) and (max-width: 1280px) {
@@ -957,6 +1161,14 @@ svg {
         top: 50px;
      
     }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
 }
 
 @media only screen and (min-width: 1280px) and (max-width: 1366px) {
@@ -991,6 +1203,18 @@ svg {
         position: relative;
         top: 50px;
     }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
+
+    footer {
+        top: 200px;
+    }
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1440px) {
@@ -1026,6 +1250,18 @@ svg {
         top: 50px;
        
     }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
+
+    footer {
+        top: 200px;
+    }
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 1920px) {
@@ -1061,6 +1297,18 @@ svg {
         position: relative;
         top: 50px;
     }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
+
+    footer {
+        top: 200px;
+    }
 }
 
 
@@ -1076,33 +1324,7 @@ svg {
 
 /*-----------------------------------------------------*/
 
-/*section contains code regarding the footer*/
-#info-div {
-    height: 225px;
-    width: 75%;
-    margin: auto;
-    top
-   /* background-color: #7c7c7c;*/
 
-}
-
-#social-div .container {
-    width: 100%;
-    height: 30px;
-}
-
-#social-div {
-    position: relative;
-    top: 25px;
-}
-
-#fb-logo {
-    margin: auto;
-}
-
-
-
-/*section contains code regarding the footer*/
 
 
 /*section contains code for transitions and other effects*/
@@ -1114,5 +1336,8 @@ svg {
     opacity: 100%;
 }
 
+a:visited {
+    color: purple;
+}
 
 /*section contains code for transitions and other effects*/
