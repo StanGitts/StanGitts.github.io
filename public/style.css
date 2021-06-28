@@ -7,6 +7,11 @@ html {
 }
 
 body {
+    background: url(back_1.jpg) no-repeat;
+    background-blend-mode: screen;
+    backdrop-filter: blur(25px);
+    background-position: top;
+    background-size: 1536px 711px;
     text-align: center;
     width: 100%;
     margin: auto;
@@ -22,10 +27,8 @@ a {
 
 button {
     border: none;
-    background-color: white;
-    border-top: solid 1px black;
-    border-bottom: solid 1px black;
-    font-family: Kingthings clarity;
+    background-color: #a4f85a;
+    font-family: Montserrat;
     margin: 0px 5px 0px 0px;
 }
 
@@ -92,7 +95,6 @@ svg {
 }
 
 .container {
-    background-color: white;
     width: 100%;
     max-width: 1920px;
 }
@@ -186,14 +188,6 @@ svg {
 
 }*/
 
-#slide-hr-bottom {
-    position: relative;
-    width: 75%;
-    background-color: #383838;
-    opacity: 50%;
-
-}
-
 /*#video-selector {
     width: 100%;
     height: 18%;
@@ -210,7 +204,7 @@ svg {
     height: 50px;
     top: 70px;
     left: 80%;
-    z-index: 98 !important;
+    z-index: 1 !important;
 }
 
 #carousel-options {
@@ -219,7 +213,7 @@ svg {
     width: 25px;
     top: 60px;
     left: 88.4%;
-    z-index: 99 !important;
+    z-index: 2 !important;
 }
 
 #option-btn {
@@ -289,12 +283,11 @@ svg {
 #nav {
     padding: 5px 5px 5px 5px;
     margin: auto;
-    background: white;
+    background: #a4f85a;
     height: 50px;
     width: 100%;
     position: fixed;
-    border: solid 1px;
-    z-index: 99 !important;
+    z-index: 2 !important;
     font-family: Arial;
 }
 
@@ -312,7 +305,7 @@ svg {
 }
 
 .nav-item {
-    font-size: 19px;
+    font-size: 15px;
     margin: 0px 40px 0px 0px;
 }
 
@@ -1388,13 +1381,10 @@ svg {
     }
 
     footer {
-        bottom: 0px;
+        position: relative;
+        top: 350px;
     }
 
-    #social-div {
-        position: relative;
-        top: 60px;
-    }
 }
 
 
@@ -1415,7 +1405,7 @@ svg {
 
 /*section contains code for transitions and other effects*/
 .nav-item:hover {
-    background-color: #b9b9b9;
+    background-color: #6fe209;
 }
 
 .btn:hover {

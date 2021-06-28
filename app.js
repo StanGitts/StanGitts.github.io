@@ -74,6 +74,10 @@ app.get('/img3.png', function (req, res) {
 	res.sendFile(path.join(__dirname + '/public/houses/img3.png'));
 })
 
+app.get('/back_1.jpg', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/assets/back_1.jpg'));
+})
+
 //******************** Your code goes here ******************** 
 
 /**********Setting up the functions**************/
