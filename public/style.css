@@ -261,7 +261,7 @@ svg {
 
 #intro-text {
     position: relative;
-    top: 40px;
+    top: 45px;
 }
 /* content */
 
@@ -515,8 +515,13 @@ svg {
       
     }*/
 
+    #intro-text {
+        top: 0px;
+    }
+
     .column {
         width: 100%;
+        margin: 5px;
     }
 
     .second-col {
@@ -545,11 +550,12 @@ svg {
     }
 
     footer {
-       /* height: 275px;
-        position: relative;
-        top: 26%;*/
-        height: 300px;
+        height: 275px;
         bottom: 0px;
+    }
+
+    #info-div {
+        height: 200px;
     }
 }
 
@@ -594,6 +600,10 @@ svg {
     #navbar-btn {
         position: fixed;
         left: 82%;
+    }
+
+    #intro-text {
+        top: 0px;
     }
 
    /* #slideshow-bg {
@@ -691,6 +701,10 @@ svg {
 
     #search-div {
         top: 10px;
+    }
+
+    #intro-text {
+        top: 0px;
     }
 
     /*#slideshow-bg {
