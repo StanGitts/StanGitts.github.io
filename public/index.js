@@ -7,6 +7,7 @@ jQuery(document).ready(function() {
     var isContact = 0;
     var isHome = 1;
     var isBlur = 0;
+    var isZoom = 0;
 
     //console.log(document.cookie);
     // On page-load AJAX Example
@@ -36,7 +37,8 @@ jQuery(document).ready(function() {
     }
 
     function displayCarouselDiv(){
-        if(window.screen.width <= 454) {
+        if(window.innerWidth < 454) {
+
             var option = document.getElementById('carousel-options');
             option.hidden = false;
             var div = document.getElementById('car-search-div');
@@ -111,6 +113,7 @@ jQuery(document).ready(function() {
     })
 
     $('#carousel-options').click(function(e){
+        e.preventDefault();
         if(isBlur == 0) {
             isBlur = 1;
             var carousel = document.getElementById('carouselExampleIndicators');
@@ -131,9 +134,50 @@ jQuery(document).ready(function() {
             footer.removeAttribute("class");
             div.setAttribute("class", "container-2 hide");
         }
-        
 
     })
+
+    $('#zoom-in-btn').click(function(e){
+        e.preventDefault();
+        if(isZoom == 0) {
+            isZoom = 1;
+            var carousel = document.getElementById('carousel-inner');
+        
+            //var carousel = document.getElementById('carouselExampleIndicators');
+            
+            let i = 0;
+            var car_children = carousel.children;
+
+            for(i = 0; i < carousel.childElementCount; i++) {
+                let child = car_children[i];
+                let img = child.firstChild.nextSibling;
+
+                img.setAttribute("class", "d-block w-100 zoom-in");
+            }
+        }
+    })
+
+    $('#zoom-out-btn').click(function(e){
+        e.preventDefault();
+        if(isZoom == 1) {
+            isZoom = 0;
+            var carousel = document.getElementById('carousel-inner');
+        
+            //var carousel = document.getElementById('carouselExampleIndicators');
+            
+            let i = 0;
+            var car_children = carousel.children;
+
+            for(i = 0; i < carousel.childElementCount; i++) {
+                let child = car_children[i];
+                let img = child.firstChild.nextSibling;
+                
+                img.setAttribute("class", "d-block w-100 zoom-out");
+            }
+        }
+    })
+
+
     var okFlag = 1;
 
 });

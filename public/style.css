@@ -39,11 +39,11 @@ p {
 
 footer {
     width: 100%;
-    height: 300px;
+    height: 175px;
     text-align: center;
     margin: auto;
-   /* background-color: #b6b6b6;*/
     position: relative;
+    bottom: 0px;
 }
 
 hr {
@@ -113,20 +113,20 @@ svg {
 }
 
 .first-col {
-    background-color: #bebebe;
+    background-color: #e3e3e3;
 }
 
 .second-col {
-    background-color: #a6a6a6;
+    background-color: #e3e3e3;
 }
 
 .third-col {
-    background-color: #bebebe;
+    background-color: #e3e3e3;
 }
 
 .column {
     float: left;
-    width: 33%;
+    width: 33.33333%;
 }
 
 .row:after {
@@ -151,6 +151,14 @@ svg {
 
 .appear {
     opacity: 100%;
+}
+
+.zoom-in {
+    transform: scale(1.5);
+}
+
+.zoom-out {
+    transform: scale(1);
 }
 
 .divExtend {
@@ -211,7 +219,7 @@ svg {
     position: relative;
     height: 25px;
     width: 25px;
-    top: 60px;
+    top: 100px;
     left: 88.4%;
     z-index: 2 !important;
 }
@@ -243,13 +251,25 @@ svg {
 
 /* carousel */
 
+/* content */
+#content {
+    height: 650px;
+    text-align: center;
+    position: relative;
+    top: 170px;
+}
+
+#intro-text {
+    position: relative;
+    top: 40px;
+}
+/* content */
 
 /*section contains code regarding the footer*/
 #info-div {
-    height: 225px;
-    width: 75%;
+    height: 100px;
+    width: 100%;
     margin: auto;
-    top
    /* background-color: #7c7c7c;*/
 
 }
@@ -257,12 +277,13 @@ svg {
 #social-div .container {
     width: 100%;
     height: 30px;
+    position: relative;
 }
 
-#social-div {
+/*#social-div {
     position: relative;
-    top: 40px;
-}
+    bottom: 30px;
+}*/
 
 #fb-logo {
     margin: auto;
@@ -287,7 +308,7 @@ svg {
     height: 50px;
     width: 100%;
     position: fixed;
-    z-index: 2 !important;
+    z-index: 3 !important;
     font-family: Arial;
 }
 
@@ -345,6 +366,7 @@ svg {
     height: 50px;
     width: 50px;
 }
+
 
 
 
@@ -407,6 +429,10 @@ svg {
         width: 100%;
     }
 
+    .second-col {
+        background-color: #b9b9b9;
+    }
+
     .third-col {
         background-color: #8e8e8e;
     }
@@ -421,6 +447,7 @@ svg {
 
     body {
         height: 100%;
+        background-size: 480px 360px;
     }
 
     html {
@@ -492,6 +519,10 @@ svg {
         width: 100%;
     }
 
+    .second-col {
+        background-color: #b9b9b9;
+    }
+
     .third-col {
         background-color: #8e8e8e;
     }
@@ -506,6 +537,7 @@ svg {
 
     body {
         height: 100%;
+        background-size: 480px 360px;
     }
 
     html {
@@ -578,6 +610,10 @@ svg {
         width: 100%;
     }
 
+    .second-col {
+        background-color: #b9b9b9;
+    }
+
     .third-col {
         background-color: #8e8e8e;
     }
@@ -592,6 +628,7 @@ svg {
 
     body {
         height: 100%;
+        background-size: 600px 400px;
     }
 
     html {
@@ -600,8 +637,11 @@ svg {
 
 
     footer {
-        height: 275px;
-        top: 31.8%;
+        height: 375px;
+    }
+
+    #info-div {
+        height: 300px
     }
     
 }
@@ -663,8 +703,17 @@ svg {
        
     }*/
 
+    #car-search-div {
+        left: 52%;
+        transform: scale(0.65);
+    }
+
     .column {
         width: 100%;
+    }
+
+    .second-col {
+        background-color: #b9b9b9;
     }
 
     .third-col {
@@ -681,6 +730,7 @@ svg {
 
     body {
         height: 100%;
+        background-size: 600px 400px;
     }
 
     html {
@@ -688,13 +738,16 @@ svg {
     }
 
     footer {
-        height: 275px;
-        position: relative;
-        top: 21.8%;
+        height: 375px;
+    }
+
+    #info-div {
+        height: 300px
     }
 }
 
 /*landscape*/
+
 @media only screen and (min-width: 454px) and (max-width: 740px) {
   
     /*#btn-div {
@@ -738,6 +791,12 @@ svg {
         left: 80%;
     }
 
+    .carousel {
+        width: 90%;
+        height: 480px;
+        margin: auto;
+    }
+
     #search-div {
         top: 10px;
     }
@@ -752,12 +811,17 @@ svg {
     }*/
 
     #car-search-div {
-        left: 62%;
+        left: 52%;
+        transform: scale(0.60);
     }
 
     .column {
         width: 100%;
         margin: 3%;
+    }
+
+    .second-col {
+        background-color: #b9b9b9;
     }
 
     .third-col {
@@ -774,6 +838,7 @@ svg {
 
     body {
         height: 100%;
+        background-size: 100%x 400px;
     }
 
     html {
@@ -781,7 +846,11 @@ svg {
     }
 
     footer {
-        top: 10%;
+        height: 375px;
+    }
+
+    #info-div {
+        height: 300px
     }
 }
 /*-----------------PHONE----------------*/
@@ -834,6 +903,12 @@ svg {
         left: 67%;
     }
 
+    .carousel {
+        width: 90%;
+        height: 480px;
+        margin: auto;
+    }
+
     body {
         height: 100%;
     }
@@ -842,14 +917,7 @@ svg {
         height: 100%;
     }
 
-    footer {
-        top: 20%;
-    }
-
-    #social-div {
-        position: relative;
-        top: 43px;
-    }
+    
 }
 
 @media only screen and (min-width: 800px) {
@@ -907,15 +975,6 @@ svg {
         height: 100%;
     }
 
-    footer {
-        top: 34.8%;
-    }
-
-    #social-div {
-        position: relative;
-        top: 43px;
-    }
-
 }
 /*-----------------TABLET----------------*/
 
@@ -956,6 +1015,15 @@ svg {
         left: 40%;
     }
 
+    .carousel {
+        width: 90%;
+        height: 480px;
+        margin: auto;
+    }
+
+    #car-search-div {
+        left: 66%;
+    }
     /*#slideshow-bg {
         width: 100%;
         height: 50%;
@@ -968,6 +1036,10 @@ svg {
     .column {
         width: 100%;
         margin: 3%;
+    }
+
+    .second-col {
+        background-color: #b9b9b9;
     }
 
     .third-col {
@@ -984,6 +1056,7 @@ svg {
 
     body {
         height: 100%;
+        background-size: 100% 720px;
     }
 
     html {
@@ -991,7 +1064,11 @@ svg {
     }
 
     footer {
-        bottom: 1px;
+        height: 375px;
+    }
+
+    #info-div {
+        height: 300px
     }
 }
 
@@ -1006,6 +1083,12 @@ svg {
     #search-div {
         position: fixed;
         left: 87.8%;
+    }
+
+    .carousel {
+        width: 768px;
+        height: 480px;
+        margin: auto;
     }
 
    /* #search-btn {
@@ -1034,10 +1117,6 @@ svg {
 
     html {
         height: 1280px;
-    }
-
-    footer {
-        bottom: 1px;
     }
 }
 
@@ -1087,15 +1166,6 @@ svg {
 
     html {
         height: 1280px;
-    }
-
-    footer {
-        bottom: 0px;
-    }
-
-    #social-div {
-        position: relative;
-        top: 60px;
     }
 
 }
@@ -1148,14 +1218,6 @@ svg {
         height: 1280px;
     }
 
-    footer {
-        bottom: 0px;
-    }
-
-    #social-div {
-        position: relative;
-        top: 60px;
-    }
 }
 
 @media only screen and (min-width: 1152px) and (max-width: 1280px) {
@@ -1207,14 +1269,6 @@ svg {
         height: 1280px;
     }
 
-    footer {
-        bottom: 0px;
-    }
-
-    #social-div {
-        position: relative;
-        top: 60px;
-    }
 }
 
 @media only screen and (min-width: 1280px) and (max-width: 1366px) {
@@ -1264,14 +1318,6 @@ svg {
         height: 1280px;
     }
 
-    footer {
-        bottom: 0px;
-    }
-
-    #social-div {
-        position: relative;
-        top: 60px;
-    }
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1440px) {
@@ -1322,14 +1368,6 @@ svg {
         height: 1280px;
     }
 
-    footer {
-        bottom: 0px;
-    }
-
-    #social-div {
-        position: relative;
-        top: 60px;
-    }
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 1920px) {
@@ -1380,21 +1418,30 @@ svg {
         height: 1280px;
     }
 
-    footer {
-        position: relative;
-        top: 350px;
-    }
-
 }
+
 
 
 /*------------------PC-------------------*/
 /* adjusting the position of the buttons with the size of the window */
 
 
+/* code to resize the smaller, intricate parts of the divs */
+@media only screen and (min-width: 454px) and (max-width: 500px) {
+    #car-search-div {
+        transform: scale(0.7);
+        left: 50%;
+    }
+}
 
 
-
+@media only screen and (min-width: 500px) and (max-width: 739px) {
+    #car-search-div {
+        transform: scale(0.7);
+        left: 60%;
+    }
+}
+/* code to resize the smaller, intricate parts of the divs */
 
 /*Section contains code regarding the navbar*/
 
