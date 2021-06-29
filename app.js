@@ -78,6 +78,14 @@ app.get('/back_1.jpg', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/assets/back_1.jpg'));
 })
 
+app.get('/explore.html', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/explore.html'));
+})
+
+app.get('/rental.html', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/rental.html'));
+})
+
 //******************** Your code goes here ******************** 
 
 /**********Setting up the functions**************/

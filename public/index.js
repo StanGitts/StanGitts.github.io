@@ -177,6 +177,14 @@ jQuery(document).ready(function() {
         }
     })
 
+    $('#explore').click(function(e){
+        window.location.href = "explore.html";
+    })
+
+    $('#rental').click(function(e){
+        window.location.href = "rental.html";
+    })
+
 
     var okFlag = 1;
 
