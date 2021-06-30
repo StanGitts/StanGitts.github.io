@@ -185,6 +185,10 @@ jQuery(document).ready(function() {
         window.location.href = "rental.html";
     })
 
+    $('#eye-btn').click(function(e){
+        window.location.href = "explore.html";
+    })
+
 
     var okFlag = 1;
 

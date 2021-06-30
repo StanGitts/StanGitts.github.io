@@ -48,6 +48,16 @@ app.get('/index.js',function(req,res){
   });
 });
 
+app.get('/explore.js',function(req,res){
+  fs.readFile(path.join(__dirname+'/public/explore.js'), 'utf8', function(err, contents) {
+    const minimizedContents = JavaScriptObfuscator.obfuscate(contents, {compact: true, controlFlowFlattening: true});
+    res.contentType('application/javascript');
+    res.send(minimizedContents._obfuscatedCode);
+  });
+});
+
+
+
 //sending the image of the logo
 app.get('/logo.jpg', function(req, res){
   res.sendFile(path.join(__dirname + '/public/assets/new.jpg'));

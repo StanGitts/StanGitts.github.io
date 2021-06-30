@@ -153,6 +153,10 @@ svg {
     opacity: 100%;
 }
 
+.appear-mid {
+    opacity: 50%;
+}
+
 .zoom-in {
     transform: scale(1.5);
 }
@@ -180,6 +184,8 @@ svg {
     opacity: 50%;
     transition: opacity 1s;
 }
+
+
 
 
 
@@ -256,7 +262,12 @@ svg {
     height: 650px;
     text-align: center;
     position: relative;
-    top: 170px;
+}
+
+#featured {
+    height: 160px;
+    margin: 10px 0px 10px 0px;
+    color: white;
 }
 
 #intro-text {
@@ -1463,6 +1474,48 @@ svg {
 
 
 
+/*-------------------------EXPLORE PAGE------------------*/
+
+#content {
+    position: relative;
+    top: 50px;
+    height: 1100px;
+    /*display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;*/
+}
+
+#filter-options {
+    height: 662.5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.option {
+    width: 45%;
+    height: 310px;
+    border: solid 1px;
+    border-radius: 5px;
+    background-color: white;
+    transition: opacity 1s;
+    margin-top: 10px;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+
+.option-item {
+    height: 100%;
+    width: 100%;
+    top: 48%;
+    position: relative;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+/*-------------------------EXPLORE PAGE------------------*/
+
 
 /*section contains code for transitions and other effects*/
 .nav-item:hover {
@@ -1475,6 +1528,10 @@ svg {
 
 a:visited {
     color: purple;
+}
+
+.option:hover {
+    opacity: 100%;
 }
 
 /*section contains code for transitions and other effects*/
