@@ -1485,7 +1485,32 @@ svg {
     flex-wrap: wrap;*/
 }
 
-#filter-options {
+#filter-options-1 {
+    height: 662.5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#filter-options-2 {
+    height: 662.5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#filter-options-3 {
+    height: 662.5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#filter-options-4 {
     height: 662.5px;
     width: 100%;
     display: flex;
@@ -1503,6 +1528,19 @@ svg {
     margin-top: 10px;
     margin-right: 2.5%;
     margin-left: 2.5%;
+}
+
+.option-sm {
+    width: 15%;
+    height: 20%;
+    border: solid 1px;
+    border-radius: 5px;
+    background-color: white;
+    transition: opacity 1s;
+    margin-top: 10px;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    flex-grow: 1;
 }
 
 .option-item {
@@ -1531,6 +1569,10 @@ a:visited {
 }
 
 .option:hover {
+    opacity: 100%;
+}
+
+.option-sm:hover {
     opacity: 100%;
 }
 

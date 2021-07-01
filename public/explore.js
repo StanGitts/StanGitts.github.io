@@ -44,7 +44,7 @@ jQuery(document).ready(function() {
     async function displayFilterOptions(){
         var foot = document.getElementById('foot');
         foot.setAttribute("class", "blur-cont");
-        var filter = document.getElementById('filter-options');
+        var filter = document.getElementById('filter-options-1');
         var children = filter.children;
         let i = 0;
 
@@ -54,6 +54,7 @@ jQuery(document).ready(function() {
             await sleep(1000);
         }
     }
+
     /*function displayCarouselDiv(){
         if(window.innerWidth < 454) {
 
@@ -163,6 +164,132 @@ jQuery(document).ready(function() {
         window.location.href = "rental.html";
     })
 
+    /*events for filter buttons*/
+
+    $('#view-all').click(function(e){
+        console.log('yeeuh');
+        var foot = document.getElementById('foot');
+        var filter = document.getElementById('filter-options-1');
+        var filter_2 = document.getElementById('filter-options-2');
+        var filter_3 = document.getElementById('filter-options-3');
+        var filter_4 = document.getElementById('filter-options-4');
+
+        foot.removeAttribute("class");
+        filter.hidden = true;
+        filter_2.hidden = true;
+        filter_3.hidden = true;
+        filter_4.hidden = true;
+
+        //finish the rest of code to bring up the UI
+
+    })
+
+    $('#by-parish').click(async function(e){
+        console.log('yess');
+        var filter_1 = document.getElementById('filter-options-1');
+        var filter_2 = document.getElementById('filter-options-2');
+        var filter_3 = document.getElementById('filter-options-3');
+        var filter_4 = document.getElementById('filter-options-4');
+
+        filter_1.hidden = true;
+        filter_3.hidden = true;
+        filter_4.hidden = true;
+        var children = filter_2.children;
+        let i = 0;
+
+        for(i = 0; i < children.length; i++) {
+            let child = children[i];
+            child.setAttribute("class", "option-sm appear-mid");
+            await(1000);
+        }
+    })
+
+    $('#by-price').click(async function(e){
+        console.log("here");
+        var filter_1 = document.getElementById('filter-options-1');
+        var filter_2 = document.getElementById('filter-options-2');
+        var filter_3 = document.getElementById('filter-options-3');
+        var filter_4 = document.getElementById('filter-options-4');
+
+        filter_1.hidden = true;
+        filter_2.hidden = true;
+        filter_4.hidden = true;
+        var children = filter_3.children;
+        let i = 0;
+
+        for(i = 0; i < children.length; i++) {
+            let child = children[i];
+            child.setAttribute("class", "option appear-mid");
+            await(1000);
+        }
+    })
+
+    $('#property-type').click(async function(e){
+        console.log("here");
+        var filter_1 = document.getElementById('filter-options-1');
+        var filter_2 = document.getElementById('filter-options-2');
+        var filter_3 = document.getElementById('filter-options-3');
+        var filter_4 = document.getElementById('filter-options-4');
+
+        filter_1.hidden = true;
+        filter_2.hidden = true;
+        filter_3.hidden = true;
+        var children = filter_4.children;
+        let i = 0;
+
+        for(i = 0; i < children.length; i++) {
+            let child = children[i];
+            child.setAttribute("class", "option appear-mid");
+            await(1000);
+        }
+    })
+
+    /* do all thing parish events*/
+
+    $('#max-price').click(function(e){
+        console.log("yessir");
+        var foot = document.getElementById('foot');
+        var filter_3 = document.getElementById('filter-options-3');
+
+        foot.removeAttribute("class");
+        filter_3.hidden = true;
+
+        //finish the rest of code to bring up the UI
+    })
+
+    $('#min-price').click(function(e){
+        console.log("yessir");
+        var foot = document.getElementById('foot');
+        var filter_3 = document.getElementById('filter-options-3');
+
+        foot.removeAttribute("class");
+        filter_3.hidden = true;
+
+        //finish the rest of code to bring up the UI
+    })
+
+    $('#bed-2').click(function(e){
+        console.log("yessir1");
+        var foot = document.getElementById('foot');
+        var filter_4 = document.getElementById('filter-options-4');
+
+        foot.removeAttribute("class");
+        filter_4.hidden = true;
+
+        //finish the rest of code to bring up the UI
+    })
+
+    $('#bed-3').click(function(e){
+        console.log("yessir");
+        var foot = document.getElementById('foot');
+        var filter_4 = document.getElementById('filter-options-4');
+
+        foot.removeAttribute("class");
+        filter_4.hidden = true;
+
+        //finish the rest of code to bring up the UI
+    })
+    /*events for filter buttons*/
     var okFlag = 1;
 
 });
