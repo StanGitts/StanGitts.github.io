@@ -173,13 +173,14 @@ jQuery(document).ready(function() {
         var filter_2 = document.getElementById('filter-options-2');
         var filter_3 = document.getElementById('filter-options-3');
         var filter_4 = document.getElementById('filter-options-4');
+        var sel = document.getElementById('sel-panel');
 
         foot.removeAttribute("class");
         filter.hidden = true;
         filter_2.hidden = true;
         filter_3.hidden = true;
         filter_4.hidden = true;
-
+        sel.hidden = false;
         //finish the rest of code to bring up the UI
 
     })
@@ -248,15 +249,136 @@ jQuery(document).ready(function() {
     })
 
     /* do all thing parish events*/
+    $('#lucy').click(function(e){
+        console.log('lucy');
+        var foot = document.getElementById('foot');
+        var filter_2 = document.getElementById('filter-options-2');
+        var sel = document.getElementById('sel-panel');
+
+        foot.removeAttribute("class");
+        filter_2.hidden = true;
+        sel.hidden = false;
+    })
+
+    $('#peter').click(function(e){
+        console.log('peter');
+        var foot = document.getElementById('foot');
+        var filter_2 = document.getElementById('filter-options-2');
+        var sel = document.getElementById('sel-panel');
+
+        foot.removeAttribute("class");
+        filter_2.hidden = true;
+        sel.hidden = false;
+    })
+
+    $('#andrew').click(function(e){
+        console.log('andrew');
+        var foot = document.getElementById('foot');
+        var filter_2 = document.getElementById('filter-options-2');
+        var sel = document.getElementById('sel-panel');
+
+        foot.removeAttribute("class");
+        filter_2.hidden = true;
+        sel.hidden = false;
+    })
+
+    $('#thomas').click(function(e){
+        console.log('thomas');
+        var foot = document.getElementById('foot');
+        var filter_2 = document.getElementById('filter-options-2');
+        var sel = document.getElementById('sel-panel');
+
+        foot.removeAttribute("class");
+        filter_2.hidden = true;
+        sel.hidden = false;
+    })
+
+    $('#joseph').click(function(e){
+        console.log('joseph');
+        var foot = document.getElementById('foot');
+        var filter_2 = document.getElementById('filter-options-2');
+        var sel = document.getElementById('sel-panel');
+
+        foot.removeAttribute("class");
+        filter_2.hidden = true;
+        sel.hidden = false;
+    })
+
+    $('#james').click(function(e){
+        console.log('james');
+        var foot = document.getElementById('foot');
+        var filter_2 = document.getElementById('filter-options-2');
+        var sel = document.getElementById('sel-panel');
+
+        foot.removeAttribute("class");
+        filter_2.hidden = true;
+        sel.hidden = false;
+    })
+
+    $('#michael').click(function(e){
+        console.log('michael');
+        var foot = document.getElementById('foot');
+        var filter_2 = document.getElementById('filter-options-2');
+        var sel = document.getElementById('sel-panel');
+
+        foot.removeAttribute("class");
+        filter_2.hidden = true;
+        sel.hidden = false;
+    })
+
+    $('#george').click(function(e){
+        console.log('george');
+        var foot = document.getElementById('foot');
+        var filter_2 = document.getElementById('filter-options-2');
+        var sel = document.getElementById('sel-panel');
+
+        foot.removeAttribute("class");
+        filter_2.hidden = true;
+        sel.hidden = false;
+    })
+
+    $('#john').click(function(e){
+        console.log('john');
+        var foot = document.getElementById('foot');
+        var filter_2 = document.getElementById('filter-options-2');
+        var sel = document.getElementById('sel-panel');
+
+        foot.removeAttribute("class");
+        filter_2.hidden = true;
+        sel.hidden = false;
+    })
+
+    $('#christ-church').click(function(e){
+        console.log('christ-church');
+        var foot = document.getElementById('foot');
+        var filter_2 = document.getElementById('filter-options-2');
+        var sel = document.getElementById('sel-panel');
+
+        foot.removeAttribute("class");
+        filter_2.hidden = true;
+        sel.hidden = false;
+    })
+
+    $('#philip').click(function(e){
+        console.log('lucy');
+        var foot = document.getElementById('foot');
+        var filter_2 = document.getElementById('filter-options-2');
+        var sel = document.getElementById('sel-panel');
+
+        foot.removeAttribute("class");
+        filter_2.hidden = true;
+        sel.hidden = false;
+    })
 
     $('#max-price').click(function(e){
         console.log("yessir");
         var foot = document.getElementById('foot');
         var filter_3 = document.getElementById('filter-options-3');
+        var sel = document.getElementById('sel-panel');
 
         foot.removeAttribute("class");
         filter_3.hidden = true;
-
+        sel.hidden = false;
         //finish the rest of code to bring up the UI
     })
 
@@ -264,10 +386,11 @@ jQuery(document).ready(function() {
         console.log("yessir");
         var foot = document.getElementById('foot');
         var filter_3 = document.getElementById('filter-options-3');
+        var sel = document.getElementById('sel-panel');
 
         foot.removeAttribute("class");
         filter_3.hidden = true;
-
+        sel.hidden = false;
         //finish the rest of code to bring up the UI
     })
 
@@ -275,10 +398,11 @@ jQuery(document).ready(function() {
         console.log("yessir1");
         var foot = document.getElementById('foot');
         var filter_4 = document.getElementById('filter-options-4');
+        var sel = document.getElementById('sel-panel');
 
         foot.removeAttribute("class");
         filter_4.hidden = true;
-
+        sel.hidden = false;
         //finish the rest of code to bring up the UI
     })
 
@@ -286,10 +410,11 @@ jQuery(document).ready(function() {
         console.log("yessir");
         var foot = document.getElementById('foot');
         var filter_4 = document.getElementById('filter-options-4');
+        var sel = document.getElementById('sel-panel');
 
         foot.removeAttribute("class");
         filter_4.hidden = true;
-
+        sel.hidden = false;
         //finish the rest of code to bring up the UI
     })
     /*events for filter buttons*/

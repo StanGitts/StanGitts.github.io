@@ -1518,6 +1518,8 @@ svg {
     flex-wrap: wrap;
 }
 
+
+
 .option {
     width: 45%;
     height: 310px;
@@ -1550,6 +1552,41 @@ svg {
     position: relative;
     margin: 0 auto;
     font-size: 20px;
+
+}
+
+.rectangle {
+    height: 640px;
+    width: 250px;
+    margin: 10px 0px 0px 20px;
+}
+
+.box {
+    width: 100%;
+    height: 640px;
+    margin: 10px 20px 10px 10px;
+    background-color: blue;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+.selection-panel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.manual-filter {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+.panel-item {
+    flex-grow: 1;
+    flex-direction: row;
 }
 
 /*-------------------------EXPLORE PAGE------------------*/
