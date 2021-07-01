@@ -122,12 +122,12 @@ jQuery(document).ready(function() {
         console.log("contact");
         var pos = window.scrollY;
 
-        if(isContact == 0 || pos != 720) {
+        if(isContact == 0 || pos != 1280) {
             isContact = 1;
             isHome = 0;
 
             //scroll to bottom
-            window.scrollTo({ top: 720, behavior: 'smooth' });
+            window.scrollTo({ top: 1280, behavior: 'smooth' });
         }
     })
 
@@ -188,6 +188,7 @@ jQuery(document).ready(function() {
         console.log('yess');
         var filter_1 = document.getElementById('filter-options-1');
         var filter_2 = document.getElementById('filter-options-2');
+        filter_2.hidden = false;
         var filter_3 = document.getElementById('filter-options-3');
         var filter_4 = document.getElementById('filter-options-4');
 
@@ -209,6 +210,7 @@ jQuery(document).ready(function() {
         var filter_1 = document.getElementById('filter-options-1');
         var filter_2 = document.getElementById('filter-options-2');
         var filter_3 = document.getElementById('filter-options-3');
+        filter_3.hidden = false;
         var filter_4 = document.getElementById('filter-options-4');
 
         filter_1.hidden = true;
@@ -230,6 +232,7 @@ jQuery(document).ready(function() {
         var filter_2 = document.getElementById('filter-options-2');
         var filter_3 = document.getElementById('filter-options-3');
         var filter_4 = document.getElementById('filter-options-4');
+        filter_4.hidden = false;
 
         filter_1.hidden = true;
         filter_2.hidden = true;
