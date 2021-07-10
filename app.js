@@ -96,6 +96,10 @@ app.get('/rental.html', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/rental.html'));
 })
 
+app.get('/index.html', function(req, res){
+  res.sendFile(path.join(__dirname + '/public/index.html'));
+})
+
 //******************** Your code goes here ******************** 
 
 /**********Setting up the functions**************/

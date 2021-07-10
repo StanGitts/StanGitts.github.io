@@ -106,14 +106,25 @@ jQuery(document).ready(function() {
     $('#home-btn').click(function(e){
         e.preventDefault();
         console.log("home");
-        var pos = window.scorllY;
+        // var pos = window.scorllY;
 
-        if(isHome == 0 || pos != 0) {
-            isHome = 1;
-            isContact = 0;
+        // if(isHome == 0 || pos != 0) {
+        //     isHome = 1;
+        //     isContact = 0;
 
-            //scroll to the top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        //     //scroll to the top
+        //     window.scrollTo({ top: 0, behavior: 'smooth' });
+        // }
+        window.location.href = "index.html";
+
+    })
+
+    $('#explore-btn').click(function(e){
+        var pos = window.scrollY;
+
+        if(pos != 0) {
+            //scroll to Top
+            window.scrollTo({top: 0, behavior: 'smooth' });
         }
     })
 
