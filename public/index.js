@@ -189,6 +189,27 @@ jQuery(document).ready(function() {
         window.location.href = "explore.html";
     })
 
+    //function to detect when at the bottom
+    $(window).scroll(function() {
+       if($(window).scrollTop()  >= 0 && $(window).scrollTop() <= 1000) {
+           console.log("top!")
+           var home = document.getElementById('home-btn');
+           home.setAttribute("class", "nav-item nav-link active pointer selected");
+           var contact = document.getElementById('contact-btn');
+           contact.setAttribute("class", "nav-item nav-link pointer");
+       }
+    });
+
+    //function to detect when at the top
+    $(window).scroll(function() {
+       if($(window).scrollTop() + $(window).height() == $(document).height()) {
+           console.log("bottom!");
+           var contact = document.getElementById('contact-btn');
+           contact.setAttribute("class", "nav-item nav-link active pointer selected");
+           var home = document.getElementById('home-btn');
+           home.setAttribute("class", "nav-item nav-link pointer");
+       }
+    });
 
     var okFlag = 1;
 

@@ -29,13 +29,13 @@ a {
 button {
     border: none;
     background-color: #a4f85a;
-    font-family: Montserrat;
+    /*font-family: Montserrat;*/
     margin: 0px 5px 0px 0px;
 }
 
 p {
     font-size: 18px;
-    font-family: Montserrat;
+    /*font-family: Montserrat;*/
 }
 
 footer {
@@ -95,6 +95,10 @@ svg {
     /*background: linear-gradient(#5df034, #005157);*/
 }
 
+.selected {
+    background-color: white;
+}
+
 .container {
     width: 100%;
     max-width: 1920px;
@@ -107,7 +111,7 @@ svg {
     width: 250px;
     height: 150px;
     font-size: 16px;
-    font-family: Montserrat;
+    /*font-family: Montserrat;*/
     text-align: left;
     border-radius: 5px;
     border: solid 1px;
@@ -186,6 +190,12 @@ svg {
     transition: opacity 1s;
 }
 
+.content-container-idx {
+    height: 380px;
+    text-align: center;
+    position: relative;
+}
+
 
 
 
@@ -259,11 +269,11 @@ svg {
 /* carousel */
 
 /* content */
-#content {
+/*#content {
     height: 650px;
     text-align: center;
     position: relative;
-}
+}*/
 
 #featured {
     height: 160px;
@@ -321,7 +331,7 @@ svg {
     width: 100%;
     position: fixed;
     z-index: 3 !important;
-    font-family: Arial;
+    /*font-family: Arial;*/
 }
 
 #innerNav {
@@ -1477,7 +1487,7 @@ svg {
 
 /*-------------------------EXPLORE PAGE------------------*/
 
-#content {
+.content-container-exp {
     position: relative;
     top: 50px;
     height: 1100px;
