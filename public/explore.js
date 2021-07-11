@@ -13,6 +13,10 @@ jQuery(document).ready(function() {
     // On page-load AJAX Example
     console.log("Page is ready!")
 
+    function highlightExploreBtn(){
+        var explore = document.getElementById('explore');
+        explore.setAttribute("class", "nav-item nav-link active pointer selected");
+    }
 
     function removeComponent(parent){
 
@@ -42,6 +46,7 @@ jQuery(document).ready(function() {
 
     /*function for displaying options*/
     async function displayFilterOptions(){
+        highlightExploreBtn();
         var foot = document.getElementById('foot');
         foot.setAttribute("class", "blur-cont");
         var filter = document.getElementById('filter-options-1');
@@ -74,8 +79,10 @@ jQuery(document).ready(function() {
     window.onresize = displayCarouselDiv;*/
 
     /*--------------Calling functions and other events-------------------------*/
-        
+    
+
     displayFilterOptions();
+    
     
     $('#navbar-btn').click(function(e){
         if(wasNavClicked == 0) {
@@ -429,6 +436,29 @@ jQuery(document).ready(function() {
         //finish the rest of code to bring up the UI
     })
     /*events for filter buttons*/
+
+    //function to detect when at the top
+    $(window).scroll(function() {
+       if($(window).scrollTop()  >= 0 && $(window).scrollTop() <= 1100) {
+           console.log("top!")
+           var explore = document.getElementById('explore');
+           explore.setAttribute("class", "nav-item nav-link active pointer selected");
+           var contact = document.getElementById('contact-btn');
+           contact.setAttribute("class", "nav-item nav-link pointer");
+       }
+    });
+
+    //event for at the bottom
+    $(window).scroll(function() {
+       if($(window).scrollTop() + $(window).height() == $(document).height()) {
+           console.log("bottom!");
+           var contact = document.getElementById('contact-btn');
+           contact.setAttribute("class", "nav-item nav-link active pointer selected");
+           var explore = document.getElementById('explore');
+           explore.setAttribute("class", "nav-item nav-link pointer");
+       }
+    });
+
     var okFlag = 1;
 
 });

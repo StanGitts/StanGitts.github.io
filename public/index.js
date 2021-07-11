@@ -13,6 +13,10 @@ jQuery(document).ready(function() {
     // On page-load AJAX Example
     console.log("Page is ready!")
 
+    function highlightHomeBtn(){
+        var home = document.getElementById('home-btn');
+        home.setAttribute("class", "nav-item nav-link active pointer selected");
+    }
 
     function removeComponent(parent){
 
@@ -56,6 +60,7 @@ jQuery(document).ready(function() {
 
     /*--------------Calling functions and other events-------------------------*/
     displayCarouselDiv()
+    highlightHomeBtn()
     
     
     $('#navbar-btn').click(function(e){
@@ -189,7 +194,7 @@ jQuery(document).ready(function() {
         window.location.href = "explore.html";
     })
 
-    //function to detect when at the bottom
+    //function to detect when at the top
     $(window).scroll(function() {
        if($(window).scrollTop()  >= 0 && $(window).scrollTop() <= 1000) {
            console.log("top!")
