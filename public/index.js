@@ -186,9 +186,9 @@ jQuery(document).ready(function() {
         window.location.href = "explore.html";
     })
 
-    $('#rental').click(function(e){
+   /* $('#rental').click(function(e){
         window.location.href = "rental.html";
-    })
+    })*/
 
     $('#eye-btn').click(function(e){
         window.location.href = "explore.html";
