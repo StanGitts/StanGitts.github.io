@@ -1108,8 +1108,7 @@ svg {
     }
 }
 
-@media only screen and (min-width: 800px) and (max-width: 960px) {
-   
+s   
 
     #btn-div {
         position: fixed;
@@ -1576,7 +1575,7 @@ svg {
     width: 100%;
     height: 640px;
     margin: 10px 20px 10px 10px;
-    background-color: blue;
+    background-color: #393c36;
     border: solid 1px;
     border-radius: 5px;
 }
@@ -1590,7 +1589,7 @@ svg {
 .manual-filter {
     width: 100%;
     height: 100%;
-    background-color: red;
+    background-color: #393c36;
     border: solid 1px;
     border-radius: 5px;
 }
@@ -1600,38 +1599,14 @@ svg {
     flex-direction: row;
 }
 
+.form-input {
+    margin: auto;
+    text-align: center;
+}
+
+.form-elem {
+    color: white;
+}
 /*-------------------------EXPLORE PAGE------------------*/
 
 
-/*-------------------------RENTAL PAGE-------------------*/
-.content-container-rent {
-    position: relative;
-    top: 50px;
-    height: 1100px;
-    /*display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;*/
-}
-
-/*section contains code for transitions and other effects*/
-.nav-item:hover {
-    background-color: #6fe209;
-}
-
-.btn:hover {
-    opacity: 100%;
-}
-
-a:visited {
-    color: purple;
-}
-
-.option:hover {
-    opacity: 100%;
-}
-
-.option-sm:hover {
-    opacity: 100%;
-}
-
-/*section contains code for transitions and other effects*/

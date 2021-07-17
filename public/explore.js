@@ -439,24 +439,27 @@ jQuery(document).ready(function() {
 
     //function to detect when at the top
     $(window).scroll(function() {
-       if($(window).scrollTop()  >= 0 && $(window).scrollTop() <= 1100) {
-           console.log("top!")
-           var explore = document.getElementById('explore');
-           explore.setAttribute("class", "nav-item nav-link active pointer selected");
-           var contact = document.getElementById('contact-btn');
-           contact.setAttribute("class", "nav-item nav-link pointer");
-       }
-    });
 
-    //event for at the bottom
-    $(window).scroll(function() {
-       if($(window).scrollTop() + $(window).height() == $(document).height()) {
-           console.log("bottom!");
-           var contact = document.getElementById('contact-btn');
-           contact.setAttribute("class", "nav-item nav-link active pointer selected");
-           var explore = document.getElementById('explore');
-           explore.setAttribute("class", "nav-item nav-link pointer");
-       }
+        // console.log($(window).scrollTop());
+        // console.log("doc height = " + $(window).height());
+        // console.log("doc height + window = ");
+        // console.log($(window).scrollTop() + $(window).height());
+
+        if($(window).scrollTop() + $(window).height() >= 0 && 
+            $(window).scrollTop() + $(window).height() <= $(document).height() - 200) {
+            console.log("top!")
+            var explore = document.getElementById('explore');
+            explore.setAttribute("class", "nav-item nav-link active pointer selected");
+            var contact = document.getElementById('contact-btn');
+            contact.setAttribute("class", "nav-item nav-link pointer");
+        }
+        else {
+            console.log("bottom!");
+            var contact = document.getElementById('contact-btn');
+            contact.setAttribute("class", "nav-item nav-link active pointer selected");
+            var explore = document.getElementById('explore');
+            explore.setAttribute("class", "nav-item nav-link pointer");
+        }
     });
 
     var okFlag = 1;
