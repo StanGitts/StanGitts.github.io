@@ -69,19 +69,19 @@ app.get('/search.svg', function(req, res){
 })
 
 app.get('/house1vid.mp4', function(req, res){
-	res.sendFile(path.join(__dirname + '/public/houses/house1vid.mp4'));
+	res.sendFile(path.join(__dirname + '/public/featured/house1vid.mp4'));
 })
 
 app.get('/img1.png', function (req, res) {
-	res.sendFile(path.join(__dirname + '/public/houses/img1.png'));
+	res.sendFile(path.join(__dirname + '/public/featured/img1.png'));
 })
 
 app.get('/img2.png', function (req, res) {
-	res.sendFile(path.join(__dirname + '/public/houses/img2.png'));
+	res.sendFile(path.join(__dirname + '/public/featured/img2.png'));
 })
 
 app.get('/img3.png', function (req, res) {
-	res.sendFile(path.join(__dirname + '/public/houses/img3.png'));
+	res.sendFile(path.join(__dirname + '/public/featured/img3.png'));
 })
 
 app.get('/back_1.jpg', function(req, res){
