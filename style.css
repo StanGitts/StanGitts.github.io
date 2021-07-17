@@ -8,12 +8,6 @@ html {
 }
 
 body {
-    background-image: url("/assets/back_1.jpg");
-    background-repeat: no-repeat;
-    background-blend-mode: screen;
-    backdrop-filter: blur(25px);
-    background-position: top;
-    background-size: 1536px 711px;
     text-align: center;
     width: 100%;
     margin: auto;
@@ -116,6 +110,15 @@ svg {
     text-align: left;
     border-radius: 5px;
     border: solid 1px;
+}
+
+.background {
+    background-image: url("assets/back_1.jpg");
+    background-repeat: no-repeat;
+    /*background-blend-mode: screen;*/
+    backdrop-filter: blur(25px);
+    background-position: top;
+    background-size: 1536px 711px;
 }
 
 .first-col {
