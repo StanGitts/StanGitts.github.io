@@ -1532,7 +1532,9 @@ s
     flex-wrap: wrap;
 }
 
-
+.filter-item {
+    padding: 5px;
+}
 
 .option {
     width: 45%;
