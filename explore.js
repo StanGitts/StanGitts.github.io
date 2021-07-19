@@ -1,4 +1,6 @@
+
 document.cookie = "AC-C=ac-c; SameSite=Lax; Secure; Max-Age=2600000";
+
 // Put all onload AJAX calls here, and event listeners
 jQuery(document).ready(function() {
     
@@ -194,7 +196,7 @@ jQuery(document).ready(function() {
 
     /*events for filter buttons*/
 
-    $('#view-all').click(function(e){
+    $('#view-all').click( async function(e){
         console.log('yeeuh');
         var foot = document.getElementById('foot');
         var filter = document.getElementById('filter-options-1');
@@ -209,7 +211,9 @@ jQuery(document).ready(function() {
         //filter_3.hidden = true;
         //filter_4.hidden = true;
         sel.hidden = false;
+
         //finish the rest of code to bring up the UI
+
 
     })
 
