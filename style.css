@@ -1112,7 +1112,7 @@ svg {
     }
 }
 
-s   
+@media only screen and (min-width: 800px) and (max-width: 960px) {
 
     #btn-div {
         position: fixed;
@@ -1533,7 +1533,7 @@ s
 }
 
 .filter-item {
-    padding: 5px;
+    padding: 10px 5px 10px 5px;
 }
 
 .option {
@@ -1548,6 +1548,9 @@ s
     margin-left: 2.5%;
 }
 
+.light {
+    color: white;
+}
 .option-sm {
     width: 15%;
     height: 20%;
@@ -1615,4 +1618,25 @@ s
 }
 /*-------------------------EXPLORE PAGE------------------*/
 
+/*section contains code for transitions and other effects*/
+.nav-item:hover {
+    background-color: #6fe209;
+}
 
+.btn:hover {
+    opacity: 100%;
+}
+
+a:visited {
+    color: purple;
+}
+
+.option:hover {
+    opacity: 100%;
+}
+
+.option-sm:hover {
+    opacity: 100%;
+}
+
+/*section contains code for transitions and other effects*/

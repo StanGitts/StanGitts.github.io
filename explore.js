@@ -82,6 +82,16 @@ jQuery(document).ready(function() {
     
 
     displayFilterOptions();
+
+    //getting default values for price sliders
+    var min_output = document.getElementById('min-price-value');
+    var max_output = document.getElementById('max-price-value');
+    var min_slider = document.getElementById('price-min');
+    var max_slider = document.getElementById('price-max');
+
+    min_output.innerHTML = min_slider.value;
+    max_output.innerHTML = max_slider.value;
+    //getting default values for price sliders
     
     
     $('#navbar-btn').click(function(e){
@@ -189,15 +199,15 @@ jQuery(document).ready(function() {
         var foot = document.getElementById('foot');
         var filter = document.getElementById('filter-options-1');
         var filter_2 = document.getElementById('filter-options-2');
-        var filter_3 = document.getElementById('filter-options-3');
-        var filter_4 = document.getElementById('filter-options-4');
+       //var filter_3 = document.getElementById('filter-options-3');
+        //var filter_4 = document.getElementById('filter-options-4');
         var sel = document.getElementById('sel-panel');
 
         foot.removeAttribute("class");
         filter.hidden = true;
         filter_2.hidden = true;
-        filter_3.hidden = true;
-        filter_4.hidden = true;
+        //filter_3.hidden = true;
+        //filter_4.hidden = true;
         sel.hidden = false;
         //finish the rest of code to bring up the UI
 
@@ -208,12 +218,12 @@ jQuery(document).ready(function() {
         var filter_1 = document.getElementById('filter-options-1');
         var filter_2 = document.getElementById('filter-options-2');
         filter_2.hidden = false;
-        var filter_3 = document.getElementById('filter-options-3');
-        var filter_4 = document.getElementById('filter-options-4');
+        //var filter_3 = document.getElementById('filter-options-3');
+       // var filter_4 = document.getElementById('filter-options-4');
 
         filter_1.hidden = true;
-        filter_3.hidden = true;
-        filter_4.hidden = true;
+       // filter_3.hidden = true;
+       // filter_4.hidden = true;
         var children = filter_2.children;
         let i = 0;
 
@@ -224,7 +234,7 @@ jQuery(document).ready(function() {
         }
     })
 
-    $('#by-price').click(async function(e){
+   /* $('#by-price').click(async function(e){
         console.log("here");
         var filter_1 = document.getElementById('filter-options-1');
         var filter_2 = document.getElementById('filter-options-2');
@@ -264,7 +274,7 @@ jQuery(document).ready(function() {
             child.setAttribute("class", "option appear-mid");
             await(1000);
         }
-    })
+    })*/
 
     /* do all thing parish events*/
     $('#lucy').click(function(e){
@@ -276,6 +286,9 @@ jQuery(document).ready(function() {
         foot.removeAttribute("class");
         filter_2.hidden = true;
         sel.hidden = false;
+
+        var btn = document.getElementById('dropdownMenu2_3');
+        btn.innerHTML = 'St. Lucy';
     })
 
     $('#peter').click(function(e){
@@ -287,6 +300,9 @@ jQuery(document).ready(function() {
         foot.removeAttribute("class");
         filter_2.hidden = true;
         sel.hidden = false;
+
+        var btn = document.getElementById('dropdownMenu2_3');
+        btn.innerHTML = 'St. Peter';
     })
 
     $('#andrew').click(function(e){
@@ -298,6 +314,9 @@ jQuery(document).ready(function() {
         foot.removeAttribute("class");
         filter_2.hidden = true;
         sel.hidden = false;
+
+        var btn = document.getElementById('dropdownMenu2_3');
+        btn.innerHTML = 'St. Andrew';
     })
 
     $('#thomas').click(function(e){
@@ -309,6 +328,9 @@ jQuery(document).ready(function() {
         foot.removeAttribute("class");
         filter_2.hidden = true;
         sel.hidden = false;
+
+        var btn = document.getElementById('dropdownMenu2_3');
+        btn.innerHTML = 'St. Thomas';
     })
 
     $('#joseph').click(function(e){
@@ -320,6 +342,9 @@ jQuery(document).ready(function() {
         foot.removeAttribute("class");
         filter_2.hidden = true;
         sel.hidden = false;
+
+        var btn = document.getElementById('dropdownMenu2_3');
+        btn.innerHTML = 'St. Joseph';
     })
 
     $('#james').click(function(e){
@@ -331,6 +356,9 @@ jQuery(document).ready(function() {
         foot.removeAttribute("class");
         filter_2.hidden = true;
         sel.hidden = false;
+
+        var btn = document.getElementById('dropdownMenu2_3');
+        btn.innerHTML = 'St. James';
     })
 
     $('#michael').click(function(e){
@@ -342,6 +370,9 @@ jQuery(document).ready(function() {
         foot.removeAttribute("class");
         filter_2.hidden = true;
         sel.hidden = false;
+
+        var btn = document.getElementById('dropdownMenu2_3');
+        btn.innerHTML = 'St. Michael';
     })
 
     $('#george').click(function(e){
@@ -353,6 +384,9 @@ jQuery(document).ready(function() {
         foot.removeAttribute("class");
         filter_2.hidden = true;
         sel.hidden = false;
+
+        var btn = document.getElementById('dropdownMenu2_3');
+        btn.innerHTML = 'St. George';
     })
 
     $('#john').click(function(e){
@@ -364,6 +398,9 @@ jQuery(document).ready(function() {
         foot.removeAttribute("class");
         filter_2.hidden = true;
         sel.hidden = false;
+
+        var btn = document.getElementById('dropdownMenu2_3');
+        btn.innerHTML = 'St. John';
     })
 
     $('#christ-church').click(function(e){
@@ -375,6 +412,9 @@ jQuery(document).ready(function() {
         foot.removeAttribute("class");
         filter_2.hidden = true;
         sel.hidden = false;
+
+        var btn = document.getElementById('dropdownMenu2_3');
+        btn.innerHTML = 'Christ Church';
     })
 
     $('#philip').click(function(e){
@@ -386,9 +426,12 @@ jQuery(document).ready(function() {
         foot.removeAttribute("class");
         filter_2.hidden = true;
         sel.hidden = false;
+
+        var btn = document.getElementById('dropdownMenu2_3');
+        btn.innerHTML = 'St. Philip';
     })
 
-    $('#max-price').click(function(e){
+   /* $('#max-price').click(function(e){
         console.log("yessir");
         var foot = document.getElementById('foot');
         var filter_3 = document.getElementById('filter-options-3');
@@ -434,8 +477,19 @@ jQuery(document).ready(function() {
         filter_4.hidden = true;
         sel.hidden = false;
         //finish the rest of code to bring up the UI
-    })
+    }) */
+
     /*events for filter buttons*/
+    min_slider.oninput = function() {
+        min_output.innerHTML = this.value;
+    }
+
+    max_slider.oninput = function() {
+        max_output.innerHTML = this.value;
+    }
+
+
+    /* evenet for filter buttons*/
 
     //function to detect when at the top
     $(window).scroll(function() {

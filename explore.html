@@ -64,12 +64,12 @@
 		    	<div id="by-parish" class="option hide">
 		    		<div  class="option-item">By Parish</div>
 		    	</div>
-		    	<div id="by-price" class="option hide">
+		    	<!--<div id="by-price" class="option hide">
 		    		<div  class="option-item">By Price</div>
 		    	</div>
 		    	<div id="property-type" class="option hide">
 		    		<div  class="option-item">Property Type</div>
-		    	</div>
+		    	</div> -->
 		    </div>
 		    <div id="filter-options-2" hidden>
 		    	<div id="lucy" class="option-sm hide">
@@ -106,7 +106,7 @@
 		    		<div  class="option-item">St. Philip</div>
 		    	</div>	
 		    </div>
-		    <div id="filter-options-3" hidden>
+		   <!-- <div id="filter-options-3" hidden>
 		    	<div id="max-price" class="option hide">
 		    		<div class="option-item">
 		    			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-sort-up" viewBox="0 0 16 16">
@@ -131,24 +131,94 @@
 		    	<div id="bed-3" class="option hide">
 		    		<div class="option-item">3-bedroom</div>
 		    	</div>
-		    </div>
+		    </div> -->
 
 		    <div id="sel-panel" class="selection-panel" hidden>
 		    	<div class="rectangle panel-item">
 			    	<div class="manual-filter">
 			    		<form ref='search' id='search'>
 
-				        	<div id="search_form" class="filter-item">
-				          		<label for="entryBox" class="form-elem">Search by Lot No.</label>
-				          		<input type="text" class="form-input" id="entryBox" value="" placeholder="Lot No.">
+				        	<div id="lot-form-div" class="filter-item">
+				          		<label for="entryBox1" class="form-elem">Search by Lot No.</label>
+				          		<input type="text" class="form-input" id="entryBox1" value="" placeholder="Lot No.">
 				        	</div>
 
-				        	<div id="search_form" class="filter-item">
-				          		<label for="entryBox" class="form-elem">Search by Lot No.</label>
-				          		<input type="text" class="form-input" id="entryBox" value="" placeholder="Lot No.">
-				        	</div>
+				        	<div data-role="main" class="ui-content filter-item">
+							    <form method="post" action="/action_page_post.php">
+							      <div data-role="rangeslider">
+							        <label for="price-min" class="light">Minimum Price: $<span id="min-price-value" class="light"></span></label>
+							        <input type="range" name="price-min" id="price-min" value="200" min="0" max="5000">
+							        
+							        <label for="price-max" class="light">Maximum Price: $<span id="max-price-value" class="light"></span></label>
+							        <input type="range" name="price-max" id="price-max" value="800" min="0" max="5000">
+							      
+							      </div>
+							        
+							        
+							    </form>
+							</div>
 
-				        	<div>
+							<div class="dropdown filter-item">
+								<label for="dropdownMenu2_1" class="light">Number of Bedrooms</label>
+							  	<button class="btn btn-primary dropdown-toggle light" type="button" id="dropdownMenu2_1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    All
+							  	</button>
+							  	<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							    	<button class="dropdown-item" type="button">1-bedroom</button>
+							    	<button class="dropdown-item" type="button">2-bedroom</button>
+							    	<button class="dropdown-item" type="button">3-bedroom</button>
+							  	</div>
+							</div>
+
+							<div class="dropdown filter-item">
+								<label for="dropdownMenu2_2" class="light">Property Type</label>
+								<br>
+							  	<button class="btn btn-primary dropdown-toggle light" type="button" id="dropdownMenu2_2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    All
+							  	</button>
+							  	<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							    	<button class="dropdown-item" type="button">Apartment</button>
+							    	<button class="dropdown-item" type="button">House</button>
+							    	<button class="dropdown-item" type="button">Town House</button>
+							  	</div>
+							</div>
+
+							<div class="dropdown filter-item">
+								<label for="dropdownMenu2_3" class="light">Parish</label>
+								<br>
+							  	<button class="btn btn-primary dropdown-toggle light" type="button" id="dropdownMenu2_3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    All
+							  	</button>
+							  	<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							    	<button class="dropdown-item" type="button">St. Lucy</button>
+							    	<button class="dropdown-item" type="button">St. Peter</button>
+							    	<button class="dropdown-item" type="button">St. Andrew</button>
+							    	<button class="dropdown-item" type="button">St. Joseph</button>
+							    	<button class="dropdown-item" type="button">St. James</button>
+							    	<button class="dropdown-item" type="button">St. John</button>
+							    	<button class="dropdown-item" type="button">St. Thomas</button>
+							    	<button class="dropdown-item" type="button">St. George</button>
+							    	<button class="dropdown-item" type="button">St. Michael</button>
+							    	<button class="dropdown-item" type="button">St. Philip</button>
+							    	<button class="dropdown-item" type="button">Christ Church</button>
+							  	</div>
+							</div>
+
+							<div class="dropdown filter-item">
+								<label for="dropdownMenu2_4" class="light">Sort by</label>
+								<br>
+							  	<button class="btn btn-primary dropdown-toggle light" type="button" id="dropdownMenu2_4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    All
+							  	</button>
+							  	<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							    	<button class="dropdown-item" type="button">Ascending (A-Z)</button>
+							    	<button class="dropdown-item" type="button">Descending (Z-A)</button>
+							    	<button class="dropdown-item" type="button">Price</button>
+							    	<button class="dropdown-item" type="button">Parish</button>
+							  	</div>
+							</div>
+
+				        	<div class="filter-item">
 				          		<input type='submit' value="Search" class="btn btn-secondary">
 				        	</div>
 				      	</form>
