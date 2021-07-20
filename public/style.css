@@ -1,0 +1,1660 @@
+/* tags */
+html {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    background: white;
+    font-family: Montserrat;
+}
+
+body {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    top: 0px;
+}
+
+
+a {
+    font-size: 23px;
+    margin: auto;
+    text-align: center;
+}
+
+button {
+    border: none;
+    background-color: #a4f85a;
+    /*font-family: Montserrat;*/
+    margin: 0px 5px 0px 0px;
+}
+
+p {
+    font-size: 18px;
+    /*font-family: Montserrat;*/
+}
+
+footer {
+    width: 100%;
+    height: 175px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    bottom: 0px;
+}
+
+hr {
+    background-color: white;
+}
+
+svg {
+    white-space: nowrap;
+    margin: auto;
+
+}
+/*@media (max-width: 768px) {
+    footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0%;
+    }   
+}
+
+@media (min-width: 1366px) {
+    footer {
+        width: 1280px;
+        position: fixed;
+        bottom: 0%;
+    }   
+}*/
+
+/* tags */
+
+/*-----------------------------------------------------*/
+
+/*classes and Ids*/
+.pointer {
+    cursor: pointer;
+}
+
+.gradient {
+    background-color: #ffffff;
+
+   /*background-image: radial-gradient(#a9f8ff, #005157);*/
+    background-image: linear-gradient(#ffffff, #c9c9c9);
+    /*background-image: linear-gradient(#5df034, #005157);*/
+
+    background: #ffffff;
+
+    /*background: radial-gradient(#a9f8ff, #005157);*/
+    background: linear-gradient(#ffffff, #c9c9c9);
+    /*background: linear-gradient(#5df034, #005157);*/
+}
+
+.selected {
+    background-color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: 1920px;
+}
+
+.container-2 {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 250px;
+    height: 150px;
+    font-size: 16px;
+    /*font-family: Montserrat;*/
+    text-align: left;
+    border-radius: 5px;
+    border: solid 1px;
+}
+
+.background {
+    background-image: url("back_1.jpg");
+    background-repeat: no-repeat;
+    /*background-blend-mode: screen;*/
+    backdrop-filter: blur(25px);
+    background-position: top;
+    background-size: 1536px 711px;
+}
+
+.first-col {
+    background-color: #e3e3e3;
+}
+
+.second-col {
+    background-color: #e3e3e3;
+}
+
+.third-col {
+    background-color: #e3e3e3;
+}
+
+.column {
+    float: left;
+    width: 33.33333%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.blur-cont {
+    filter:blur(8px);
+    transition: filter 0.2s;
+}
+
+.hide {
+    opacity: 0%;
+}
+
+.appear {
+    opacity: 100%;
+}
+
+.appear-mid {
+    opacity: 50%;
+}
+
+.zoom-in {
+    transform: scale(1.5);
+}
+
+.zoom-out {
+    transform: scale(1);
+}
+
+.divExtend {
+    position: relative;
+    top: 12%;
+}
+
+.searchDivExtend {
+    position: fixed;
+    top: 205px;
+}
+
+.nav-item {
+    transition: background-color 1s;
+}
+
+.btn {
+    height: 31.6px;
+    opacity: 50%;
+    transition: opacity 1s;
+}
+
+.content-container-idx {
+    height: 380px;
+    text-align: center;
+    position: relative;
+}
+
+
+
+
+
+
+/*section regarding the body */
+
+/*#slideshow-div {
+    height: 100%;
+    width: 50%;
+    margin: auto;
+    background: white;
+    border-radius: 1px;
+    border: solid 1px;
+
+}*/
+
+/*#video-selector {
+    width: 100%;
+    height: 18%;
+    background-color: #343434;
+}*/
+
+
+/*section regarding the body */
+
+/* carousel */
+#car-search-div {
+    position: relative;
+    width: 250px;
+    height: 50px;
+    top: 70px;
+    left: 80%;
+    z-index: 1 !important;
+}
+
+#carousel-options {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    top: 100px;
+    left: 88.4%;
+    z-index: 2 !important;
+}
+
+#option-btn {
+    height: 20px;
+    width: 20px;
+}
+
+/*vertical dots icon*/
+.bi-three-dots-vertical {
+    position: relative;
+    bottom: 5px;
+    right: 8px;
+}
+
+#options {
+    margin: auto;
+    position: relative;
+    bottom: 170px;
+    transition: opacity 0.1s;
+    text-align: center;
+}
+
+#options p {
+    text-align: center;
+    margin: auto;
+}
+
+/* carousel */
+
+/* content */
+/*#content {
+    height: 650px;
+    text-align: center;
+    position: relative;
+}*/
+
+#featured {
+    height: 160px;
+    margin: 10px 0px 10px 0px;
+    color: white;
+}
+
+#intro-text {
+    position: relative;
+    top: 45px;
+}
+/* content */
+
+/*section contains code regarding the footer*/
+#info-div {
+    height: 100px;
+    width: 100%;
+    margin: auto;
+   /* background-color: #7c7c7c;*/
+
+}
+
+#social-div .container {
+    width: 100%;
+    height: 30px;
+    position: relative;
+}
+
+/*#social-div {
+    position: relative;
+    bottom: 30px;
+}*/
+
+#fb-logo {
+    margin: auto;
+}
+
+
+
+/*section contains code regarding the footer*/
+
+
+/*Section contains code regarding the navbar*/
+
+#icon {
+    position: fixed;
+    left: 25%;
+}
+
+#nav {
+    padding: 5px 5px 5px 5px;
+    margin: auto;
+    background: #a4f85a;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 3 !important;
+    /*font-family: Arial;*/
+}
+
+#innerNav {
+    position: relative;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+#navbarNavAltMarkup {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+.nav-item {
+    font-size: 15px;
+    margin: 0px 40px 0px 0px;
+}
+
+
+#brand-div {
+    height: 40px;
+    width: 140px;
+    display: none;
+    color:  black;
+}
+
+#btn-div {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+#search-div {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+#search-btn {
+    height: 50px;
+    width: 50px;
+}
+
+#search-btn img {
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 10px;
+}
+
+#search-form {
+    height: 50px;
+    width: 50px;
+}
+
+
+
+
+/* adjusting the position of the buttons with the size of the window */
+/*-----------------PHONE----------------*/
+@media only screen and (min-width: 0px) and (max-width: 360px) {
+  
+    /*#btn-div {
+        position: fixed;
+        left: 30%; 
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-box {
+        float: right;
+        position: fixed;
+        left: 60%;
+    }
+
+    #submit-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 70%;
+    }*/
+
+    #brand-div {
+        display: inline;
+        position: fixed;
+        left: 28%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 5%;
+    }
+
+    #navbar-btn {
+        position: fixed;
+        left: 80%;
+    }
+
+   /* #slideshow-bg {
+        width: 100%;
+        height: 25%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+        
+    }*/
+
+    .column {
+        width: 100%;
+    }
+
+    .second-col {
+        background-color: #b9b9b9;
+    }
+
+    .third-col {
+        background-color: #8e8e8e;
+    }
+
+    .btn {
+        opacity: 80%;
+    }
+
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+        background-size: 480px 360px;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    footer {
+        height: 275px;
+        position: relative;
+        top: 24%;
+    }
+
+}
+
+@media only screen and (min-width: 360px) and (max-width: 375px) {
+  
+    /*#btn-div {
+        position: fixed;
+        left: 30%; 
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-box {
+        float: right;
+        position: fixed;
+        left: 60%;
+    }
+
+    #submit-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 70%;
+    }*/
+
+    #brand-div {
+        display: inline;
+        position: fixed;
+        left: 29%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 5%;
+    }
+
+    #navbar-btn {
+        position: fixed;
+        left: 80%;
+    }
+
+    /*#slideshow-bg {
+        width: 100%;
+        height: 25%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+      
+    }*/
+
+    #intro-text {
+        top: 0px;
+    }
+
+    .column {
+        width: 100%;
+        margin: 5px;
+    }
+
+    .second-col {
+        background-color: #b9b9b9;
+    }
+
+    .third-col {
+        background-color: #8e8e8e;
+    }
+
+    .btn {
+        opacity: 80%;
+    }
+
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+        background-size: 480px 360px;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    footer {
+        height: 275px;
+        bottom: 0px;
+    }
+
+    #info-div {
+        height: 200px;
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 414px) {
+  
+    /*#btn-div {
+        position: fixed;
+        left: 30%; 
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-box {
+        float: right;
+        position: fixed;
+        left: 60%;
+    }
+
+    #submit-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 70%;
+    }*/
+
+    #brand-div {
+        display: inline;
+        position: fixed;
+        left: 31%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 5%;
+    }
+
+    #navbar-btn {
+        position: fixed;
+        left: 82%;
+    }
+
+    #intro-text {
+        top: 0px;
+    }
+
+   /* #slideshow-bg {
+        width: 100%;
+        height: 25%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+        
+    }*/
+
+    .column {
+        width: 100%;
+    }
+
+    .second-col {
+        background-color: #b9b9b9;
+    }
+
+    .third-col {
+        background-color: #8e8e8e;
+    }
+
+    .btn {
+        opacity: 80%;
+    }
+
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+        background-size: 600px 400px;
+    }
+
+    html {
+        height: 100%;
+    }
+
+
+    footer {
+        height: 375px;
+    }
+
+    #info-div {
+        height: 300px
+    }
+    
+}
+
+@media only screen and (min-width: 414px) and (max-width: 454px) {
+  
+    /*#btn-div {
+        position: fixed;
+        left: 30%; 
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-box {
+        float: right;
+        position: fixed;
+        left: 60%;
+    }
+
+    #submit-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 70%;
+    }*/
+
+    #brand-div {
+        display: inline;
+        position: fixed;
+        left: 35.5%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 14%;
+    }
+
+    #navbar-btn {
+        position: fixed;
+        left: 80%;
+    }
+
+    #search-div {
+        top: 10px;
+    }
+
+    #intro-text {
+        top: 0px;
+    }
+
+    /*#slideshow-bg {
+        width: 100%;
+        height: 25%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+       
+    }*/
+
+    #car-search-div {
+        left: 52%;
+        transform: scale(0.65);
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .second-col {
+        background-color: #b9b9b9;
+    }
+
+    .third-col {
+        background-color: #8e8e8e;
+    }
+
+    .btn {
+        opacity: 80%;
+    }
+
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+        background-size: 600px 400px;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    footer {
+        height: 375px;
+    }
+
+    #info-div {
+        height: 300px
+    }
+}
+
+/*landscape*/
+
+@media only screen and (min-width: 454px) and (max-width: 740px) {
+  
+    /*#btn-div {
+        position: fixed;
+        left: 30%; 
+    }
+
+    #search-div {
+        width: 500px;
+        height: 50px;
+        position: fixed;
+        top: 8px;
+    }
+
+    #search-box {
+        float: right;
+        position: fixed;
+        left: 60%;
+    }
+
+    #submit-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 70%;
+    }*/
+
+    #brand-div {
+        display: inline;
+        position: fixed;
+        left: 40%;
+    }
+
+    #icon {
+        position: fixed;
+        left: 14%;
+    }
+
+    #navbar-btn {
+        position: fixed;
+        left: 80%;
+    }
+
+    .carousel {
+        width: 90%;
+        height: 480px;
+        margin: auto;
+    }
+
+    #search-div {
+        top: 10px;
+    }
+
+   /* #slideshow-bg {
+        width: 100%;
+        height: 30%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 40px;
+    }*/
+
+    #car-search-div {
+        left: 52%;
+        transform: scale(0.60);
+    }
+
+    .column {
+        width: 100%;
+        margin: 3%;
+    }
+
+    .second-col {
+        background-color: #b9b9b9;
+    }
+
+    .third-col {
+        background-color: #8e8e8e;
+    }
+
+    .btn {
+        opacity: 80%;
+    }
+
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+        background-size: 100%x 400px;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    footer {
+        height: 375px;
+    }
+
+    #info-div {
+        height: 300px
+    }
+}
+/*-----------------PHONE----------------*/
+
+/*-----------------TABLET----------------*/
+@media only screen and (min-width: 768px) and (max-width: 800px) {
+  
+    #btn-div {
+        position: fixed;
+        left: 32.5%;
+        padding: 0px 0px 0px 0px; 
+    }
+
+    #search-div {
+        position: fixed;
+        left: 87%;
+    }
+
+    /*#search-btn img {
+        height: 25px;
+        width: 25px;
+    }*/
+
+   /* #search-btn {
+        position: fixed;
+        top: 11px;
+        left: 77%;
+    }*/
+
+    #icon {
+        position: fixed;
+        left: 10%;
+    }
+
+    #brand-div {
+        display: none;
+    }
+
+    /*#slideshow-bg {
+        width: 100%;
+        height: 50%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+      
+    }*/
+
+    #car-search-div {
+        left: 67%;
+    }
+
+    .carousel {
+        width: 90%;
+        height: 480px;
+        margin: auto;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    
+}
+
+@media only screen and (min-width: 800px) {
+  
+    #btn-div {
+        position: fixed;
+        left: 35%; 
+        padding: 0px 0px 0px 0px;
+    }
+
+    #search-div {
+        position: fixed;
+        left: 72%;
+    }
+
+    #search-btn img {
+        height: 25px;
+        width: 25px;
+    }
+
+   /* #search-btn {
+        position: fixed;
+        top: 11px;
+        left: 74%;
+    }*/
+
+    #icon {
+        position: fixed;
+        left: 25.5%;
+    }
+
+    #brand-div {
+        display: none;
+    }
+
+    /*#slideshow-bg {
+        width: 100%;
+        height: 65%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+        
+    }*/
+
+    #car-search-div {
+        left: 67%;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    html {
+        height: 100%;
+    }
+
+}
+/*-----------------TABLET----------------*/
+
+/*------------------PC-------------------*/
+@media only screen and (min-width: 740px) and (max-width: 767.9px) {
+   
+
+   /* #btn-div {
+        position: fixed;
+        left: 24%;
+    }*/
+
+  /*  #search-div {
+        position: fixed;
+        left: 87%;
+    }*/
+
+   /* #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 74%;
+    }*/
+
+    #icon {
+        position: fixed;
+        left: 10%;
+    }
+
+    #navbar-btn {
+        position: fixed;
+        left: 82%;
+    }
+
+    #brand-div {
+        display: inline;
+        position: fixed;
+        left: 40%;
+    }
+
+    .carousel {
+        width: 90%;
+        height: 480px;
+        margin: auto;
+    }
+
+    #car-search-div {
+        left: 66%;
+    }
+    /*#slideshow-bg {
+        width: 100%;
+        height: 50%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+    }*/
+
+    .column {
+        width: 100%;
+        margin: 3%;
+    }
+
+    .second-col {
+        background-color: #b9b9b9;
+    }
+
+    .third-col {
+        background-color: #8e8e8e;
+    }
+
+    .btn {
+        opacity: 80%;
+    }
+
+    .nav-item {
+        border: none;
+    }
+
+    body {
+        height: 100%;
+        background-size: 100% 720px;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    footer {
+        height: 375px;
+    }
+
+    #info-div {
+        height: 300px
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 960px) {
+
+    #btn-div {
+        position: fixed;
+        left: 35%;
+    }
+
+    #search-div {
+        position: fixed;
+        left: 87.8%;
+    }
+
+    .carousel {
+        width: 768px;
+        height: 480px;
+        margin: auto;
+    }
+
+   /* #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 74%;
+    }*/
+
+    #icon {
+        position: fixed;
+        left: 7.9%;
+    }
+
+   /* #slideshow-bg {
+        width: 100%;
+        height: 50%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+   
+
+    #btn-div {
+        position: fixed;
+        left: 36%;
+    }
+
+    #search-div {
+        position: fixed;
+        left: 85.7%;
+    }
+
+   /* #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 77%;
+    }*/
+
+    #icon {
+        position: fixed;
+        left: 10.5%;
+    }
+
+    .carousel {
+        width: 768px;
+        height: 480px;
+        margin: auto;
+    }
+
+   /* #slideshow-bg {
+        width: 100%;
+        height: 50%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+    }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1152px) {
+   
+
+    #btn-div {
+        position: fixed;
+        left: 37%;
+    }
+
+    #search-div {
+        position: fixed;
+        left: 81.6%;
+    }
+
+   /* #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 77%;
+    }*/
+
+    #icon {
+        position: fixed;
+        left: 15%;
+    }
+
+    .carousel {
+        width: 768px;
+        height: 480px;
+        margin: auto;
+    }
+
+    /*#slideshow-bg {
+        width: 100%;
+        height: 50%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+    }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
+
+}
+
+@media only screen and (min-width: 1152px) and (max-width: 1280px) {
+   
+
+    #btn-div {
+        position: fixed;
+        left: 38.6%;
+    }
+
+    #search-div {
+        position: fixed;
+        left: 78.2%;
+    }
+
+   /* #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 72%;
+    }*/
+
+    #icon {
+        position: fixed;
+        left: 18.6%;
+    }
+
+    .carousel {
+        width: 768px;
+        height: 480px;
+        margin: auto;
+    }
+
+    /*#slideshow-bg {
+        width: 100%;
+        height: 50%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+     
+    }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
+
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1366px) {
+   
+    #btn-div {
+        position: fixed;
+        left: 40%;
+    }
+
+    #search-div {
+        position: fixed;
+        left: 76.6%;
+    }
+
+   /* #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 72%;
+    }*/
+
+    #icon {
+        position: fixed;
+        left: 20.4%;
+    }
+
+    .carousel {
+        width: 768px;
+        height: 480px;
+        margin: auto;
+    }
+
+    /*#slideshow-bg {
+        width: 100%;
+        height: 50%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+    }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
+
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1440px) {
+   
+    #btn-div {
+        position: fixed;
+        left: 41%;
+    }
+
+    #search-div {
+        position: fixed;
+        left: 75.2%;
+    }
+
+   /* #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 72%;
+    }*/
+
+    #icon {
+        position: fixed;
+        left: 21.9%;
+    }
+
+    .carousel {
+        width: 768px;
+        height: 480px;
+        margin: auto;
+    }
+
+    /*#slideshow-bg {
+        width: 100%;
+        height: 50%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+       
+    }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1920px) {
+   
+    #btn-div {
+        position: fixed;
+        left: 41.2%;
+        padding: 0px 0px 0px 0px;
+    }
+
+    #search-div {
+        position: fixed;
+        left: 73.7%;
+    }
+
+   /* #search-btn {
+        margin: auto;
+        position: fixed;
+        top: 15px;
+        left: 72%;
+    }*/
+
+    #icon {
+        position: fixed;
+        left: 23.8%;
+    }
+
+    .carousel {
+        width: 768px;
+        height: 480px;
+        margin: auto;
+    }
+
+    /*#slideshow-bg {
+        width: 100%;
+        height: 50%;
+        margin: auto;
+        background-color: black;
+        position: relative;
+        top: 50px;
+    }*/
+
+    body {
+        height: 1280px;
+    }
+
+    html {
+        height: 1280px;
+    }
+
+}
+
+
+
+/*------------------PC-------------------*/
+/* adjusting the position of the buttons with the size of the window */
+
+
+/* code to resize the smaller, intricate parts of the divs */
+@media only screen and (min-width: 454px) and (max-width: 500px) {
+    #car-search-div {
+        transform: scale(0.7);
+        left: 50%;
+    }
+}
+
+
+@media only screen and (min-width: 500px) and (max-width: 739px) {
+    #car-search-div {
+        transform: scale(0.7);
+        left: 60%;
+    }
+}
+/* code to resize the smaller, intricate parts of the divs */
+
+/*Section contains code regarding the navbar*/
+
+/*-----------------------------------------------------*/
+
+
+
+/*-------------------------EXPLORE PAGE------------------*/
+
+.content-container-exp {
+    position: relative;
+    top: 50px;
+    height: 1100px;
+    /*display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;*/
+}
+
+#filter-options-1 {
+    height: 662.5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#filter-options-2 {
+    height: 662.5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#filter-options-3 {
+    height: 662.5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#filter-options-4 {
+    height: 662.5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.filter-item {
+    padding: 10px 5px 10px 5px;
+}
+
+.option {
+    width: 45%;
+    height: 310px;
+    border: solid 1px;
+    border-radius: 5px;
+    background-color: white;
+    transition: opacity 1s;
+    margin-top: 10px;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+
+.light {
+    color: white;
+}
+.option-sm {
+    width: 15%;
+    height: 20%;
+    border: solid 1px;
+    border-radius: 5px;
+    background-color: white;
+    transition: opacity 1s;
+    margin-top: 10px;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    flex-grow: 1;
+}
+
+.option-md {
+    width: 23%;
+    height: 31%;
+    border: solid 1px;
+    border-radius: 5px;
+    background-color: white;
+    transition: opacity 1s;
+    margin-top: 10px;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.option-item {
+    height: 100%;
+    width: 100%;
+    top: 48%;
+    position: relative;
+    margin: 0 auto;
+    font-size: 20px;
+
+}
+
+.rectangle {
+    height: 640px;
+    width: 250px;
+    margin: 10px 0px 0px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    width: 100%;
+    height: 640px;
+    margin: 10px 20px 10px 10px;
+    background-color: #393c36;
+    border: solid 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.selection-panel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.manual-filter {
+    width: 100%;
+    height: 100%;
+    background-color: #393c36;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+.panel-item {
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+.form-input {
+    margin: auto;
+    text-align: center;
+}
+
+.form-elem {
+    color: white;
+}
+/*-------------------------EXPLORE PAGE------------------*/
+
+/*section contains code for transitions and other effects*/
+.nav-item:hover {
+    background-color: #6fe209;
+}
+
+.btn:hover {
+    opacity: 100%;
+}
+
+a:visited {
+    color: purple;
+}
+
+.option:hover {
+    opacity: 100%;
+}
+
+.option-sm:hover {
+    opacity: 100%;
+}
+
+/*section contains code for transitions and other effects*/
