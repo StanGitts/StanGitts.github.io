@@ -98,6 +98,11 @@ app.get('/index.html', function(req, res){
 
 //******************** Your code goes here ******************** 
 
+app.get('/getHouseList', function(req, res){
+  var folders = fs.readdirSync(__dirname+'/public/houses/');
+  res.send(folders);
+  console.log(folders);
+})
 /**********Setting up the functions**************/
 
 

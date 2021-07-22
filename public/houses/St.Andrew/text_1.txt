@@ -1,0 +1,7 @@
+For: house_1
+Price: $2000
+Location: St. Andrew
+No. of Bedrooms: 2
+Property Type: House
+Lot No.: 27
+Description: A nice beautiful house residing in the hills of St.Andrew, with a gorgeous view of the coastline.

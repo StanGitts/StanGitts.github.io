@@ -81,7 +81,18 @@ jQuery(document).ready(function() {
         }
     }
     
+
     window.onresize = displayCarouselDiv;*/
+
+    function getParishChild(sel, parish) {
+        var i = 0;
+
+        for(i = 0; i < sel.childNodes.length; i++) {
+            if(sel.childNodes[i].text == parish) {
+                return i;
+            }
+        }
+    }
 
     /*--------------Calling functions and other events-------------------------*/
     
@@ -216,8 +227,58 @@ jQuery(document).ready(function() {
         sel.hidden = false;
 
         //finish the rest of code to bring up the UI
+        console.log('here');
+        $.ajax({
+            type: 'get',
+            url: '/getHouseList',
 
+            success: function(list){
+                console.log('success');
+                console.log(list);
+                let length = list.length;
+                let i = 0;
 
+                for(i = 0; i < length; i++){
+                    $.ajax({
+                        type: 'get',
+                        url: '/getHouseImgs',
+                        dataType: 'json',
+                        data: {
+                            parish: list[i]
+                        },
+
+                        success: async function(imgs) {
+
+                        }
+
+                        fail: async function(err) {
+
+                        }
+                    });
+
+                    $.ajax({
+                        type: 'get',
+                        url: '/getHouseFiles',
+                        dataType: 'json',
+                        data: {
+                            parish: list[i]
+                        },
+
+                        success: async function(data) {
+
+                        },
+
+                        fail: async function(err) {
+
+                        }
+                    });
+
+                }
+            },
+            fail: function(){
+                console.log('error');
+            }
+        });
     })
 
     $('#by-parish').click(async function(e){
@@ -294,8 +355,11 @@ jQuery(document).ready(function() {
         filter_2.hidden = true;
         sel.hidden = false;
 
-        var btn = document.getElementById('dropdownMenu2_3');
-        btn.innerHTML = 'St. Lucy';
+        var btn = document.getElementById('parish_type');
+        var index = getParishChild(btn, 'St. Lucy');
+        //console.log(btn.childNodes[index].text);
+        btn.value = btn.childNodes[index].text;
+        //btn.innerHTML = 'St. Lucy';
     })
 
     $('#peter').click(function(e){
@@ -308,8 +372,10 @@ jQuery(document).ready(function() {
         filter_2.hidden = true;
         sel.hidden = false;
 
-        var btn = document.getElementById('dropdownMenu2_3');
-        btn.innerHTML = 'St. Peter';
+        var btn = document.getElementById('parish_type');
+        var index = getParishChild(btn, 'St. Peter');
+        //console.log(btn.childNodes[index].text);
+        btn.value = btn.childNodes[index].text;
     })
 
     $('#andrew').click(function(e){
@@ -322,8 +388,10 @@ jQuery(document).ready(function() {
         filter_2.hidden = true;
         sel.hidden = false;
 
-        var btn = document.getElementById('dropdownMenu2_3');
-        btn.innerHTML = 'St. Andrew';
+        var btn = document.getElementById('parish_type');
+        var index = getParishChild(btn, 'St. Andrew');
+        //console.log(btn.childNodes[index].text);
+        btn.value = btn.childNodes[index].text;
     })
 
     $('#thomas').click(function(e){
@@ -336,8 +404,10 @@ jQuery(document).ready(function() {
         filter_2.hidden = true;
         sel.hidden = false;
 
-        var btn = document.getElementById('dropdownMenu2_3');
-        btn.innerHTML = 'St. Thomas';
+        var btn = document.getElementById('parish_type');
+        var index = getParishChild(btn, 'St. Thomas');
+        //console.log(btn.childNodes[index].text);
+        btn.value = btn.childNodes[index].text;
     })
 
     $('#joseph').click(function(e){
@@ -350,8 +420,10 @@ jQuery(document).ready(function() {
         filter_2.hidden = true;
         sel.hidden = false;
 
-        var btn = document.getElementById('dropdownMenu2_3');
-        btn.innerHTML = 'St. Joseph';
+        var btn = document.getElementById('parish_type');
+        var index = getParishChild(btn, 'St. Joseph');
+        //console.log(btn.childNodes[index].text);
+        btn.value = btn.childNodes[index].text;
     })
 
     $('#james').click(function(e){
@@ -364,8 +436,10 @@ jQuery(document).ready(function() {
         filter_2.hidden = true;
         sel.hidden = false;
 
-        var btn = document.getElementById('dropdownMenu2_3');
-        btn.innerHTML = 'St. James';
+        var btn = document.getElementById('parish_type');
+        var index = getParishChild(btn, 'St. James');
+        //console.log(btn.childNodes[index].text);
+        btn.value = btn.childNodes[index].text;
     })
 
     $('#michael').click(function(e){
@@ -378,8 +452,10 @@ jQuery(document).ready(function() {
         filter_2.hidden = true;
         sel.hidden = false;
 
-        var btn = document.getElementById('dropdownMenu2_3');
-        btn.innerHTML = 'St. Michael';
+        var btn = document.getElementById('parish_type');
+        var index = getParishChild(btn, 'St. Michael');
+        //console.log(btn.childNodes[index].text);
+        btn.value = btn.childNodes[index].text;
     })
 
     $('#george').click(function(e){
@@ -392,8 +468,10 @@ jQuery(document).ready(function() {
         filter_2.hidden = true;
         sel.hidden = false;
 
-        var btn = document.getElementById('dropdownMenu2_3');
-        btn.innerHTML = 'St. George';
+        var btn = document.getElementById('parish_type');
+        var index = getParishChild(btn, 'St. George');
+        //console.log(btn.childNodes[index].text);
+        btn.value = btn.childNodes[index].text;
     })
 
     $('#john').click(function(e){
@@ -406,8 +484,10 @@ jQuery(document).ready(function() {
         filter_2.hidden = true;
         sel.hidden = false;
 
-        var btn = document.getElementById('dropdownMenu2_3');
-        btn.innerHTML = 'St. John';
+        var btn = document.getElementById('parish_type');
+        var index = getParishChild(btn, 'St. John');
+        //console.log(btn.childNodes[index].text);
+        btn.value = btn.childNodes[index].text;
     })
 
     $('#christ-church').click(function(e){
@@ -420,8 +500,10 @@ jQuery(document).ready(function() {
         filter_2.hidden = true;
         sel.hidden = false;
 
-        var btn = document.getElementById('dropdownMenu2_3');
-        btn.innerHTML = 'Christ Church';
+        var btn = document.getElementById('parish_type');
+        var index = getParishChild(btn, 'Christ Church');
+        //console.log(btn.childNodes[index].text);
+        btn.value = btn.childNodes[index].text;
     })
 
     $('#philip').click(function(e){
@@ -434,8 +516,10 @@ jQuery(document).ready(function() {
         filter_2.hidden = true;
         sel.hidden = false;
 
-        var btn = document.getElementById('dropdownMenu2_3');
-        btn.innerHTML = 'St. Philip';
+        var btn = document.getElementById('parish_type');
+        var index = getParishChild(btn, 'St. Philip');
+        //console.log(btn.childNodes[index].text);
+        btn.value = btn.childNodes[index].text;
     })
 
    /* $('#max-price').click(function(e){
@@ -498,7 +582,7 @@ jQuery(document).ready(function() {
 
 
 
-    /* evenet for filter buttons*/
+    /* event for filter buttons*/
 
     //function to detect when at the top
     $(window).scroll(function() {
