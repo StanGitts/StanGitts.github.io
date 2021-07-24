@@ -94,6 +94,10 @@ jQuery(document).ready(function() {
         }
     }
 
+    function getDescription(parish, text_name) {
+        
+    }
+
     /*--------------Calling functions and other events-------------------------*/
     
 
@@ -263,7 +267,7 @@ jQuery(document).ready(function() {
                             for (i = 0; i < files.length/2; i++) {
 
                                 let img_name = img_keyword + num + '.png';
-                                let text_name = text_keyword + num + '.txt';
+                                let text_name = text_keyword + num + '.json';
                                 let img_path = '/houses/' + parish + '/' + img_name;
                                 console.log(img_name);
                                 console.log(text_name);
@@ -290,7 +294,9 @@ jQuery(document).ready(function() {
                                 div_text.setAttribute("class", "desc");
 
                                 let text = document.createElement('p');
+
                                 //replace with function that gets the description in a string
+                                getDescription(parish, text_name)
                                 text.innerHTML = "text";
 
                                 div_text.appendChild(text);
