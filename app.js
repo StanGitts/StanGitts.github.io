@@ -19,6 +19,7 @@ console.log(__dirname);
 // });
 
 app.use(fileUpload());
+app.use(express.static(path.join(__dirname+ '/public')));
 //app.use(express.static(path.join(__dirname+'/uploads')));
 
 // Minimization
@@ -97,12 +98,39 @@ app.get('/index.html', function(req, res){
 })
 
 //******************** Your code goes here ******************** 
-
 app.get('/getHouseList', function(req, res){
-  var folders = fs.readdirSync(__dirname+'/public/houses/');
-  res.send(folders);
-  console.log(folders);
+    var folders = fs.readdirSync(__dirname+'/public/houses/');
+    res.send(folders);
+    //console.log(folders);
 })
+
+
+app.get('/getHouseFiles', function(req, res){
+ // console.log(req.query.place);
+  let path = __dirname + '/public/houses/' + req.query.place;
+  //console.log(path);
+
+  let files = fs.readdirSync(path);
+  //console.log(files);
+
+  res.send(files);
+
+})
+
+/*app.get('/getPath', function(req, res){
+  console.log('yess');
+  res.send(__dirname + '\\public\\houses\\' + req.query.place);
+})*/
+
+/*app.get('/getImg', function(req, res){
+
+  res.sendFile(path.join(__dirname + '/public/houses/' + req.query.place + '/' + req.query.iName));
+
+})
+
+app.get('/getText', function(req, res){
+
+})*/
 /**********Setting up the functions**************/
 
 

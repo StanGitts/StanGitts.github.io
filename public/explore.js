@@ -50,7 +50,7 @@ jQuery(document).ready(function() {
     }
 
     /*function for displaying options*/
-    async function displayFilterOptions(){
+    function displayFilterOptions(){
         highlightExploreBtn();
         var foot = document.getElementById('foot');
         foot.setAttribute("class", "blur-cont");
@@ -61,7 +61,7 @@ jQuery(document).ready(function() {
         for(i = 0; i < children.length; i++) {
             let child = children[i];
             child.setAttribute("class", "option appear-mid");
-            await sleep(1000);
+            sleep(1000);
         }
     }
 
@@ -210,7 +210,7 @@ jQuery(document).ready(function() {
 
     /*events for filter buttons*/
 
-    $('#view-all').click( async function(e){
+    $('#view-all').click( function(e){
         console.log('yeeuh');
         var foot = document.getElementById('foot');
         var filter = document.getElementById('filter-options-1');
@@ -233,46 +233,91 @@ jQuery(document).ready(function() {
             url: '/getHouseList',
 
             success: function(list){
-                console.log('success');
-                console.log(list);
+                //console.log('success');
+                //console.log(list);
                 let length = list.length;
+               // console.log(length);
                 let i = 0;
 
                 for(i = 0; i < length; i++){
-                    $.ajax({
-                        type: 'get',
-                        url: '/getHouseImgs',
-                        dataType: 'json',
-                        data: {
-                            parish: list[i]
-                        },
-
-                        success: async function(imgs) {
-
-                        }
-
-                        fail: async function(err) {
-
-                        }
-                    });
-
+                    let parish = list[i];
+                    //console.log(parish);
                     $.ajax({
                         type: 'get',
                         url: '/getHouseFiles',
                         dataType: 'json',
                         data: {
-                            parish: list[i]
+                            place: parish
                         },
 
-                        success: async function(data) {
+                        success: function(files) {
+                            //console.log(files);
 
+                            //get the imgs
+                            var img_keyword = 'house_';
+                            var text_keyword = 'text_';
+
+                            let i = 0;
+                            let num = 1;
+
+                            for (i = 0; i < files.length/2; i++) {
+
+                                let img_name = img_keyword + num + '.png';
+                                let text_name = text_keyword + num + '.txt';
+                                let img_path = '/houses/' + parish + '/' + img_name;
+                                console.log(img_name);
+                                console.log(text_name);
+                                console.log(img_path);
+
+                                //creating img tags
+                                var panel = document.getElementById('house-panel');
+
+                                let imgTag = document.createElement('img');
+                                imgTag.setAttribute("src", img_path);
+                                imgTag.setAttribute("class", "img")
+
+                                //outer div
+                                let div_outer = document.createElement('div');
+                                div_outer.setAttribute("class", "option-md");
+
+                                //div containing image
+                                let div_img = document.createElement('div');
+                                div_img.setAttribute("class", "option-item");
+                                div_img.appendChild(imgTag);
+
+                                //div containing description
+                                let div_text = document.createElement('div');
+                                div_text.setAttribute("class", "desc");
+
+                                let text = document.createElement('p');
+                                //replace with function that gets the description in a string
+                                text.innerHTML = "text";
+
+                                div_text.appendChild(text);
+
+                                div_outer.appendChild(div_img);
+                                div_outer.appendChild(div_text);
+
+                                
+
+                                panel.appendChild(div_outer);
+                                
+                                
+                                num++;
+                            }
+
+                            
+
+                            
+
+                            
                         },
 
-                        fail: async function(err) {
-
+                        fail: function(err) {
+                            console.log("error trying to retrieve files!");
                         }
                     });
-
+                    //console.log(list[i]);
                 }
             },
             fail: function(){
@@ -281,7 +326,7 @@ jQuery(document).ready(function() {
         });
     })
 
-    $('#by-parish').click(async function(e){
+    $('#by-parish').click( function(e){
         console.log('yess');
         var filter_1 = document.getElementById('filter-options-1');
         var filter_2 = document.getElementById('filter-options-2');
@@ -298,7 +343,7 @@ jQuery(document).ready(function() {
         for(i = 0; i < children.length; i++) {
             let child = children[i];
             child.setAttribute("class", "option-sm appear-mid");
-            await(1000);
+            sleep(1000);
         }
     })
 

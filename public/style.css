@@ -30,6 +30,8 @@ button {
 
 p {
     font-size: 18px;
+    margin: auto;
+    text-align: center;
     /*font-family: Montserrat;*/
 }
 
@@ -1499,6 +1501,11 @@ svg {
     flex-wrap: wrap;*/
 }
 
+.filter-header {
+    position: relative;
+    top: 60%;
+}
+
 #filter-options-1 {
     height: 662.5px;
     width: 100%;
@@ -1565,25 +1572,42 @@ svg {
 }
 
 .option-md {
-    width: 23%;
-    height: 31%;
+    width: 24%;
+    height: 40%;
     border: solid 1px;
     border-radius: 5px;
     background-color: white;
     transition: opacity 1s;
+    margin: auto;
     margin-top: 10px;
-    margin-right: 1%;
-    margin-left: 1%;
+    margin-right: 6.2px;
+    margin-left: 6.2px;
 }
 
+
+
 .option-item {
-    height: 100%;
+    height: 73%;
     width: 100%;
-    top: 48%;
+    
     position: relative;
     margin: 0 auto;
     font-size: 20px;
 
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.desc {
+    height: 27%;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 18px;
 }
 
 .rectangle {
