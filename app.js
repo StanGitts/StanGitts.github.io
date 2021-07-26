@@ -117,6 +117,35 @@ app.get('/getHouseFiles', function(req, res){
 
 })
 
+app.get('/getDesc', function(req, res){
+  console.log('here');
+  res.sendFile(path.join(__dirname + '/public/houses/' + req.query.place + '/' + req.query.filename));
+  
+
+  
+ /* let files = fs.readdirSync(__dirname + '/public/houses/' + req.query.place);
+  let jsonText = -1;
+
+  let i = 0;
+  for(i = 0; i < files.length; i++) {
+    if(files[i] == req.query.filename) {
+      console.log("yesss");
+      jsonText = files[i];
+      console.log(jsonText);
+    }
+  }
+
+  console.log(jsonText);
+  if(jsonText != -1) {
+    console.log("1")
+    res.send(jsonText).status(200);
+  } else {
+    console.log("2");
+    res.send("description not found!").status(400);
+  }*/
+  
+})
+
 /*app.get('/getPath', function(req, res){
   console.log('yess');
   res.send(__dirname + '\\public\\houses\\' + req.query.place);

@@ -94,9 +94,14 @@ jQuery(document).ready(function() {
         }
     }
 
-    function getDescription(parish, text_name) {
+    /*function getDescription(parish, text_name) {
+        var text;
+
         
-    }
+
+
+        console.log("yes");
+    }*/
 
     /*--------------Calling functions and other events-------------------------*/
     
@@ -276,30 +281,67 @@ jQuery(document).ready(function() {
                                 //creating img tags
                                 var panel = document.getElementById('house-panel');
 
-                                let imgTag = document.createElement('img');
+                                var imgTag = document.createElement('img');
                                 imgTag.setAttribute("src", img_path);
                                 imgTag.setAttribute("class", "img")
 
                                 //outer div
-                                let div_outer = document.createElement('div');
+                                var div_outer = document.createElement('div');
                                 div_outer.setAttribute("class", "option-md");
 
                                 //div containing image
-                                let div_img = document.createElement('div');
+                                var div_img = document.createElement('div');
                                 div_img.setAttribute("class", "option-item");
                                 div_img.appendChild(imgTag);
 
                                 //div containing description
-                                let div_text = document.createElement('div');
+                                var div_text = document.createElement('div');
                                 div_text.setAttribute("class", "desc");
 
-                                let text = document.createElement('p');
+                                var text = document.createElement('p');
 
                                 //replace with function that gets the description in a string
-                                getDescription(parish, text_name)
-                                text.innerHTML = "text";
+                                //let desc = getDescription(parish, text_name)
+                                
+                        
 
-                                div_text.appendChild(text);
+                                $.ajax({
+                                    type: 'get',
+                                    url: 'getDesc',
+                                    dataType: 'json',
+                                    data: {
+                                        place: parish,
+                                        filename: text_name
+                                    },
+
+                                    success: function(file) {
+                                        console.log(file);
+
+                                        house_summ = "Price: " + file.Price + " " + "Location: " + file.Location + " "
+                                               + "Bedrooms: " + file.Bedrooms + " " + "Lot no.: " + file.Lot;
+
+                                       //console.log(house_summ);
+
+                                        text.innerHTML = house_summ;
+                                        console.log(text.innerHTML);
+                                        div_text.appendChild(text);
+                                        
+                                    },
+
+                                    error: function() {
+                                        console.log("could not find file!");
+                                    }
+
+                                });
+
+                               /* if(desc != null) {
+                                    console.log(desc);
+                                } else {
+                                    text.innerHTML = "text";
+                                }*/
+                                
+
+                               // div_text.appendChild(text);
 
                                 div_outer.appendChild(div_img);
                                 div_outer.appendChild(div_text);
