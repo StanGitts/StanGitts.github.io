@@ -1577,14 +1577,12 @@ svg {
     border: solid 1px;
     border-radius: 5px;
     background-color: white;
-    transition: opacity 1s;
+    transition: background-color 0.5s;
     margin: auto;
     margin-top: 10px;
     margin-right: 6.2px;
     margin-left: 6.2px;
 }
-
-
 
 .option-item {
     height: 73%;
@@ -1686,6 +1684,10 @@ a:visited {
 
 .option-sm:hover {
     opacity: 100%;
+}
+
+.option-md:hover {
+    background-color: #18e770;
 }
 
 /*section contains code for transitions and other effects*/

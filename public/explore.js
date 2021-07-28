@@ -287,7 +287,7 @@ jQuery(document).ready(function() {
 
                                 //outer div
                                 var div_outer = document.createElement('div');
-                                div_outer.setAttribute("class", "option-md");
+                                div_outer.setAttribute("class", "option-md pointer");
 
                                 //div containing image
                                 var div_img = document.createElement('div');
@@ -313,6 +313,7 @@ jQuery(document).ready(function() {
                                 //replace with function that gets the description in a string
                                 //let desc = getDescription(parish, text_name)
                                 
+                                var isRented;
                         
 
                                 $.ajax({
@@ -335,21 +336,35 @@ jQuery(document).ready(function() {
                                        let row2 = "Bedrooms: " + file.Bedrooms + ", Lot: " + file.Lot;
                                       // let lot = ;
                                        //console.log(house_summ);
+                                       isRented = file.isRented;
 
-                                        text1.innerHTML = row1;
-                                        text2.innerHTML = row2;
-                                       /* text3.innerHTML = bed;
-                                        text4.innerHTML = lot;*/
+                                       if(isRented == "No") {
+                                            text1.innerHTML = row1;
+                                            text2.innerHTML = row2;
+                                           /* text3.innerHTML = bed;
+                                            text4.innerHTML = lot;*/
 
-                                        console.log(text1.innerHTML);
-                                        console.log(text2.innerHTML);
-                                       /* console.log(text3.innerHTML);
-                                        console.log(text4.innerHTML);*/
+                                            console.log(text1.innerHTML);
+                                            console.log(text2.innerHTML);
+                                           /* console.log(text3.innerHTML);
+                                            console.log(text4.innerHTML);*/
 
-                                        div_text.appendChild(text1);
-                                        div_text.appendChild(text2);
-                                       /* div_text.appendChild(text3);
-                                        div_text.appendChild(text4);*/
+                                            div_text.appendChild(text1);
+                                            div_text.appendChild(text2);
+                                           /* div_text.appendChild(text3);
+                                            div_text.appendChild(text4);*/
+
+                                            div_outer.appendChild(div_img);
+                                            div_outer.appendChild(div_text);
+
+                                            
+
+                                            panel.appendChild(div_outer);
+
+                                        
+                                       }
+
+                                        
                                         
                                     },
 
@@ -358,17 +373,9 @@ jQuery(document).ready(function() {
                                     }
 
                                 });
-
-
-                                div_outer.appendChild(div_img);
-                                div_outer.appendChild(div_text);
-
-                                
-
-                                panel.appendChild(div_outer);
-                                
                                 
                                 num++;
+                                
                             }
 
                             
