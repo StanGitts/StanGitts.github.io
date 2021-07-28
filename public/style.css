@@ -1608,6 +1608,13 @@ svg {
     width: 100%;
     margin: 0 auto;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    font-size: 16px;
+    height: 100%;
 }
 
 .rectangle {

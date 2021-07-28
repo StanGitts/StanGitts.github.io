@@ -298,7 +298,17 @@ jQuery(document).ready(function() {
                                 var div_text = document.createElement('div');
                                 div_text.setAttribute("class", "desc");
 
-                                var text = document.createElement('p');
+                                var text1 = document.createElement('p');
+                                text1.setAttribute("class", "text");
+
+                                var text2 = document.createElement('p');
+                                text2.setAttribute("class", "text");
+
+                              /*  var text3 = document.createElement('p');
+                                text3.setAttribute("class", "text");
+
+                                var text4 = document.createElement('p');
+                                text4.setAttribute("class", "text");*/
 
                                 //replace with function that gets the description in a string
                                 //let desc = getDescription(parish, text_name)
@@ -309,6 +319,7 @@ jQuery(document).ready(function() {
                                     type: 'get',
                                     url: 'getDesc',
                                     dataType: 'json',
+                                    async: false,
                                     data: {
                                         place: parish,
                                         filename: text_name
@@ -317,14 +328,28 @@ jQuery(document).ready(function() {
                                     success: function(file) {
                                         console.log(file);
 
-                                        house_summ = "Price: " + file.Price + " " + "Location: " + file.Location + " "
-                                               + "Bedrooms: " + file.Bedrooms + " " + "Lot no.: " + file.Lot;
-
+                                       // house_summ = "Price: " + file.Price + "     " + "Location: " + file.Location + "\n"
+                                       //        + "Bedrooms: " + file.Bedrooms + "    " + "Lot: " + file.Lot;
+                                       let row1 = "Price: " + file.Price + ", Location: " + file.Location + ",";
+                                      // let loc = ;
+                                       let row2 = "Bedrooms: " + file.Bedrooms + ", Lot: " + file.Lot;
+                                      // let lot = ;
                                        //console.log(house_summ);
 
-                                        text.innerHTML = house_summ;
-                                        console.log(text.innerHTML);
-                                        div_text.appendChild(text);
+                                        text1.innerHTML = row1;
+                                        text2.innerHTML = row2;
+                                       /* text3.innerHTML = bed;
+                                        text4.innerHTML = lot;*/
+
+                                        console.log(text1.innerHTML);
+                                        console.log(text2.innerHTML);
+                                       /* console.log(text3.innerHTML);
+                                        console.log(text4.innerHTML);*/
+
+                                        div_text.appendChild(text1);
+                                        div_text.appendChild(text2);
+                                       /* div_text.appendChild(text3);
+                                        div_text.appendChild(text4);*/
                                         
                                     },
 
@@ -334,14 +359,6 @@ jQuery(document).ready(function() {
 
                                 });
 
-                               /* if(desc != null) {
-                                    console.log(desc);
-                                } else {
-                                    text.innerHTML = "text";
-                                }*/
-                                
-
-                               // div_text.appendChild(text);
 
                                 div_outer.appendChild(div_img);
                                 div_outer.appendChild(div_text);
