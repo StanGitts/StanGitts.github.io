@@ -94,6 +94,338 @@ jQuery(document).ready(function() {
         }
     }
 
+    function displayRentals(parish_name) {
+        if(parish_name == "none") {
+            $.ajax({
+                type: 'get',
+                url: '/getHouseList',
+
+                success: function(list){
+                    //console.log('success');
+                    //console.log(list);
+                    let length = list.length;
+                   // console.log(length);
+                    let i = 0;
+
+                    for(i = 0; i < length; i++){
+                        let parish = list[i];
+                        //console.log(parish);
+                        $.ajax({
+                            type: 'get',
+                            url: '/getHouseFiles',
+                            dataType: 'json',
+                            data: {
+                                place: parish
+                            },
+
+                            success: function(files) {
+                                //console.log(files);
+
+                                //get the imgs
+                                var img_keyword = 'house_';
+                                var text_keyword = 'text_';
+
+                                let i = 0;
+                                let num = 1;
+
+                                for (i = 0; i < files.length/2; i++) {
+
+                                    let img_name = img_keyword + num + '.png';
+                                    let text_name = text_keyword + num + '.json';
+                                    let img_path = '/houses/' + parish + '/' + img_name;
+                                    console.log(img_name);
+                                    console.log(text_name);
+                                    console.log(img_path);
+
+                                    //creating img tags
+                                    var panel = document.getElementById('house-panel');
+
+                                    var imgTag = document.createElement('img');
+                                    imgTag.setAttribute("src", img_path);
+                                    imgTag.setAttribute("class", "img")
+
+                                    //outer div
+                                    var div_outer = document.createElement('div');
+                                    div_outer.setAttribute("class", "option-md pointer");
+
+                                    //div containing image
+                                    var div_img = document.createElement('div');
+                                    div_img.setAttribute("class", "option-item");
+                                    div_img.appendChild(imgTag);
+
+                                    //div containing description
+                                    var div_text = document.createElement('div');
+                                    div_text.setAttribute("class", "desc");
+
+                                    var text1 = document.createElement('p');
+                                    text1.setAttribute("class", "text");
+
+                                    var text2 = document.createElement('p');
+                                    text2.setAttribute("class", "text");
+
+                                  /*  var text3 = document.createElement('p');
+                                    text3.setAttribute("class", "text");
+
+                                    var text4 = document.createElement('p');
+                                    text4.setAttribute("class", "text");*/
+
+                                    //replace with function that gets the description in a string
+                                    //let desc = getDescription(parish, text_name)
+                                    
+                                    var isRented;
+                            
+
+                                    $.ajax({
+                                        type: 'get',
+                                        url: 'getDesc',
+                                        dataType: 'json',
+                                        async: false,
+                                        data: {
+                                            place: parish,
+                                            filename: text_name
+                                        },
+
+                                        success: function(file) {
+                                            console.log(file);
+
+                                           // house_summ = "Price: " + file.Price + "     " + "Location: " + file.Location + "\n"
+                                           //        + "Bedrooms: " + file.Bedrooms + "    " + "Lot: " + file.Lot;
+                                           let row1 = "Price: " + file.Price + ", Location: " + file.Location + ",";
+                                          // let loc = ;
+                                           let row2 = "Bedrooms: " + file.Bedrooms + ", Lot: " + file.Lot;
+                                          // let lot = ;
+                                           //console.log(house_summ);
+                                           isRented = file.isRented;
+
+                                           if(isRented == "No") {
+                                                text1.innerHTML = row1;
+                                                text2.innerHTML = row2;
+                                               /* text3.innerHTML = bed;
+                                                text4.innerHTML = lot;*/
+
+                                                console.log(text1.innerHTML);
+                                                console.log(text2.innerHTML);
+                                               /* console.log(text3.innerHTML);
+                                                console.log(text4.innerHTML);*/
+
+                                                div_text.appendChild(text1);
+                                                div_text.appendChild(text2);
+                                               /* div_text.appendChild(text3);
+                                                div_text.appendChild(text4);*/
+
+                                                div_outer.appendChild(div_img);
+                                                div_outer.appendChild(div_text);
+
+                                                
+
+                                                panel.appendChild(div_outer);
+
+                                            
+                                           }
+
+                                            
+                                            
+                                        },
+
+                                        error: function() {
+                                            console.log("could not find file!");
+                                        }
+
+                                    });
+                                    
+                                    num++;
+                                    
+                                }
+
+                                
+
+                                
+
+                                
+                            },
+
+                            fail: function(err) {
+                                console.log("error trying to retrieve files!");
+                            }
+                        });
+                        //console.log(list[i]);
+                    }
+                },
+                fail: function(){
+                    console.log('error');
+                }
+            });
+        } else {
+            $.ajax({
+                type: 'get',
+                url: '/getHouseList',
+
+                success: function(list){
+                    //console.log('success');
+                    //console.log(list);
+                    /*let length = list.length;
+                   // console.log(length);
+                    let i = 0;
+                    var parish;
+
+                    for(i = 0; i < length; i++) {
+                        if(list[i] == parish_type) {
+                            parish
+                        }
+                    }*/
+
+                    for(i = 0; i < 1; i++){
+                        //let parish = list[i];
+                        //console.log(parish);
+                        $.ajax({
+                            type: 'get',
+                            url: '/getHouseFiles',
+                            dataType: 'json',
+                            data: {
+                                place: parish_name
+                            },
+
+                            success: function(files) {
+                                //console.log(files);
+
+                                //get the imgs
+                                var img_keyword = 'house_';
+                                var text_keyword = 'text_';
+
+                                let i = 0;
+                                let num = 1;
+
+                                for (i = 0; i < files.length/2; i++) {
+
+                                    let img_name = img_keyword + num + '.png';
+                                    let text_name = text_keyword + num + '.json';
+                                    let img_path = '/houses/' + parish_name + '/' + img_name;
+                                    console.log(img_name);
+                                    console.log(text_name);
+                                    console.log(img_path);
+
+                                    //creating img tags
+                                    var panel = document.getElementById('house-panel');
+
+                                    var imgTag = document.createElement('img');
+                                    imgTag.setAttribute("src", img_path);
+                                    imgTag.setAttribute("class", "img")
+
+                                    //outer div
+                                    var div_outer = document.createElement('div');
+                                    div_outer.setAttribute("class", "option-md pointer");
+
+                                    //div containing image
+                                    var div_img = document.createElement('div');
+                                    div_img.setAttribute("class", "option-item");
+                                    div_img.appendChild(imgTag);
+
+                                    //div containing description
+                                    var div_text = document.createElement('div');
+                                    div_text.setAttribute("class", "desc");
+
+                                    var text1 = document.createElement('p');
+                                    text1.setAttribute("class", "text");
+
+                                    var text2 = document.createElement('p');
+                                    text2.setAttribute("class", "text");
+
+                                  /*  var text3 = document.createElement('p');
+                                    text3.setAttribute("class", "text");
+
+                                    var text4 = document.createElement('p');
+                                    text4.setAttribute("class", "text");*/
+
+                                    //replace with function that gets the description in a string
+                                    //let desc = getDescription(parish, text_name)
+                                    
+                                    var isRented;
+                            
+
+                                    $.ajax({
+                                        type: 'get',
+                                        url: 'getDesc',
+                                        dataType: 'json',
+                                        async: false,
+                                        data: {
+                                            place: parish_name,
+                                            filename: text_name
+                                        },
+
+                                        success: function(file) {
+                                            console.log(file);
+
+                                           // house_summ = "Price: " + file.Price + "     " + "Location: " + file.Location + "\n"
+                                           //        + "Bedrooms: " + file.Bedrooms + "    " + "Lot: " + file.Lot;
+                                           let row1 = "Price: " + file.Price + ", Location: " + file.Location + ",";
+                                          // let loc = ;
+                                           let row2 = "Bedrooms: " + file.Bedrooms + ", Lot: " + file.Lot;
+                                          // let lot = ;
+                                           //console.log(house_summ);
+                                           isRented = file.isRented;
+
+                                           if(isRented == "No") {
+                                                text1.innerHTML = row1;
+                                                text2.innerHTML = row2;
+                                               /* text3.innerHTML = bed;
+                                                text4.innerHTML = lot;*/
+
+                                                console.log(text1.innerHTML);
+                                                console.log(text2.innerHTML);
+                                               /* console.log(text3.innerHTML);
+                                                console.log(text4.innerHTML);*/
+
+                                                div_text.appendChild(text1);
+                                                div_text.appendChild(text2);
+                                               /* div_text.appendChild(text3);
+                                                div_text.appendChild(text4);*/
+
+                                                div_outer.appendChild(div_img);
+                                                div_outer.appendChild(div_text);
+
+                                                
+
+                                                panel.appendChild(div_outer);
+
+                                            
+                                           }
+
+                                            
+                                            
+                                        },
+
+                                        error: function() {
+                                            console.log("could not find file!");
+                                        }
+
+                                    });
+                                    
+                                    num++;
+                                    
+                                }
+
+                                
+
+                                
+
+                                
+                            },
+
+                            fail: function(err) {
+                                console.log("error trying to retrieve files!");
+                            }
+                        });
+                        //console.log(list[i]);
+                    }
+                },
+                fail: function(){
+                    console.log('error');
+                }
+            });
+        }  
+        
+    }
+
     /*function getDescription(parish, text_name) {
         var text;
 
@@ -237,165 +569,7 @@ jQuery(document).ready(function() {
 
         //finish the rest of code to bring up the UI
         console.log('here');
-        $.ajax({
-            type: 'get',
-            url: '/getHouseList',
-
-            success: function(list){
-                //console.log('success');
-                //console.log(list);
-                let length = list.length;
-               // console.log(length);
-                let i = 0;
-
-                for(i = 0; i < length; i++){
-                    let parish = list[i];
-                    //console.log(parish);
-                    $.ajax({
-                        type: 'get',
-                        url: '/getHouseFiles',
-                        dataType: 'json',
-                        data: {
-                            place: parish
-                        },
-
-                        success: function(files) {
-                            //console.log(files);
-
-                            //get the imgs
-                            var img_keyword = 'house_';
-                            var text_keyword = 'text_';
-
-                            let i = 0;
-                            let num = 1;
-
-                            for (i = 0; i < files.length/2; i++) {
-
-                                let img_name = img_keyword + num + '.png';
-                                let text_name = text_keyword + num + '.json';
-                                let img_path = '/houses/' + parish + '/' + img_name;
-                                console.log(img_name);
-                                console.log(text_name);
-                                console.log(img_path);
-
-                                //creating img tags
-                                var panel = document.getElementById('house-panel');
-
-                                var imgTag = document.createElement('img');
-                                imgTag.setAttribute("src", img_path);
-                                imgTag.setAttribute("class", "img")
-
-                                //outer div
-                                var div_outer = document.createElement('div');
-                                div_outer.setAttribute("class", "option-md pointer");
-
-                                //div containing image
-                                var div_img = document.createElement('div');
-                                div_img.setAttribute("class", "option-item");
-                                div_img.appendChild(imgTag);
-
-                                //div containing description
-                                var div_text = document.createElement('div');
-                                div_text.setAttribute("class", "desc");
-
-                                var text1 = document.createElement('p');
-                                text1.setAttribute("class", "text");
-
-                                var text2 = document.createElement('p');
-                                text2.setAttribute("class", "text");
-
-                              /*  var text3 = document.createElement('p');
-                                text3.setAttribute("class", "text");
-
-                                var text4 = document.createElement('p');
-                                text4.setAttribute("class", "text");*/
-
-                                //replace with function that gets the description in a string
-                                //let desc = getDescription(parish, text_name)
-                                
-                                var isRented;
-                        
-
-                                $.ajax({
-                                    type: 'get',
-                                    url: 'getDesc',
-                                    dataType: 'json',
-                                    async: false,
-                                    data: {
-                                        place: parish,
-                                        filename: text_name
-                                    },
-
-                                    success: function(file) {
-                                        console.log(file);
-
-                                       // house_summ = "Price: " + file.Price + "     " + "Location: " + file.Location + "\n"
-                                       //        + "Bedrooms: " + file.Bedrooms + "    " + "Lot: " + file.Lot;
-                                       let row1 = "Price: " + file.Price + ", Location: " + file.Location + ",";
-                                      // let loc = ;
-                                       let row2 = "Bedrooms: " + file.Bedrooms + ", Lot: " + file.Lot;
-                                      // let lot = ;
-                                       //console.log(house_summ);
-                                       isRented = file.isRented;
-
-                                       if(isRented == "No") {
-                                            text1.innerHTML = row1;
-                                            text2.innerHTML = row2;
-                                           /* text3.innerHTML = bed;
-                                            text4.innerHTML = lot;*/
-
-                                            console.log(text1.innerHTML);
-                                            console.log(text2.innerHTML);
-                                           /* console.log(text3.innerHTML);
-                                            console.log(text4.innerHTML);*/
-
-                                            div_text.appendChild(text1);
-                                            div_text.appendChild(text2);
-                                           /* div_text.appendChild(text3);
-                                            div_text.appendChild(text4);*/
-
-                                            div_outer.appendChild(div_img);
-                                            div_outer.appendChild(div_text);
-
-                                            
-
-                                            panel.appendChild(div_outer);
-
-                                        
-                                       }
-
-                                        
-                                        
-                                    },
-
-                                    error: function() {
-                                        console.log("could not find file!");
-                                    }
-
-                                });
-                                
-                                num++;
-                                
-                            }
-
-                            
-
-                            
-
-                            
-                        },
-
-                        fail: function(err) {
-                            console.log("error trying to retrieve files!");
-                        }
-                    });
-                    //console.log(list[i]);
-                }
-            },
-            fail: function(){
-                console.log('error');
-            }
-        });
+        displayRentals("none");
     })
 
     $('#by-parish').click( function(e){
@@ -477,6 +651,8 @@ jQuery(document).ready(function() {
         //console.log(btn.childNodes[index].text);
         btn.value = btn.childNodes[index].text;
         //btn.innerHTML = 'St. Lucy';
+        displayRentals("St.Lucy");
+
     })
 
     $('#peter').click(function(e){
@@ -493,6 +669,8 @@ jQuery(document).ready(function() {
         var index = getParishChild(btn, 'St. Peter');
         //console.log(btn.childNodes[index].text);
         btn.value = btn.childNodes[index].text;
+
+        displayRentals("St.Peter");
     })
 
     $('#andrew').click(function(e){
@@ -509,6 +687,8 @@ jQuery(document).ready(function() {
         var index = getParishChild(btn, 'St. Andrew');
         //console.log(btn.childNodes[index].text);
         btn.value = btn.childNodes[index].text;
+
+        displayRentals("St.Andrew");
     })
 
     $('#thomas').click(function(e){
@@ -525,6 +705,8 @@ jQuery(document).ready(function() {
         var index = getParishChild(btn, 'St. Thomas');
         //console.log(btn.childNodes[index].text);
         btn.value = btn.childNodes[index].text;
+
+        displayRentals("St.Thomas");
     })
 
     $('#joseph').click(function(e){
@@ -541,6 +723,8 @@ jQuery(document).ready(function() {
         var index = getParishChild(btn, 'St. Joseph');
         //console.log(btn.childNodes[index].text);
         btn.value = btn.childNodes[index].text;
+
+        displayRentals("St.Joseph");
     })
 
     $('#james').click(function(e){
@@ -557,6 +741,8 @@ jQuery(document).ready(function() {
         var index = getParishChild(btn, 'St. James');
         //console.log(btn.childNodes[index].text);
         btn.value = btn.childNodes[index].text;
+
+        displayRentals("St.James");
     })
 
     $('#michael').click(function(e){
@@ -573,6 +759,8 @@ jQuery(document).ready(function() {
         var index = getParishChild(btn, 'St. Michael');
         //console.log(btn.childNodes[index].text);
         btn.value = btn.childNodes[index].text;
+
+        displayRentals("St.Michael");
     })
 
     $('#george').click(function(e){
@@ -589,6 +777,8 @@ jQuery(document).ready(function() {
         var index = getParishChild(btn, 'St. George');
         //console.log(btn.childNodes[index].text);
         btn.value = btn.childNodes[index].text;
+
+        displayRentals("St.George");
     })
 
     $('#john').click(function(e){
@@ -605,6 +795,8 @@ jQuery(document).ready(function() {
         var index = getParishChild(btn, 'St. John');
         //console.log(btn.childNodes[index].text);
         btn.value = btn.childNodes[index].text;
+
+        displayRentals("St.John");
     })
 
     $('#christ-church').click(function(e){
@@ -621,10 +813,12 @@ jQuery(document).ready(function() {
         var index = getParishChild(btn, 'Christ Church');
         //console.log(btn.childNodes[index].text);
         btn.value = btn.childNodes[index].text;
+
+        displayRentals("ChristChurch");
     })
 
     $('#philip').click(function(e){
-        console.log('lucy');
+        console.log('philip');
         var foot = document.getElementById('foot');
         var filter_2 = document.getElementById('filter-options-2');
         var sel = document.getElementById('sel-panel');
@@ -637,6 +831,8 @@ jQuery(document).ready(function() {
         var index = getParishChild(btn, 'St. Philip');
         //console.log(btn.childNodes[index].text);
         btn.value = btn.childNodes[index].text;
+
+        displayRentals("St.Philip");
     })
 
    /* $('#max-price').click(function(e){
