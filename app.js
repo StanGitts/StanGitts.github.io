@@ -69,6 +69,10 @@ app.get('/search.svg', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/assets/search.svg'));
 })
 
+app.get('/x.svg', function(req, res){
+  res.sendFile(path.join(__dirname + '/public/assets/x.svg'));
+})
+
 app.get('/house1vid.mp4', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/houses/house1vid.mp4'));
 })
@@ -120,7 +124,7 @@ app.get('/getHouseFiles', function(req, res){
 app.get('/getDesc', function(req, res){
   console.log('here');
   res.sendFile(path.join(__dirname + '/public/houses/' + req.query.place + '/' + req.query.filename));
-  
+
 
   
  /* let files = fs.readdirSync(__dirname + '/public/houses/' + req.query.place);

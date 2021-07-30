@@ -1652,41 +1652,30 @@ svg {
     margin-top: 2px;
     margin-left: 4px;
     height: 30px;
-    width: 200px;
+    width: 125px;
     text-align: left;
     padding: 0;
+    border: solid 1px black;
 }
-
-/*.filter-icon {
-    height: 30px;
-    /*margin: 0 auto;*/
-  /*  margin-top: 2px;
-    margin-left: 3px;
-    width: 100px;
-    border-radius: 3px;
-}*/
 
 .filter-icon-text {
     text-align: left;
     position: relative;
-    top: -5px;
-    width: 50px;
+    top: -2px;
+    left: 2px;
+    width: 55px;
     margin: 0;
 }
 
-/*.filter-svg {
-    width: 16px;
-    height: 16px;
-}*/
-
-/*.filter-close {
+.filter-close {
     
     width: 20px;
     height: 20px;
     margin: 0 auto;
-    top: -4px;
-    position: relative; 
-}*/
+    top: 3px;
+    position: relative;
+    float: right;
+}
 
 .filter-btn {
     position: relative;
