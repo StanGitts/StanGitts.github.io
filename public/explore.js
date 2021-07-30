@@ -426,7 +426,15 @@ jQuery(document).ready(function() {
         
     }
 
-    function addFilterIcon(parish_name) {
+    function displayFilteredRentals(lot, min_price, max_price, beds, parish) {
+
+    }
+
+    function sortRentals(sort_type) {
+        
+    }
+
+    function addParishFilterIcon(parish_name) {
         var div = document.getElementById('filter-icon-bar');
 
         var btn = document.createElement('button');
@@ -691,7 +699,7 @@ jQuery(document).ready(function() {
         btn.value = btn.childNodes[index].text;
         //btn.innerHTML = 'St. Lucy';
         displayRentals("St.Lucy");
-        addFilterIcon("St.Lucy");
+        addParishFilterIcon("St.Lucy");
 
     })
 
@@ -711,7 +719,7 @@ jQuery(document).ready(function() {
         btn.value = btn.childNodes[index].text;
 
         displayRentals("St.Peter");
-        addFilterIcon("St.Peter");
+        addParishFilterIcon("St.Peter");
     })
 
     $('#andrew').click(function(e){
@@ -730,7 +738,7 @@ jQuery(document).ready(function() {
         btn.value = btn.childNodes[index].text;
 
         displayRentals("St.Andrew");
-        addFilterIcon("St.Andrew");
+        addParishFilterIcon("St.Andrew");
     })
 
     $('#thomas').click(function(e){
@@ -749,7 +757,7 @@ jQuery(document).ready(function() {
         btn.value = btn.childNodes[index].text;
 
         displayRentals("St.Thomas");
-        addFilterIcon("St.Thomas");
+        addParishFilterIcon("St.Thomas");
     })
 
     $('#joseph').click(function(e){
@@ -768,7 +776,7 @@ jQuery(document).ready(function() {
         btn.value = btn.childNodes[index].text;
 
         displayRentals("St.Joseph");
-        addFilterIcon("St.Joseph");
+        addParishFilterIcon("St.Joseph");
     })
 
     $('#james').click(function(e){
@@ -787,7 +795,7 @@ jQuery(document).ready(function() {
         btn.value = btn.childNodes[index].text;
 
         displayRentals("St.James");
-        addFilterIcon("St.James");
+        addParishFilterIcon("St.James");
     })
 
     $('#michael').click(function(e){
@@ -806,7 +814,7 @@ jQuery(document).ready(function() {
         btn.value = btn.childNodes[index].text;
 
         displayRentals("St.Michael");
-        addFilterIcon("St.MIchael");
+        addParishFilterIcon("St.MIchael");
     })
 
     $('#george').click(function(e){
@@ -825,7 +833,7 @@ jQuery(document).ready(function() {
         btn.value = btn.childNodes[index].text;
 
         displayRentals("St.George");
-        addFilterIcon("St.George");
+        addParishFilterIcon("St.George");
     })
 
     $('#john').click(function(e){
@@ -844,7 +852,7 @@ jQuery(document).ready(function() {
         btn.value = btn.childNodes[index].text;
 
         displayRentals("St.John");
-        addFilterIcon("St.John");
+        addParishFilterIcon("St.John");
     })
 
     $('#christ-church').click(function(e){
@@ -863,7 +871,7 @@ jQuery(document).ready(function() {
         btn.value = btn.childNodes[index].text;
 
         displayRentals("ChristChurch");
-        addFilterIcon("ChirstChurch");
+        addParishFilterIcon("ChirstChurch");
     })
 
     $('#philip').click(function(e){
@@ -882,7 +890,7 @@ jQuery(document).ready(function() {
         btn.value = btn.childNodes[index].text;
 
         displayRentals("St.Philip");
-        addFilterIcon("St.Philip");
+        addParishFilterIcon("St.Philip");
     })
 
    /* $('#max-price').click(function(e){
