@@ -103,8 +103,8 @@ app.get('/index.html', function(req, res){
 
 //******************** Your code goes here ******************** 
 app.get('/getHouseList', function(req, res){
-    var folders = fs.readdirSync(__dirname+'/public/houses/');
-    res.send(folders);
+    var files = fs.readdirSync(__dirname+'/public/houses/');
+    res.send(files);
     //console.log(folders);
 })
 
@@ -121,9 +121,22 @@ app.get('/getHouseFiles', function(req, res){
 
 })
 
+// app.get('/getAllHouses', function (req, res){
+//   let path = __dirname + '/public/houses/';
+
+//   let allFiles;
+//   let folders = fs.readdirSync(path);
+//   let length = folders.length;
+
+//   for(let i = 0; i < length; i++) {
+//     let filePath = __dirname + '/public/houses/' + folders[i];
+
+//   }
+// })
+
 app.get('/getDesc', function(req, res){
   console.log('here');
-  res.sendFile(path.join(__dirname + '/public/houses/' + req.query.place + '/' + req.query.filename));
+  res.sendFile(path.join(__dirname + '/public/houses/' + req.query.name));
 
 
   

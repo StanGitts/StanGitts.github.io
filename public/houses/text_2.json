@@ -1,7 +1,7 @@
 {
 	"For": "house_2",
-	"Price": "$2500",
-	"Location": "St. Andrew",
+	"Price": 2500,
+	"Location": "Christ Church",
 	"Bedrooms": 3,
 	"Lot": 25,
 	"Description": "A nice beautiful house.",

@@ -1652,7 +1652,7 @@ svg {
     margin-top: 2px;
     margin-left: 4px;
     height: 30px;
-    width: 125px;
+    width: 140px;
     text-align: left;
     padding: 0;
     border: solid 1px black;
@@ -1735,5 +1735,8 @@ a:visited {
 .option-md:hover {
     background-color: #18e770;
 }
+
+
+
 
 /*section contains code for transitions and other effects*/

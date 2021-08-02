@@ -151,10 +151,10 @@
 							    <form method="post" action="/action_page_post.php">
 							      <div data-role="rangeslider">
 							        <label for="price-min" class="light">Minimum Price: $<span id="min-price-value" class="light"></span></label>
-							        <input type="range" name="price-min" id="price-min" value="200" min="0" max="5000">
+							        <input type="range" name="price-min" id="price-min" value="0" min="0" max="5000">
 							        
 							        <label for="price-max" class="light">Maximum Price: $<span id="max-price-value" class="light"></span></label>
-							        <input type="range" name="price-max" id="price-max" value="800" min="0" max="5000">
+							        <input type="range" name="price-max" id="price-max" value="5000" min="0" max="5000">
 							      
 							      </div>
 							        
@@ -164,11 +164,12 @@
 
 							<div class="filter-item">
 						      	<label class="light" for="bed_type" id="bed_sel">Number of Bedrooms</label>
+						      	<br>
 						      	<select name="bed_type" id="bed_type">
 						      		<option>All</option>
-						      		<option>1-bedroom</option>
-						      		<option>2-bedroom</option>
-						      		<option>3-bedroom</option>
+						      		<option>1</option>
+						      		<option>2</option>
+						      		<option>3</option>
 						      	</select>
 						    </div>
 
@@ -220,10 +221,9 @@
 						      	<br>
 						      	<select name="sort_type" id="sort_type">
 						      		<option></option>
-						      		<option>Ascending (A-Z)</option>
-						      		<option>Descending (Z-A)</option>
 						      		<option>Parish</option>
-						      		<option>Price</option>
+						      		<option>Price (ascending)</option>
+						      		<option>Price (descending)</option>
 						      	</select>
 						    </div>
 
@@ -270,7 +270,7 @@
 	    
 
 	    <footer id="foot">
-	    		
+
 		  	<!-- social media bar -->
 		    <div id="info-div" class="row">
 		    	<div class="column first-col">About us<br>SAMPLE</div>
