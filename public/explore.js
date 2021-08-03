@@ -847,6 +847,9 @@ jQuery(document).ready(function() {
             /*for(let i = 1; i < sel.children.length; i++) {
                 sel.children[i].remove();
             }*/
+            while(sel.children.length != 1) {
+                sel.children[sel.children.length-1].remove();
+            }
 
 
             var lot = document.getElementById('entryBox1').value;
@@ -891,9 +894,12 @@ jQuery(document).ready(function() {
 
             //remove the current rentals and put on using new filter
             var sel = document.getElementById('house-panel');
-           /* for(let i = 1; i < sel.children.length; i++) {
+            /*for(let i = 1; i < sel.children.length; i++) {
                 sel.children[i].remove();
             }*/
+            while(sel.children.length != 1) {
+                sel.children[sel.children.length-1].remove();
+            }
 
            
             var parish = document.getElementById('parish_type').value;
@@ -940,6 +946,9 @@ jQuery(document).ready(function() {
            /* for(let i = 1; i < sel.children.length; i++) {
                 sel.children[i].remove();
             }*/
+            while(sel.children.length != 1) {
+                sel.children[sel.children.length-1].remove();
+            }
 
            
             var parish = document.getElementById('parish_type').value;
