@@ -464,18 +464,20 @@ jQuery(document).ready(function() {
 
                             //checking lot
                             if(lot != "") {
+
                                 if(file.Lot != lot) {
                                     console.log('here1');
                                     check = 0;
-                                }
-                            }
+                                } 
+                            } 
 
                             //checking parish
                             if(parish != "All") {
+
                                 if(file.Location != parish) {
                                     console.log('here2');
                                     check = 0;
-                                }
+                                }       
                             }
 
                             //checking beds
@@ -495,6 +497,8 @@ jQuery(document).ready(function() {
                                 filteredFiles.push(img_name);
                                 filteredFiles.push(text_name);
                             }
+
+                           
                         },
 
                         fail: function () {
@@ -794,6 +798,27 @@ jQuery(document).ready(function() {
         }
     }
 
+    function addFilters(lot, min_price, max_price, beds, parish) {
+
+        if(lot != "") {
+            addLotFilterIcon(lot);
+        }
+
+        console.log("before parish filter");
+        addPriceFilterIcon(min_price, max_price);
+        console.log("after parish fgilter");
+
+        if(beds != "All") {
+            addBedFilterIcon(beds);
+        }
+
+        if(parish != "All") {
+            addParishFilterIcon(parish);
+        }
+
+       
+    }
+
     function addParishFilterIcon(parish_name) {
         var div = document.getElementById('filter-icon-bar');
 
@@ -819,23 +844,175 @@ jQuery(document).ready(function() {
 
             //remove the current rentals and put on using new filter
             var sel = document.getElementById('house-panel');
-            for(let i = 1; i < sel.children.length; i++) {
+            /*for(let i = 1; i < sel.children.length; i++) {
                 sel.children[i].remove();
-            }
+            }*/
 
-           
+
+            var lot = document.getElementById('entryBox1').value;
             var min_price = document.getElementById('price-min').value;
             var max_price = document.getElementById('price-max').value;
+            var beds = document.getElementById('bed_type').value;
             
             var sort = document.getElementById('sort_type').value;
 
-            displayFilteredRentals("", min_price, max_price, "All", "All", sort);
+            displayFilteredRentals(lot, min_price, max_price, beds, "All", sort);
 
         });
 
         btn.appendChild(img);
         btn.appendChild(text);
         div.appendChild(btn);
+        
+    }
+
+    function addLotFilterIcon(lot) {
+        var div = document.getElementById('filter-icon-bar');
+
+        var btn = document.createElement('button');
+        btn.setAttribute("class", "btn btn-primary filter-bar-btn");
+        btn.setAttribute("id", "lot-filter");
+
+        var text = document.createElement('p');
+        text.setAttribute("class", "filter-icon-text");
+        text.innerHTML = "Lot No. " + lot;
+
+        var img = document.createElement('img');
+        img.setAttribute("src", "x.svg");
+        img.setAttribute("class", "filter-close");
+
+        btn.addEventListener("click", function() {
+            btn.remove();
+
+            //add code to refresh page with the new filters
+            var lot_entry = document.getElementById('entryBox1');
+
+            lot_entry.value = "";
+
+            //remove the current rentals and put on using new filter
+            var sel = document.getElementById('house-panel');
+           /* for(let i = 1; i < sel.children.length; i++) {
+                sel.children[i].remove();
+            }*/
+
+           
+            var parish = document.getElementById('parish_type').value;
+            var min_price = document.getElementById('price-min').value;
+            var max_price = document.getElementById('price-max').value;
+            var beds = document.getElementById('bed_type').value;
+            
+            var sort = document.getElementById('sort_type').value;
+
+            displayFilteredRentals("", min_price, max_price, beds, parish, sort);
+
+        });
+
+        btn.appendChild(img);
+        btn.appendChild(text);
+        div.appendChild(btn);
+    }
+
+    function addBedFilterIcon(beds) {
+        var div = document.getElementById('filter-icon-bar');
+
+        var btn = document.createElement('button');
+        btn.setAttribute("class", "btn btn-primary filter-bar-btn");
+        btn.setAttribute("id", "bed-filter");
+
+        var text = document.createElement('p');
+        text.setAttribute("class", "filter-icon-text");
+        text.innerHTML = beds + "-bedroom";
+
+        var img = document.createElement('img');
+        img.setAttribute("src", "x.svg");
+        img.setAttribute("class", "filter-close");
+
+        btn.addEventListener("click", function() {
+            btn.remove();
+
+            //add code to refresh page with the new filters
+            var bed = document.getElementById('bed_type');
+
+            bed.value = "All";
+
+            //remove the current rentals and put on using new filter
+            var sel = document.getElementById('house-panel');
+           /* for(let i = 1; i < sel.children.length; i++) {
+                sel.children[i].remove();
+            }*/
+
+           
+            var parish = document.getElementById('parish_type').value;
+            var min_price = document.getElementById('price-min').value;
+            var max_price = document.getElementById('price-max').value;
+            var lot = document.getElementById('entryBox1').value;
+            
+            var sort = document.getElementById('sort_type').value;
+
+            displayFilteredRentals(lot, min_price, max_price, "All", parish, sort);
+
+        });
+
+        btn.appendChild(img);
+        btn.appendChild(text);
+        div.appendChild(btn);
+    }
+
+    function addPriceFilterIcon(min_price, max_price) {
+       
+        var div = document.getElementById('filter-icon-bar');
+        
+
+        var btn = document.createElement('button');
+        btn.setAttribute("class", "btn btn-primary filter-bar-btn");
+        btn.setAttribute("id", "price-filter");
+
+        var text = document.createElement('p');
+        text.setAttribute("class", "filter-icon-text");
+        text.innerHTML = "$" + min_price + " - " + "$" + max_price;
+        console.log("here");
+
+        var img = document.createElement('img');
+        img.setAttribute("src", "x.svg");
+        img.setAttribute("class", "filter-close");
+
+        btn.addEventListener("click", function() {
+            btn.remove();
+
+            //add code to refresh page with the new filters
+            var min_range = document.getElementById('price-min');
+            var max_range = document.getElementById('price-max');
+
+            min_range.value = 0;
+            max_range.value = 5000;
+
+            var min_out = document.getElementById('min-price-value');
+            var max_out = document.getElementById('max-price-value');
+            min_out.innerHTML = min_range.value;
+            max_out.innerHTML = max_range.value;
+
+            //remove the current rentals and put on using new filter
+            var sel = document.getElementById('house-panel');
+            while(sel.children.length > 1) {
+                sel.children[sel.children.length-1].remove();
+            }
+
+           
+            var parish = document.getElementById('parish_type').value;
+            var lot = document.getElementById('entryBox1').value;
+            var sort = document.getElementById('sort_type').value;
+            var bed = document.getElementById('bed_type').value;
+
+            
+
+            displayFilteredRentals(lot, 0, 5000, bed, parish, sort);
+
+        });
+
+        btn.appendChild(img);
+        btn.appendChild(text);
+        div.appendChild(btn);
+        
         
     }
 
@@ -1418,6 +1595,10 @@ jQuery(document).ready(function() {
         while (tray.childNodes.length > 0) {
             tray.removeChild(tray.lastChild);
         }
+
+        console.log("before filters");
+        addFilters(lot, min_price, max_price, bed, parish);
+        console.log("after filters");
 
         displayFilteredRentals(lot, min_price, max_price, bed, parish, sort);
     })
