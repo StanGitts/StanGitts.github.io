@@ -527,6 +527,7 @@ jQuery(document).ready(function() {
                     //outer div
                     var div_outer = document.createElement('div');
                     div_outer.setAttribute("class", "option-md pointer");
+                    div_outer.addEventListener('click', getInfo);
 
                     //div containing image
                     var div_img = document.createElement('div');
@@ -1025,6 +1026,25 @@ jQuery(document).ready(function() {
         
     }
 
+    function getInfo () {
+        var sel_panel = document.getElementById('sel-panel');
+        //sel_panel.setAttribute("class", "selection-panel blur-cont");
+        var filt_panel = document.getElementById('filter-panel');
+        filt_panel.setAttribute("class", "rectangle panel-item blur-cont");
+        var house_panel = document.getElementById('house-panel');
+        house_panel.setAttribute("class", "box panel-item blur-cont");
+
+        var new_panel = document.createElement('div');
+        var btn = document.getElementById('close-btn');
+        btn.setAttribute("class", "close-btn-on");
+
+
+        new_panel.setAttribute("class", "house-info-div");
+
+        //filt_panel.hidden = true;
+        //house_panel.hidden = true;
+        sel_panel.appendChild(new_panel);
+    }
     /*function getDescription(parish, text_name) {
         var text;
 

@@ -1709,6 +1709,36 @@ svg {
 .form-elem {
     color: white;
 }
+
+.house-info-div {
+    width: 1200px;
+    height: 600px;
+    color: red;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 2;
+    top: 30px;
+    left: 11%;
+    background-color: red;
+}
+
+.close-btn-off {
+    position: absolute;
+    top: 25px;
+    margin: 0 auto;
+    left: 94%;
+    z-index: 2;
+    opacity: 0%;
+}
+
+.close-btn-on {
+    position: absolute;
+    top: 50px;
+    margin: 0 auto;
+    left: 94%;
+    z-index: 2;
+    opacity: 100%;
+}
 /*-------------------------EXPLORE PAGE------------------*/
 
 /*section contains code for transitions and other effects*/
