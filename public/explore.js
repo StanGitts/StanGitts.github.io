@@ -1033,17 +1033,47 @@ jQuery(document).ready(function() {
         filt_panel.setAttribute("class", "rectangle panel-item blur-cont");
         var house_panel = document.getElementById('house-panel');
         house_panel.setAttribute("class", "box panel-item blur-cont");
+       // house_panel.setAttribute("id", "house-info");
 
         var new_panel = document.createElement('div');
+        new_panel.setAttribute("id", "house-info");
+        new_panel.setAttribute("class", "house-info-div");
+
+        var div = document.createElement('div');
+        div.setAttribute("class", "close-div");
+        div.setAttribute("id", "close-btn-div");
+
         var btn = document.getElementById('close-btn');
         btn.setAttribute("class", "close-btn-on");
 
+        div.addEventListener('click', function(){
+            var btn = document.getElementById('close-btn');
+            btn.setAttribute("class", "close-btn-off");
 
-        new_panel.setAttribute("class", "house-info-div");
+            var panel = document.getElementById('house-info');
+            panel.remove();
+
+            var filter_panel = document.getElementById('filter-panel');
+            filter_panel.setAttribute("class", "rectangle panel-item");
+
+            var h_panel = document.getElementById('house-panel');
+            h_panel.setAttribute("class", "box panel-item");
+        })
+
+        div.appendChild(btn);
+        sel_panel.appendChild(div);
+
+
+
+
+        
 
         //filt_panel.hidden = true;
         //house_panel.hidden = true;
+
+
         sel_panel.appendChild(new_panel);
+
     }
     /*function getDescription(parish, text_name) {
         var text;
@@ -1630,6 +1660,14 @@ jQuery(document).ready(function() {
         console.log("after filters");
 
         displayFilteredRentals(lot, min_price, max_price, bed, parish, sort);
+    })
+
+    $('#close-btn-div').click(function(e) {
+        var panel = document.getElementById('house-info');
+        panel.remove();
+        var btn = document.getElementById('close-btn');
+        btn.setAttribute("class", "close-btn-off");
+
     })
 
 

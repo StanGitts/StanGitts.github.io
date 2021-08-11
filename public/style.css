@@ -156,6 +156,10 @@ svg {
     transition: filter 0.2s;
 }
 
+.darken-cont {
+    background-color: black;
+}
+
 .hide {
     opacity: 0%;
 }
@@ -1719,24 +1723,35 @@ svg {
     z-index: 2;
     top: 30px;
     left: 11%;
-    background-color: red;
+    background-color: chartreuse;
+    border-radius: 5px;
+}
+
+.close-div {
+    height: 50px;
+    width: 50px;
+    top: 40px;
+    margin: 0 auto;
+    position: absolute;
+    left: 94%;
+    z-index: 2;
 }
 
 .close-btn-off {
-    position: absolute;
+/*    position: absolute;
     top: 25px;
     margin: 0 auto;
     left: 94%;
-    z-index: 2;
+    z-index: 2;*/
     opacity: 0%;
 }
 
 .close-btn-on {
-    position: absolute;
+/*    position: absolute;
     top: 50px;
     margin: 0 auto;
     left: 94%;
-    z-index: 2;
+    z-index: 2;*/
     opacity: 100%;
 }
 /*-------------------------EXPLORE PAGE------------------*/
@@ -1764,6 +1779,10 @@ a:visited {
 
 .option-md:hover {
     background-color: #18e770;
+}
+
+.close-btn-on:hover {
+    cursor: pointer;
 }
 
 
