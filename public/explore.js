@@ -443,7 +443,7 @@ jQuery(document).ready(function() {
                 let num = 1;
 
                 for(let i = 0; i < length/2; i++) {
-                    let img_name = img_keyword + num + '.png';
+                    let img_name = img_keyword + num + '_1' + '.png';
                     let text_name = text_keyword + num + '.json';
 
                     console.log(text_name);
@@ -1027,6 +1027,7 @@ jQuery(document).ready(function() {
     }
 
     function getInfo () {
+        console.log(img);
         var sel_panel = document.getElementById('sel-panel');
         //sel_panel.setAttribute("class", "selection-panel blur-cont");
         var filt_panel = document.getElementById('filter-panel');
@@ -1039,9 +1040,9 @@ jQuery(document).ready(function() {
         new_panel.setAttribute("id", "house-info");
         new_panel.setAttribute("class", "house-info-div");
 
-        var div = document.createElement('div');
-        div.setAttribute("class", "close-div");
-        div.setAttribute("id", "close-btn-div");
+        var div = document.getElementById('close-btn-div');
+        //div.setAttribute("class", "close-div");
+        //div.setAttribute("id", "close-btn-div");
 
         var btn = document.getElementById('close-btn');
         btn.setAttribute("class", "close-btn-on");
@@ -1050,19 +1051,67 @@ jQuery(document).ready(function() {
             var btn = document.getElementById('close-btn');
             btn.setAttribute("class", "close-btn-off");
 
-            var panel = document.getElementById('house-info');
-            panel.remove();
-
             var filter_panel = document.getElementById('filter-panel');
             filter_panel.setAttribute("class", "rectangle panel-item");
 
             var h_panel = document.getElementById('house-panel');
             h_panel.setAttribute("class", "box panel-item");
+
+            var panel = document.getElementById('house-info');
+            panel.remove();
         })
 
-        div.appendChild(btn);
-        sel_panel.appendChild(div);
 
+        div.appendChild(btn);
+        //sel_panel.appendChild(div);
+
+        //var img_keyword = div_outer.children;
+        //console.log("children:");
+       // console.log(img_keyword);
+       // var text_keyword = 'text_';
+
+
+
+       /* $.ajax({
+            type: 'get',
+            url: '/getHouseInfo',
+            data: {
+                
+            },
+            async: false,
+            dataType: 'json',
+
+            success: function(file1) {
+                let j = i+2;
+
+                for(j = i+2; j < files.length; j+=2) {
+                    $.ajax({
+                        type: 'get',
+                        url: '/getDesc',
+                        data: {
+                            name: files[j]
+                        },
+                        async: false,
+                        dataType: 'json',
+
+                        success: function(file2) {
+                            if(file2.Price > file1.Price) {
+                               // console.log("<");
+                                max = j;
+                            }
+                        },
+
+                        fail: function() {
+                            console.log("could not retrieve file!");
+                        }
+                    })
+                }
+            },
+
+            fail: function() {
+                console.log("error trying to retrieve file!");
+            }
+        })*/
 
 
 
