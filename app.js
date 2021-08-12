@@ -121,19 +121,6 @@ app.get('/getHouseFiles', function(req, res){
 
 })
 
-// app.get('/getAllHouses', function (req, res){
-//   let path = __dirname + '/public/houses/';
-
-//   let allFiles;
-//   let folders = fs.readdirSync(path);
-//   let length = folders.length;
-
-//   for(let i = 0; i < length; i++) {
-//     let filePath = __dirname + '/public/houses/' + folders[i];
-
-//   }
-// })
-
 app.get('/getDesc', function(req, res){
   console.log('here');
   res.sendFile(path.join(__dirname + '/public/houses/' + req.query.name));
@@ -162,6 +149,11 @@ app.get('/getDesc', function(req, res){
   }*/
   
 })
+
+app.get('/getHouseInfo', function(req, res){
+  res.sendFile(path.join(__dirname + '/public/houses/' + req.query.text));
+})
+
 
 /*app.get('/getPath', function(req, res){
   console.log('yess');

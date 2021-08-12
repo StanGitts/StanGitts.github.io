@@ -10,6 +10,7 @@ jQuery(document).ready(function() {
     var isHome = 1;
     var isBlur = 0;
     var isZoom = 0;
+    //var initFlag = 0;
 
     //console.log(document.cookie);
     // On page-load AJAX Example
@@ -517,6 +518,7 @@ jQuery(document).ready(function() {
 
                 for(let i = 0; i < filteredFiles.length; i = i + 2) {
                     //creating img tags
+                    
                     var panel = document.getElementById('house-panel');
                     let img_path = '/houses/' + filteredFiles[i];
 
@@ -527,8 +529,9 @@ jQuery(document).ready(function() {
                     //outer div
                     var div_outer = document.createElement('div');
                     div_outer.setAttribute("class", "option-md pointer");
-                    div_outer.addEventListener('click', getInfo);
-
+                    div_outer.setAttribute("id", filteredFiles[i]);
+                    div_outer.addEventListener('click', function() { getInfo(this.id); }, false);
+                    
                     //div containing image
                     var div_img = document.createElement('div');
                     div_img.setAttribute("class", "option-item");
@@ -602,6 +605,7 @@ jQuery(document).ready(function() {
 
                     });
                 }
+                initFlag = 1;
 
 
             }, 
@@ -1026,8 +1030,10 @@ jQuery(document).ready(function() {
         
     }
 
-    function getInfo () {
-        console.log(img);
+    function getInfo(id) {
+        
+        //console.log("initFlag = " + initFlag);
+        console.log(id);
         var sel_panel = document.getElementById('sel-panel');
         //sel_panel.setAttribute("class", "selection-panel blur-cont");
         var filt_panel = document.getElementById('filter-panel');
@@ -1063,55 +1069,110 @@ jQuery(document).ready(function() {
 
 
         div.appendChild(btn);
+
         //sel_panel.appendChild(div);
 
         //var img_keyword = div_outer.children;
         //console.log("children:");
        // console.log(img_keyword);
-       // var text_keyword = 'text_';
+        var text_keyword = 'text_';
+        var text_name;
 
+        for(let i = 0; i < id.length; i++) {
+            if(!(id[i] >= 'a' && id[i] <= 'z') && !(id[i] >= 'A' && id[i] <= 'Z') && id[i] != '_' 
+                && id[i] != '.') {
+                text_name = text_keyword + id[i] + '.json';
+                i = id.length;
+            }
+        }
 
+        console.log("text = " + text_name);
 
-       /* $.ajax({
+        var price;
+        var loc;
+        var beds;
+        var lot;
+        var desc;
+
+        $.ajax({
             type: 'get',
             url: '/getHouseInfo',
             data: {
-                
+                text: text_name
             },
             async: false,
             dataType: 'json',
 
             success: function(file1) {
-                let j = i+2;
+                price = file1.Price;
+                loc = file1.Location;
+                beds = file1.Bedrooms;
+                lot = file1.Lot;
+                desc = file1.Description;
 
-                for(j = i+2; j < files.length; j+=2) {
-                    $.ajax({
-                        type: 'get',
-                        url: '/getDesc',
-                        data: {
-                            name: files[j]
-                        },
-                        async: false,
-                        dataType: 'json',
-
-                        success: function(file2) {
-                            if(file2.Price > file1.Price) {
-                               // console.log("<");
-                                max = j;
-                            }
-                        },
-
-                        fail: function() {
-                            console.log("could not retrieve file!");
-                        }
-                    })
-                }
+                console.log(price);
+                console.log(loc);
+                console.log(beds);
+                console.log(lot);
+                console.log(desc);
             },
 
             fail: function() {
                 console.log("error trying to retrieve file!");
             }
-        })*/
+        })
+
+
+        $.ajax({
+            type: 'get',
+            url: '/getHouseList',
+            async: false,
+
+            success: function (files) {
+                var idx;
+
+                for(let i = 0; i < files.length/2; i++) {
+                    if(files[i] == id) {
+                        idx = i;
+                    }
+                }
+
+                var house_num;
+                let j = 0;
+
+                while(id[j] != '_') {
+                    j++;
+                }
+                j++;
+
+                let init = 0;
+                let length = 0;
+                while(id[j] >= '0' && id[j] <= '9'){
+                    if(init == 0) {
+                        console.log(id[j]);
+                        house_num = id[j];
+                        j++;
+                        init = 1;
+                    } else {
+                        house_num = house_num + id[j];
+                        j++;
+                    }
+                    length++;
+                }
+
+                console.log("house_num = " + house_num);
+
+                j = 0;
+                for(j = 0; j < length; j++) {
+                    //code to go through the list of files comparing them to "house_num"
+                }
+
+            },
+
+            fail: function() {
+                console.log("error!");
+            }
+        })
 
 
 
@@ -1122,6 +1183,8 @@ jQuery(document).ready(function() {
 
 
         sel_panel.appendChild(new_panel);
+        
+        
 
     }
     /*function getDescription(parish, text_name) {
@@ -1679,6 +1742,7 @@ jQuery(document).ready(function() {
     
 
     $('#filter_submit').click(function(e) {
+        console.log("initFlag = " + initFlag);
         var lot = document.getElementById('entryBox1').value;
         var min_price = document.getElementById('price-min').value;
         var max_price = document.getElementById('price-max').value;
@@ -1711,12 +1775,16 @@ jQuery(document).ready(function() {
         displayFilteredRentals(lot, min_price, max_price, bed, parish, sort);
     })
 
-    $('#close-btn-div').click(function(e) {
+    /*$('#close-btn-div').click(function(e) {
         var panel = document.getElementById('house-info');
         panel.remove();
         var btn = document.getElementById('close-btn');
         btn.setAttribute("class", "close-btn-off");
 
+    })*/
+
+    $(".option-md").click(function(){
+        console.log("initFlag = " + initFlag);
     })
 
 
