@@ -1063,8 +1063,19 @@ jQuery(document).ready(function() {
             var h_panel = document.getElementById('house-panel');
             h_panel.setAttribute("class", "box panel-item");
 
+            var carousel = document.getElementById('carouselExampleIndicators');
+            carousel.setAttribute("class", "carousel slide container3 carousel-down zoom-out");
+            carousel.hidden = true;
+
+            var inner = document.getElementById('carousel-inner');
+            while(inner.children.length != 0) {
+                inner.firstChild.remove();
+            }
+
             var panel = document.getElementById('house-info');
             panel.remove();
+
+
         })
 
 
@@ -1075,6 +1086,11 @@ jQuery(document).ready(function() {
         //var img_keyword = div_outer.children;
         //console.log("children:");
        // console.log(img_keyword);
+        var carousel = document.getElementById('carouselExampleIndicators');
+        carousel.setAttribute("class", "carousel slide container3 zoom-out carousel-down above");
+        carousel.hidden = false;
+
+
         var text_keyword = 'text_';
         var text_name;
 
@@ -1149,7 +1165,7 @@ jQuery(document).ready(function() {
                 let length = 0;
                 while(id[j] >= '0' && id[j] <= '9'){
                     if(init == 0) {
-                        console.log(id[j]);
+                       // console.log(id[j]);
                         house_num = id[j];
                         j++;
                         init = 1;
@@ -1163,9 +1179,105 @@ jQuery(document).ready(function() {
                 console.log("house_num = " + house_num);
 
                 j = 0;
-                for(j = 0; j < length; j++) {
-                    //code to go through the list of files comparing them to "house_num"
+                var flag = 1;
+                init = 1;
+                var count = 1;
+
+
+                while(flag == 1) {
+                    for(j = 0; j < length; j++) {
+                        //code to go through the list of files comparing them to "house_num"
+                        if(files[idx][j+6] != id[6]) {
+                            flag = 0;
+                        }
+                        console.log(files[idx]);
+                    }
+
+                    if(flag != 0) {
+                        //make carousel
+                        var inner = document.getElementById("carousel-inner");
+                        if(init == 1) {
+                            var car_item = document.createElement('div');
+                            car_item.setAttribute("class", "carousel-item active");
+
+                            //image code
+                            var scene = document.createElement('a-scene');
+
+                            var img = document.createElement('img');
+
+                            let identity = "pic" + count;
+                            let path = '/houses/' + files[idx];
+
+                            img.setAttribute("id", identity);
+                            img.setAttribute("class", "d-block w-100");
+                            img.setAttribute("src", path);
+                            img.setAttribute("alt", "First slide");
+
+                            scene.appendChild(img);
+
+                            var sky = document.createElement('a-sky');
+
+                            sky.setAttribute("src", "#"+identity);
+                            sky.setAttribute("rotation", "0 -90 0");
+
+                            scene.appendChild(sky);
+
+                            //image code
+
+                            car_item.appendChild(scene);
+
+                            inner.appendChild(car_item);
+
+                            var new_desc = document.createElement('p');
+
+                            var new_text = "Price: " + price + "<br>";
+                            new_text = new_text + "Location: " + loc + "<br>";
+                            new_text = new_text + "Bedrooms: " + beds + "<br>";
+                            new_text = new_text + "Lot: " + lot + "<br>";
+                            new_text = new_text + "Description: " + desc;
+
+                            new_desc.innerHTML = new_text;
+
+                            new_panel.appendChild(new_desc);
+                            init = 0;
+                        } else {
+                            var car_item = document.createElement('div');
+                            car_item.setAttribute("class", "carousel-item");
+
+                            //image code
+                            var scene = document.createElement('a-scene');
+
+                            var img = document.createElement('img');
+
+                            let identity = "pic" + count;
+                            let path = '/houses/' + files[idx];
+
+                            img.setAttribute("id", identity);
+                            img.setAttribute("class", "d-block w-100");
+                            img.setAttribute("src", path);
+                            //img.setAttribute("alt", "First slide");
+
+                            scene.appendChild(img);
+
+                            var sky = document.createElement('a-sky');
+
+                            sky.setAttribute("src", "#"+identity);
+                            sky.setAttribute("rotation", "0 -90 0");
+
+                            scene.appendChild(sky);
+
+                            //image code
+
+                            car_item.appendChild(scene);
+
+                            inner.appendChild(car_item);
+                        }
+
+                    }
+                    idx++;
                 }
+
+                
 
             },
 

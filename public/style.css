@@ -340,7 +340,7 @@ svg {
     height: 50px;
     width: 100%;
     position: fixed;
-    z-index: 3 !important;
+    z-index: 4 !important;
     /*font-family: Arial;*/
 }
 
@@ -1715,22 +1715,22 @@ svg {
 }
 
 .house-info-div {
-    width: 1200px;
-    height: 600px;
+    width: 1325px;
+    height: 800px;
     color: red;
     margin: 0 auto;
     position: absolute;
     z-index: 2;
-    top: 30px;
-    left: 11%;
-    background-color: chartreuse;
+    top: 5px;
+    left: 5%;
+    background-color: DarkSlateGray;
     border-radius: 5px;
 }
 
 .close-div {
     height: 50px;
     width: 50px;
-    top: 40px;
+    top: 5px;
     margin: 0 auto;
     position: absolute;
     left: 94%;
@@ -1753,6 +1753,15 @@ svg {
     left: 94%;
     z-index: 2;*/
     opacity: 100%;
+}
+
+.above {
+    z-index:3;
+}
+
+.carousel-down {
+    position: relative;
+    top: 5%;
 }
 /*-------------------------EXPLORE PAGE------------------*/
 
