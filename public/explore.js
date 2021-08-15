@@ -447,72 +447,78 @@ jQuery(document).ready(function() {
                     let img_name = img_keyword + num + '_1' + '.png';
                     let text_name = text_keyword + num + '.json';
 
-                    console.log(text_name);
-                    console.log(img_name);
+                    //console.log(text_name);
+                    //console.log(img_name);
 
+                    //function to check if the file is in the list of files
 
-                    $.ajax({
-                        type: 'get',
-                        url: '/getDesc',
-                        data: {
-                            name: text_name
-                        },
-                        async: false,
-                        dataType: 'json',
+                    for(let k = 0; k < length; k++) {
+                        if(img_name == list[k]) {
+                            $.ajax({
+                                type: 'get',
+                                url: '/getDesc',
+                                data: {
+                                    name: text_name
+                                },
+                                async: false,
+                                dataType: 'json',
 
-                        success: function(file) {
-                            var check = 1;
+                                success: function(file) {
+                                    var check = 1;
 
-                            //checking lot
-                            if(lot != "") {
+                                    //checking lot
+                                    if(lot != "") {
 
-                                if(file.Lot != lot) {
-                                    console.log('here1');
-                                    check = 0;
-                                } 
-                            } 
+                                        if(file.Lot != lot) {
+                                           // console.log('here1');
+                                            check = 0;
+                                        } 
+                                    } 
 
-                            //checking parish
-                            if(parish != "All") {
+                                    //checking parish
+                                    if(parish != "All") {
 
-                                if(file.Location != parish) {
-                                    console.log('here2');
-                                    check = 0;
-                                }       
-                            }
+                                        if(file.Location != parish) {
+                                            //console.log('here2');
+                                            check = 0;
+                                        }       
+                                    }
 
-                            //checking beds
-                            if(beds != "All") {
-                                if(file.Bedrooms != beds) {
-                                    console.log('here3');
-                                    check = 0;
+                                    //checking beds
+                                    if(beds != "All") {
+                                        if(file.Bedrooms != beds) {
+                                            //console.log('here3');
+                                            check = 0;
+                                        }
+                                    }
+
+                                    //checking price
+                                    if(!(file.Price >= min_price && file.Price <= max_price)){
+                                        check = 0;
+                                    }
+
+                                    if(check == 1) {
+                                        filteredFiles.push(img_name);
+                                        filteredFiles.push(text_name);
+                                    }
+
+                                   
+                                },
+
+                                fail: function () {
+                                    console.log("error while retrieving file");
                                 }
-                            }
-
-                            //checking price
-                            if(!(file.Price >= min_price && file.Price <= max_price)){
-                                check = 0;
-                            }
-
-                            if(check == 1) {
-                                filteredFiles.push(img_name);
-                                filteredFiles.push(text_name);
-                            }
-
-                           
-                        },
-
-                        fail: function () {
-                            console.log("error while retrieving file");
+                            })
                         }
-                    })
+                    }
+                    
 
                     num++;
                 }
 
-                console.log(filteredFiles);
+                //console.log(filteredFiles);
                 filteredFiles = sortRentals(filteredFiles, sort_type);
-                console.log(filteredFiles);
+               // console.log(filteredFiles);
 
                 //creating elements for the files
 
@@ -558,7 +564,7 @@ jQuery(document).ready(function() {
                         },
 
                         success: function(file) {
-                            console.log(file);
+                            //console.log(file);
 
                             // house_summ = "Price: " + file.Price + "     " + "Location: " + file.Location + "\n"
                             //        + "Bedrooms: " + file.Bedrooms + "    " + "Lot: " + file.Lot;
@@ -575,8 +581,8 @@ jQuery(document).ready(function() {
                                /* text3.innerHTML = bed;
                                 text4.innerHTML = lot;*/
 
-                                console.log(text1.innerHTML);
-                                console.log(text2.innerHTML);
+                                //console.log(text1.innerHTML);
+                                //console.log(text2.innerHTML);
                                /* console.log(text3.innerHTML);
                                 console.log(text4.innerHTML);*/
 
@@ -809,9 +815,9 @@ jQuery(document).ready(function() {
             addLotFilterIcon(lot);
         }
 
-        console.log("before parish filter");
+        //console.log("before parish filter");
         addPriceFilterIcon(min_price, max_price);
-        console.log("after parish fgilter");
+        //console.log("after parish fgilter");
 
         if(beds != "All") {
             addBedFilterIcon(beds);
@@ -984,7 +990,7 @@ jQuery(document).ready(function() {
         var text = document.createElement('p');
         text.setAttribute("class", "filter-icon-text");
         text.innerHTML = "$" + min_price + " - " + "$" + max_price;
-        console.log("here");
+        //console.log("here");
 
         var img = document.createElement('img');
         img.setAttribute("src", "x.svg");
@@ -1044,7 +1050,7 @@ jQuery(document).ready(function() {
 
         var new_panel = document.createElement('div');
         new_panel.setAttribute("id", "house-info");
-        new_panel.setAttribute("class", "house-info-div");
+        new_panel.setAttribute("class", "house-info-div panel-item");
 
         var div = document.getElementById('close-btn-div');
         //div.setAttribute("class", "close-div");
@@ -1067,9 +1073,9 @@ jQuery(document).ready(function() {
             carousel.setAttribute("class", "carousel slide container3 carousel-down zoom-out");
             carousel.hidden = true;
 
-            var inner = document.getElementById('carousel-inner');
-            while(inner.children.length != 0) {
-                inner.firstChild.remove();
+            var inner_div = document.getElementById('carousel-inner');
+            while(inner_div.children.length != 0) {
+                inner_div.firstChild.remove();
             }
 
             var panel = document.getElementById('house-info');
@@ -1089,7 +1095,6 @@ jQuery(document).ready(function() {
         var carousel = document.getElementById('carouselExampleIndicators');
         carousel.setAttribute("class", "carousel slide container3 zoom-out carousel-down above");
         carousel.hidden = false;
-
 
         var text_keyword = 'text_';
         var text_name;
@@ -1126,11 +1131,11 @@ jQuery(document).ready(function() {
                 lot = file1.Lot;
                 desc = file1.Description;
 
-                console.log(price);
-                console.log(loc);
-                console.log(beds);
-                console.log(lot);
-                console.log(desc);
+                //console.log(price);
+                //console.log(loc);
+                //console.log(beds);
+                //console.log(lot);
+                //console.log(desc);
             },
 
             fail: function() {
@@ -1193,9 +1198,11 @@ jQuery(document).ready(function() {
                         console.log(files[idx]);
                     }
 
+                    var inner = document.getElementById("carousel-inner");
+                    console.log(inner);
                     if(flag != 0) {
                         //make carousel
-                        var inner = document.getElementById("carousel-inner");
+                        
                         if(init == 1) {
                             var car_item = document.createElement('div');
                             car_item.setAttribute("class", "carousel-item active");
@@ -1228,7 +1235,8 @@ jQuery(document).ready(function() {
 
                             inner.appendChild(car_item);
 
-                            var new_desc = document.createElement('p');
+                           /* var new_desc = document.createElement('p');
+                            new_desc.setAttribute("class", "house-desc");
 
                             var new_text = "Price: " + price + "<br>";
                             new_text = new_text + "Location: " + loc + "<br>";
@@ -1238,9 +1246,9 @@ jQuery(document).ready(function() {
 
                             new_desc.innerHTML = new_text;
 
-                            new_panel.appendChild(new_desc);
+                            new_panel.appendChild(new_desc);*/
                             init = 0;
-                        } else {
+                        } /*else {
                             var car_item = document.createElement('div');
                             car_item.setAttribute("class", "carousel-item");
 
@@ -1271,9 +1279,9 @@ jQuery(document).ready(function() {
                             car_item.appendChild(scene);
 
                             inner.appendChild(car_item);
-                        }
+                        }*/
 
-                    }
+                    } 
                     idx++;
                 }
 
@@ -1293,8 +1301,8 @@ jQuery(document).ready(function() {
         //filt_panel.hidden = true;
         //house_panel.hidden = true;
 
-
-        sel_panel.appendChild(new_panel);
+       /* new_panel.appendChild(carousel);
+        sel_panel.appendChild(new_panel);*/
         
         
 
@@ -1449,7 +1457,7 @@ jQuery(document).ready(function() {
         var max_price = document.getElementById('price-max').value;
         
         var sort = document.getElementById('sort_type').value;
-        console.log("sort = " + sort);
+        //console.log("sort = " + sort);
 
         displayFilteredRentals("", min_price, max_price, "All", "All", sort);
     })

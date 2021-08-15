@@ -1725,6 +1725,7 @@ svg {
     left: 5%;
     background-color: DarkSlateGray;
     border-radius: 5px;
+    display: flex;
 }
 
 .close-div {
@@ -1762,6 +1763,11 @@ svg {
 .carousel-down {
     position: relative;
     top: 5%;
+}
+
+.house-desc {
+    position: relative;
+    top: 63%;
 }
 /*-------------------------EXPLORE PAGE------------------*/
 

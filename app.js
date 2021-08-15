@@ -151,7 +151,11 @@ app.get('/getDesc', function(req, res){
 })
 
 app.get('/getHouseInfo', function(req, res){
+  
   res.sendFile(path.join(__dirname + '/public/houses/' + req.query.text));
+  
+  
+  
 })
 
 
