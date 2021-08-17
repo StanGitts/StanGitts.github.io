@@ -5,6 +5,7 @@ html {
     font-size: 16px;
     background: white;
     font-family: Montserrat;
+    overflow: scroll;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
     width: 100%;
     margin: auto;
     top: 0px;
+
 }
 
 
@@ -94,6 +96,11 @@ svg {
 
 .selected {
     background-color: white;
+}
+
+.pano-image {
+    width: 400px;
+    height: 600px;
 }
 
 .container {
@@ -1758,11 +1765,12 @@ svg {
 
 .above {
     z-index:3;
+    margin: auto;
 }
 
 .carousel-down {
     position: relative;
-    top: 5%;
+    top: -100px;
 }
 
 .house-desc {

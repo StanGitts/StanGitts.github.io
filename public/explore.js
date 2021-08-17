@@ -1036,6 +1036,81 @@ jQuery(document).ready(function() {
         
     }
 
+    function createCarousel() {
+
+        var carousel = document.createElement('div');
+        carousel.setAttribute("id", "carouselExampleIndicators");
+        carousel.setAttribute("class", "carousel slide container3 zoom-out carousel-down above");
+        carousel.setAttribute("data-ride", "carousel");
+
+        //creating ol tag
+        var ol_tag = document.createElement('ol');
+        ol_tag.setAttribute("class", "carousel-indicators");
+        carousel.appendChild(ol_tag);
+
+        //creating li tags
+        var li_tag1 = document.createElement('li');
+        li_tag1.setAttribute("data-target", "#carouselExampleIndicators");
+        li_tag1.setAttribute("data-slide-to", "0");
+        li_tag1.setAttribute("class", "active");
+        ol_tag.appendChild(li_tag1);
+
+        var li_tag2 = document.createElement('li');
+        li_tag2.setAttribute("data-target", "#carouselExampleIndicators");
+        li_tag2.setAttribute("data-slide-to", "1");
+        ol_tag.appendChild(li_tag2);
+       
+
+        var li_tag3 = document.createElement('li');
+        li_tag3.setAttribute("data-target", "#carouselExampleIndicators");
+        li_tag3.setAttribute("data-slide-to", "2");
+        ol_tag.appendChild(li_tag3);
+
+        //creating the carousel-inner
+        var inner = document.createElement('div');
+        inner.setAttribute("id", "carousel-inner");
+        inner.setAttribute("class", "carousel-inner");
+        carousel.appendChild(inner);
+
+        //creating buttons to prev and next
+        var a_tag1 = document.createElement("a");
+        a_tag1.setAttribute("class", "carousel-control-prev");
+        a_tag1.setAttribute("href", "#carouselExampleIndicators");
+        a_tag1.setAttribute("role", "button");
+        a_tag1.setAttribute("data-slide", "prev");
+        carousel.appendChild(a_tag1);
+
+        var a_tag2 = document.createElement("a");
+        a_tag2.setAttribute("class", "carousel-control-next");
+        a_tag2.setAttribute("href", "#carouselExampleIndicators");
+        a_tag2.setAttribute("role", "button");
+        a_tag2.setAttribute("data-slide", "next");
+        carousel.appendChild(a_tag2);
+
+        //creating span tags
+        var span1 = document.createElement('span');
+        span1.setAttribute("class", "carousel-control-prev-icon");
+        span1.setAttribute("aria-hidden", "true");
+        a_tag1.appendChild(span1);
+
+        var span2 = document.createElement('span');
+        span2.setAttribute("class", "sr-only");
+        span2.innerHTML = "Previous";
+        a_tag1.appendChild(span2);
+
+        var span3 = document.createElement('span');
+        span3.setAttribute("class", "carousel-control-next-icon");
+        span3.setAttribute("aria-hidden", "true");
+        a_tag2.appendChild(span3);
+
+        var span4 = document.createElement('span');
+        span4.setAttribute("class", "sr-only");
+        span4.innerHTML = "Next";
+        a_tag2.appendChild(span4);
+
+        return carousel;
+    }
+
     function getInfo(id) {
         
         //console.log("initFlag = " + initFlag);
@@ -1092,9 +1167,12 @@ jQuery(document).ready(function() {
         //var img_keyword = div_outer.children;
         //console.log("children:");
        // console.log(img_keyword);
-        var carousel = document.getElementById('carouselExampleIndicators');
-        carousel.setAttribute("class", "carousel slide container3 zoom-out carousel-down above");
-        carousel.hidden = false;
+
+        //function to create a dynamic carousel
+        
+        //carousel.hidden = false;
+        var carousel = createCarousel();
+        new_panel.appendChild(carousel);
 
         var text_keyword = 'text_';
         var text_name;
@@ -1166,8 +1244,8 @@ jQuery(document).ready(function() {
                 }
                 j++;
 
-                let init = 0;
-                let length = 0;
+                var init = 0;
+                var length = 0;
                 while(id[j] >= '0' && id[j] <= '9'){
                     if(init == 0) {
                        // console.log(id[j]);
@@ -1198,19 +1276,22 @@ jQuery(document).ready(function() {
                         console.log(files[idx]);
                     }
 
-                    var inner = document.getElementById("carousel-inner");
+                    var inner = carousel.children[1];
                     console.log(inner);
                     if(flag != 0) {
                         //make carousel
                         
                         if(init == 1) {
-                            var car_item = document.createElement('div');
+                            let car_item = document.createElement('div');
                             car_item.setAttribute("class", "carousel-item active");
+                            inner.appendChild(car_item);
 
                             //image code
-                            var scene = document.createElement('a-scene');
+                            let scene = document.createElement('a-scene');
+                            car_item.appendChild(scene);
 
-                            var img = document.createElement('img');
+                            /*let img = document.createElement('img');
+                            scene.appendChild(img);
 
                             let identity = "pic" + count;
                             let path = '/houses/' + files[idx];
@@ -1220,9 +1301,9 @@ jQuery(document).ready(function() {
                             img.setAttribute("src", path);
                             img.setAttribute("alt", "First slide");
 
-                            scene.appendChild(img);
+                            
 
-                            var sky = document.createElement('a-sky');
+                            let sky = document.createElement('a-sky');
 
                             sky.setAttribute("src", "#"+identity);
                             sky.setAttribute("rotation", "0 -90 0");
@@ -1231,14 +1312,14 @@ jQuery(document).ready(function() {
 
                             //image code
 
-                            car_item.appendChild(scene);
+                            //car_item.appendChild(scene);
+                            //console.log(inner);
+                            //inner.appendChild(car_item);
 
-                            inner.appendChild(car_item);
-
-                           /* var new_desc = document.createElement('p');
+                            let new_desc = document.createElement('p');
                             new_desc.setAttribute("class", "house-desc");
 
-                            var new_text = "Price: " + price + "<br>";
+                            let new_text = "Price: " + price + "<br>";
                             new_text = new_text + "Location: " + loc + "<br>";
                             new_text = new_text + "Bedrooms: " + beds + "<br>";
                             new_text = new_text + "Lot: " + lot + "<br>";
@@ -1246,16 +1327,17 @@ jQuery(document).ready(function() {
 
                             new_desc.innerHTML = new_text;
 
-                            new_panel.appendChild(new_desc);*/
+                            new_panel.appendChild(new_desc);
+                            count++; */
                             init = 0;
-                        } /*else {
-                            var car_item = document.createElement('div');
+                        } else {
+                            /*let car_item = document.createElement('div');
                             car_item.setAttribute("class", "carousel-item");
 
                             //image code
-                            var scene = document.createElement('a-scene');
+                            let scene = document.createElement('a-scene');
 
-                            var img = document.createElement('img');
+                            let img = document.createElement('img');
 
                             let identity = "pic" + count;
                             let path = '/houses/' + files[idx];
@@ -1267,7 +1349,7 @@ jQuery(document).ready(function() {
 
                             scene.appendChild(img);
 
-                            var sky = document.createElement('a-sky');
+                            let sky = document.createElement('a-sky');
 
                             sky.setAttribute("src", "#"+identity);
                             sky.setAttribute("rotation", "0 -90 0");
@@ -1278,8 +1360,8 @@ jQuery(document).ready(function() {
 
                             car_item.appendChild(scene);
 
-                            inner.appendChild(car_item);
-                        }*/
+                            inner.appendChild(car_item);*/
+                        }
 
                     } 
                     idx++;
@@ -1301,8 +1383,8 @@ jQuery(document).ready(function() {
         //filt_panel.hidden = true;
         //house_panel.hidden = true;
 
-       /* new_panel.appendChild(carousel);
-        sel_panel.appendChild(new_panel);*/
+       /* new_panel.appendChild(carousel);*/
+        sel_panel.appendChild(new_panel);
         
         
 
