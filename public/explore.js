@@ -1286,9 +1286,28 @@ jQuery(document).ready(function() {
                             car_item.setAttribute("class", "carousel-item active");
                             inner.appendChild(car_item);
 
+                            var pano_div = document.createElement('div');
+                            pano_div.setAttribute("class", "pano-image");
+                            car_item.appendChild(pano_div);
+
+                            let path = '/houses/' + files[idx];
+
+                            var panorama = new PANOLENS.ImagePanorama(path);
+                            var viewer = new PANOLENS.Viewer({
+                                container: pano_div
+                            });
+
+                            viewer.add(panorama);
+
+                            //code to make the image visible 
+                            var canvas = pano_div.children[0];
+                            canvas.setAttribute("style", "width: 800px; height: 425px; display: block;");
+                            canvas.setAttribute("width", "800");
+                            canvas.setAttribute("height", "425");
+
                             //image code
-                            let scene = document.createElement('a-scene');
-                            car_item.appendChild(scene);
+                           // let scene = document.createElement('a-scene');
+                            //car_item.appendChild(scene);
 
                             /*let img = document.createElement('img');
                             scene.appendChild(img);

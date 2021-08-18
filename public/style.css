@@ -5,7 +5,6 @@ html {
     font-size: 16px;
     background: white;
     font-family: Montserrat;
-    overflow: scroll;
 }
 
 body {
@@ -13,7 +12,6 @@ body {
     width: 100%;
     margin: auto;
     top: 0px;
-
 }
 
 
@@ -99,8 +97,8 @@ svg {
 }
 
 .pano-image {
-    width: 400px;
-    height: 600px;
+    width: 800px;
+    height: 425px;
 }
 
 .container {
