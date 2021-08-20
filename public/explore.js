@@ -1292,18 +1292,24 @@ jQuery(document).ready(function() {
 
                             let path = '/houses/' + files[idx];
 
-                            var panorama = new PANOLENS.ImagePanorama(path);
-                            var viewer = new PANOLENS.Viewer({
+                            const panorama = new PANOLENS.ImagePanorama(path);
+                            const viewer = new PANOLENS.Viewer({
                                 container: pano_div
                             });
 
                             viewer.add(panorama);
 
+                            
+
                             //code to make the image visible 
                             var canvas = pano_div.children[0];
                             canvas.setAttribute("style", "width: 800px; height: 425px; display: block;");
-                            canvas.setAttribute("width", "800");
-                            canvas.setAttribute("height", "425");
+                            canvas.setAttribute("width", "1920");
+                            canvas.setAttribute("height", "1080");
+
+                            window.resizeTo(window.innerWidth - 2, window.innerHeight - 2);
+
+
 
                             //image code
                            // let scene = document.createElement('a-scene');
@@ -1386,8 +1392,8 @@ jQuery(document).ready(function() {
                     idx++;
                 }
 
-                
-
+                //window.dispatchEvent(new Event('resize'));
+               // $(window).trigger('resize');
             },
 
             fail: function() {
